@@ -555,13 +555,13 @@
             left: 50%;
             transform: translate(-50%, -50%) rotate(-22deg);
             font-family: var(--font-display);
-            font-size: 2.2rem;
+            font-size: 1.1rem;
             font-weight: 800;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             color: rgba(220, 38, 38, 0.55);
-            border: 4px solid rgba(220, 38, 38, 0.55);
+            border: 3px solid rgba(220, 38, 38, 0.55);
             border-radius: 8px;
-            padding: 0.1rem 1rem;
+            padding: 0.15rem 0.75rem;
             text-transform: uppercase;
             pointer-events: none;
             z-index: 5;
@@ -3342,7 +3342,7 @@
 <body>
     <!-- iOS Splash Screen -->
     <div id="splashScreen">
-        <div class="splash-icon">🐦</div>
+        <div class="splash-icon">🎹</div>
         <div class="splash-title">Loonie Bird</div>
         <div class="splash-subtitle">Music Lesson Scheduler</div>
         <div class="splash-loader"></div>
@@ -3352,7 +3352,7 @@
     <div id="publicWebsite">
         <nav class="site-nav">
             <a href="#" class="site-nav-brand" onclick="event.preventDefault();">
-                <span class="bird-icon">🐦</span> Loonie Bird Studio
+                <span class="bird-icon">🎹</span> Melanie's Piano Studio
             </a>
             <div class="site-nav-links">
                 <a href="#about" onclick="smoothScroll(event, 'about')">About</a>
@@ -3495,9 +3495,9 @@
         <footer class="site-footer">
             <div class="site-footer-inner">
                 <div class="site-footer-brand">
-                    <span>🐦</span> Loonie Bird Studio
+                    <span>🎹</span> Melanie's Piano Studio
                 </div>
-                <div class="site-footer-copy">© 2026 Loonie Bird Studio. All rights reserved.</div>
+                <div class="site-footer-copy">© 2026 Melanie's Piano Studio. All rights reserved.</div>
                 <div class="site-footer-links">
                     <a href="#">Privacy</a>
                     <a href="#">Terms</a>
@@ -3510,7 +3510,7 @@
     <div id="loginScreen">
         <div class="login-card">
             <div class="login-logo">
-                <span class="bird-icon">🐦</span>
+                <span class="bird-icon">🎹</span>
                 <h1>Loonie Bird</h1>
                 <p>Music Lesson Scheduler</p>
             </div>
@@ -3553,7 +3553,7 @@
     <div id="teacherDashboard" style="display: none;">
         <div class="dashboard-container">
             <div class="dashboard-header">
-                <span class="bird-icon" style="font-size: 3rem;">🐦</span>
+                <span class="bird-icon" style="font-size: 3rem;">🎹</span>
                 <h1 class="dashboard-title">Loonie Bird</h1>
                 <p class="dashboard-subtitle">Teacher Dashboard</p>
             </div>
@@ -3574,7 +3574,7 @@
                 </div>
                 
                 <div class="dashboard-card dashboard-card-payments" onclick="openDashboardModal(showPaymentsModal)" style="overflow: hidden;">
-                    <div class="draft-stamp">DRAFT</div>
+                    <div class="draft-stamp">UNDER CONSTRUCTION</div>
                     <div class="dashboard-card-icon">💰</div>
                     <div class="dashboard-card-label">Payments</div>
                     <div class="dashboard-card-desc">Invoices, balances, and payment history</div>
@@ -3595,7 +3595,7 @@
             <div class="header-content">
                 <div class="header-top">
                     <div class="header-brand">
-                        <span class="bird-icon">🐦</span>
+                        <span class="bird-icon">🎹</span>
                         <h1>Loonie Bird</h1>
                     </div>
                     <div class="header-user">
@@ -4624,7 +4624,9 @@ function render() {
             const cellClass = isPastCell ? 'drop-zone past-day' : 'drop-zone';
             
             // Check if today's column and current hour for time indicator
-            const isCurrentDayCell = currentWeek === 0 && d === (new Date().getDay() - 1);
+            const jsDay = new Date().getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+            const todayCol = jsDay === 0 ? 6 : jsDay - 1; // Convert to 0=Mon, ..., 6=Sun
+            const isCurrentDayCell = currentWeek === 0 && d === todayCol;
             const nowHour = new Date().getHours();
             const nowMinutes = new Date().getMinutes();
             const cellHour = parseInt(hour);
@@ -4814,8 +4816,8 @@ function startTimeIndicator() {
         if(currentWeek !== 0) return;
         
         const now = new Date();
-        const todayCol = now.getDay() - 1; // 0=Mon
-        if(todayCol < 0 || todayCol > 6) return;
+        const jsDay = now.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+        const todayCol = jsDay === 0 ? 6 : jsDay - 1; // Convert to 0=Mon, ..., 6=Sun
         
         const nowHour = now.getHours();
         const nowMinutes = now.getMinutes();
@@ -8876,7 +8878,7 @@ function generateInvoice(firstName, lastName) {
     html += "<div class='invoice-preview'>" +
         "<div class='invoice-header'>" +
         "<div>" +
-        "<div class='invoice-title'>🐦 Loonie Bird Music</div>" +
+        "<div class='invoice-title'>🎹 Melanie's Piano Studio</div>" +
         "<div style='font-size: 0.8rem; color: var(--stone-500);'>Music Lessons Invoice</div>" +
         "</div>" +
         "<div style='text-align: right;'>" +
