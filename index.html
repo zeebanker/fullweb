@@ -2581,6 +2581,221 @@
             border-top: 2px solid var(--stone-300);
         }
         
+        /* Stripe ACH Styles */
+        .stripe-config-banner {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .stripe-config-banner.connected {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--emerald-600);
+        }
+        
+        .stripe-config-banner.disconnected {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            color: var(--amber-600);
+        }
+        
+        .stripe-config-banner:hover {
+            filter: brightness(0.95);
+        }
+        
+        [data-theme="dark"] .stripe-config-banner.connected {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--emerald-400);
+        }
+        
+        [data-theme="dark"] .stripe-config-banner.disconnected {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--amber-400);
+        }
+        
+        .stripe-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        
+        .stripe-badge.ach {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--violet-600);
+        }
+        
+        .stripe-badge.processing {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--amber-600);
+        }
+        
+        .stripe-badge.succeeded {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--emerald-600);
+        }
+        
+        .stripe-badge.failed {
+            background: rgba(244, 63, 94, 0.15);
+            color: var(--rose-600);
+        }
+        
+        [data-theme="dark"] .stripe-badge.ach { color: var(--violet-400); }
+        [data-theme="dark"] .stripe-badge.processing { color: var(--amber-400); }
+        [data-theme="dark"] .stripe-badge.succeeded { color: var(--emerald-400); }
+        [data-theme="dark"] .stripe-badge.failed { color: var(--rose-400); }
+        
+        .ach-payment-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            border: 2px solid var(--stone-200);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ach-payment-option:hover {
+            border-color: var(--teal-400);
+            background: rgba(20, 184, 166, 0.05);
+        }
+        
+        .ach-payment-option.selected {
+            border-color: var(--teal-500);
+            background: rgba(20, 184, 166, 0.08);
+        }
+        
+        .ach-payment-option-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .ach-payment-option-info {
+            flex: 1;
+        }
+        
+        .ach-payment-option-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .ach-payment-option-desc {
+            font-size: 0.75rem;
+            color: var(--stone-500);
+        }
+        
+        .ach-payment-option-fee {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--teal-600);
+        }
+        
+        .stripe-settings-field {
+            margin-bottom: 1rem;
+        }
+        
+        .stripe-settings-field label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--stone-600);
+            margin-bottom: 0.35rem;
+        }
+        
+        .stripe-key-input {
+            width: 100%;
+            padding: 0.6rem 0.75rem;
+            border: 1px solid var(--stone-300);
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            background: var(--stone-50);
+            color: var(--stone-700);
+        }
+        
+        [data-theme="dark"] .stripe-key-input {
+            background: #1c1917;
+            border-color: #44403c;
+            color: var(--stone-300);
+        }
+        
+        .ach-status-timeline {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin: 1rem 0;
+            font-size: 0.7rem;
+        }
+        
+        .ach-status-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding-top: 1.5rem;
+        }
+        
+        .ach-status-step::before {
+            content: '';
+            position: absolute;
+            top: 0.45rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--stone-200);
+        }
+        
+        .ach-status-step:first-child::before {
+            left: 50%;
+        }
+        
+        .ach-status-step:last-child::before {
+            right: 50%;
+        }
+        
+        .ach-status-step.active::before,
+        .ach-status-step.complete::before {
+            background: var(--teal-400);
+        }
+        
+        .ach-status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--stone-300);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .ach-status-step.active .ach-status-dot {
+            background: var(--teal-500);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
+        }
+        
+        .ach-status-step.complete .ach-status-dot {
+            background: var(--emerald-500);
+        }
+        
+        .ach-status-step.failed .ach-status-dot {
+            background: var(--rose-500);
+        }
+        
         /* Data persistence indicator */
         .save-indicator {
             font-size: 0.75rem;
@@ -3693,6 +3908,9 @@ function saveData() {
         nextSwapId: nextSwapId,
         nextMoveId: nextMoveId,
         nextPaymentId: nextPaymentId,
+        stripeConfig: stripeConfig,
+        achPayments: achPayments,
+        nextAchPaymentId: nextAchPaymentId,
         darkMode: document.documentElement.getAttribute('data-theme') === 'dark'
     };
     
@@ -3739,6 +3957,9 @@ function loadData() {
             if(data.nextSwapId) nextSwapId = data.nextSwapId;
             if(data.nextMoveId) nextMoveId = data.nextMoveId;
             if(data.nextPaymentId) nextPaymentId = data.nextPaymentId;
+            if(data.stripeConfig) stripeConfig = data.stripeConfig;
+            if(data.achPayments) achPayments = data.achPayments;
+            if(data.nextAchPaymentId) nextAchPaymentId = data.nextAchPaymentId;
             if(data.darkMode) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 updateThemeIcon();
@@ -4020,6 +4241,25 @@ let payments = [
     {id: 8, studentKey: "Luna Hall", amount: 140, date: "2025-01-20", note: "PayPal", createdAt: "2025-01-20T15:00:00Z"}
 ];
 let nextPaymentId = 9;
+
+// Stripe ACH configuration
+let stripeConfig = {
+    connected: false,
+    publishableKey: '',
+    secretKeyHint: '',  // Only store last 4 chars for display
+    achEnabled: true,
+    cardEnabled: false,
+    testMode: true
+};
+
+// ACH payment records (online payments via Stripe)
+let achPayments = [
+    // Demo data
+    {id: 1, studentKey: "Emma Smith", amount: 70, status: "succeeded", method: "ach_debit", last4: "6789", bankName: "Chase", stripePaymentId: "pi_demo_001", createdAt: "2025-01-20T12:00:00Z", settledAt: "2025-01-23T09:00:00Z"},
+    {id: 2, studentKey: "Liam Jones", amount: 55, status: "processing", method: "ach_debit", last4: "4321", bankName: "US Bank", stripePaymentId: "pi_demo_002", createdAt: "2025-01-28T14:00:00Z", settledAt: null},
+    {id: 3, studentKey: "Sophia Garcia", amount: 140, status: "failed", method: "ach_debit", last4: "1111", bankName: "Wells Fargo", stripePaymentId: "pi_demo_003", createdAt: "2025-01-25T10:00:00Z", settledAt: null, failureReason: "Insufficient funds"}
+];
+let nextAchPaymentId = 4;
 
 // Default lesson rates by duration (in dollars)
 let lessonRates = {
@@ -8582,6 +8822,9 @@ function showPaymentsModal() {
     let html = "<h3 class='modal-title'>💰 Payment Tracking</h3>" +
         "<p class='modal-subtitle'>Manage lesson payments and invoices</p>";
     
+    // Stripe ACH banner
+    html += getStripeStatusBanner();
+    
     // Summary stats
     html += "<div class='payment-summary'>" +
         "<div class='payment-stat total'>" +
@@ -8599,10 +8842,17 @@ function showPaymentsModal() {
         "</div>";
     
     // Quick actions
-    html += "<div style='display: flex; gap: 0.5rem; margin-bottom: 1rem;'>" +
+    html += "<div style='display: flex; gap: 0.5rem; margin-bottom: 0.5rem;'>" +
         "<button onclick='showRecordPaymentModal()' class='modal-btn modal-btn-success' style='flex: 1; margin-bottom: 0;'>+ Record Payment</button>" +
         "<button onclick='showRatesModal()' class='modal-btn modal-btn-primary' style='flex: 1; margin-bottom: 0;'>⚙️ Rates</button>" +
         "</div>";
+    
+    // ACH history button (if connected or has history)
+    if(stripeConfig.connected || achPayments.length > 0) {
+        const processingCount = achPayments.filter(p => p.status === 'processing').length;
+        const achBadge = processingCount > 0 ? " <span style='background: var(--amber-500); color: white; border-radius: 10px; padding: 0.1rem 0.4rem; font-size: 0.65rem; font-weight: 700;'>" + processingCount + "</span>" : "";
+        html += "<button onclick='showAchPaymentHistory()' class='modal-btn' style='width: 100%; margin-bottom: 1rem; background: rgba(99, 102, 241, 0.1); color: var(--violet-600); border: 1px solid rgba(99, 102, 241, 0.2); padding: 0.65rem 1rem; border-radius: 10px; font-size: 0.85rem; cursor: pointer; font-weight: 600;'>🏦 ACH Payment History" + achBadge + "</button>";
+    }
     
     // Student balances
     html += "<div class='section-title'>Student Balances</div>";
@@ -8686,10 +8936,15 @@ function showStudentPayments(firstName, lastName) {
         "</div>";
     
     // Quick actions
-    html += "<div style='display: flex; gap: 0.5rem; margin-bottom: 1rem;'>" +
+    html += "<div style='display: flex; gap: 0.5rem; margin-bottom: 0.5rem;'>" +
         "<button onclick='showRecordPaymentModal(\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn modal-btn-success' style='flex: 1; margin-bottom: 0;'>+ Record Payment</button>" +
         "<button onclick='generateInvoice(\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn modal-btn-primary' style='flex: 1; margin-bottom: 0;'>📄 Invoice</button>" +
         "</div>";
+    
+    // ACH payment link button
+    if(balance > 0) {
+        html += "<button onclick='showSendPaymentLinkModal(\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn' style='width: 100%; margin-bottom: 1rem; background: rgba(99, 102, 241, 0.1); color: var(--violet-600); border: 1px solid rgba(99, 102, 241, 0.2); padding: 0.65rem 1rem; border-radius: 10px; font-size: 0.85rem; cursor: pointer; font-weight: 600;'>🏦 Send ACH Payment Link</button>";
+    }
     
     // Payment history
     html += "<div class='section-title'>Payment History</div>";
@@ -8700,12 +8955,13 @@ function showStudentPayments(firstName, lastName) {
         html += "<div class='scroll-container'>";
         studentPayments.forEach(payment => {
             const date = new Date(payment.date);
+            const achBadge = payment.achLinked ? " <span class='stripe-badge ach'>ACH</span>" : "";
             html += "<div class='payment-row'>" +
                 "<div class='payment-row-info'>" +
-                "<div class='payment-row-name'>$" + payment.amount.toFixed(2) + "</div>" +
+                "<div class='payment-row-name'>$" + payment.amount.toFixed(2) + achBadge + "</div>" +
                 "<div class='payment-row-detail'>" + date.toLocaleDateString() + (payment.note ? ' • ' + payment.note : '') + "</div>" +
                 "</div>" +
-                "<button onclick='deletePayment(" + payment.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='background: var(--rose-500); color: white; font-size: 0.7rem;'>✕</button>" +
+                (payment.achLinked ? "" : "<button onclick='deletePayment(" + payment.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='background: var(--rose-500); color: white; font-size: 0.7rem;'>✕</button>") +
                 "</div>";
         });
         html += "</div>";
@@ -8849,6 +9105,381 @@ function saveRates() {
     toast('Rates updated!');
     saveData();
     showPaymentsModal();
+}
+
+// ===== STRIPE ACH INTEGRATION =====
+
+function getStripeStatusBanner() {
+    if(stripeConfig.connected) {
+        return "<div class='stripe-config-banner connected' onclick='showStripeSettingsModal()'>" +
+            "<span style='font-size: 1.1rem;'>🏦</span>" +
+            "<div style='flex:1;'><strong>Stripe ACH Connected</strong>" + (stripeConfig.testMode ? " <span class='stripe-badge processing'>TEST MODE</span>" : "") + "<br>" +
+            "<span style='font-size: 0.75rem; opacity: 0.8;'>Accepting bank payments • Tap to configure</span></div>" +
+            "<span style='font-size: 0.8rem;'>⚙️</span></div>";
+    } else {
+        return "<div class='stripe-config-banner disconnected' onclick='showStripeSettingsModal()'>" +
+            "<span style='font-size: 1.1rem;'>🔗</span>" +
+            "<div style='flex:1;'><strong>Connect Stripe</strong><br>" +
+            "<span style='font-size: 0.75rem; opacity: 0.8;'>Enable online ACH bank payments</span></div>" +
+            "<span style='font-size: 0.8rem;'>→</span></div>";
+    }
+}
+
+function showStripeSettingsModal() {
+    let html = "<h3 class='modal-title'>🏦 Stripe ACH Settings</h3>" +
+        "<p class='modal-subtitle'>Configure online bank payment collection</p>";
+    
+    // Connection status
+    const statusColor = stripeConfig.connected ? 'var(--emerald-500)' : 'var(--stone-400)';
+    const statusText = stripeConfig.connected ? 'Connected' : 'Not connected';
+    html += "<div style='display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.25rem; padding: 0.75rem; background: var(--stone-100); border-radius: 10px;'>" +
+        "<div style='width: 10px; height: 10px; border-radius: 50%; background: " + statusColor + ";'></div>" +
+        "<span style='font-weight: 600; font-size: 0.85rem;'>" + statusText + "</span>" +
+        (stripeConfig.testMode && stripeConfig.connected ? " <span class='stripe-badge processing'>TEST</span>" : "") +
+        "</div>";
+    
+    // API Keys
+    html += "<div class='stripe-settings-field'>" +
+        "<label>Publishable Key</label>" +
+        "<input type='text' class='stripe-key-input' id='stripePublishableKey' placeholder='pk_test_...' value='" + (stripeConfig.publishableKey || '') + "'>" +
+        "</div>";
+    
+    html += "<div class='stripe-settings-field'>" +
+        "<label>Secret Key <span style='font-weight: 400; color: var(--stone-400);'>(stored securely on your server)</span></label>" +
+        "<input type='password' class='stripe-key-input' id='stripeSecretKey' placeholder='sk_test_...' value='" + (stripeConfig.connected ? '••••••••' + (stripeConfig.secretKeyHint || '') : '') + "'>" +
+        "</div>";
+    
+    // Mode toggle
+    html += "<div style='display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; padding: 0.75rem; background: var(--stone-100); border-radius: 10px;'>" +
+        "<label style='margin: 0; font-size: 0.85rem; font-weight: 600; flex: 1;'>Test Mode</label>" +
+        "<label style='position: relative; display: inline-block; width: 44px; height: 24px; margin: 0;'>" +
+        "<input type='checkbox' id='stripeTestMode' " + (stripeConfig.testMode ? "checked" : "") + " style='opacity: 0; width: 0; height: 0;'>" +
+        "<span style='position: absolute; cursor: pointer; inset: 0; background: " + (stripeConfig.testMode ? "var(--amber-500)" : "var(--stone-300)") + "; border-radius: 24px; transition: 0.3s;'></span>" +
+        "<span style='position: absolute; content: \"\"; height: 18px; width: 18px; left: " + (stripeConfig.testMode ? "23px" : "3px") + "; bottom: 3px; background: white; border-radius: 50%; transition: 0.3s;'></span>" +
+        "</label></div>";
+    
+    // Payment method toggles
+    html += "<div class='section-title' style='margin-top: 0.5rem;'>Payment Methods</div>" +
+        "<div style='display: flex; gap: 0.5rem; margin-bottom: 1rem;'>" +
+        "<div style='flex: 1; padding: 0.75rem; border: 2px solid " + (stripeConfig.achEnabled ? "var(--teal-400)" : "var(--stone-200)") + "; border-radius: 10px; text-align: center; cursor: pointer;' onclick='document.getElementById(\"achToggle\").checked=!document.getElementById(\"achToggle\").checked'>" +
+        "<input type='checkbox' id='achToggle' " + (stripeConfig.achEnabled ? "checked" : "") + " style='display:none;'>" +
+        "<div style='font-size: 1.25rem; margin-bottom: 0.25rem;'>🏦</div>" +
+        "<div style='font-weight: 600; font-size: 0.8rem;'>ACH Bank</div>" +
+        "<div style='font-size: 0.65rem; color: var(--stone-500);'>0.8% (max $5)</div></div>" +
+        "<div style='flex: 1; padding: 0.75rem; border: 2px solid " + (stripeConfig.cardEnabled ? "var(--teal-400)" : "var(--stone-200)") + "; border-radius: 10px; text-align: center; cursor: pointer; opacity: 0.5;'>" +
+        "<input type='checkbox' id='cardToggle' " + (stripeConfig.cardEnabled ? "checked" : "") + " style='display:none;'>" +
+        "<div style='font-size: 1.25rem; margin-bottom: 0.25rem;'>💳</div>" +
+        "<div style='font-weight: 600; font-size: 0.8rem;'>Card</div>" +
+        "<div style='font-size: 0.65rem; color: var(--stone-500);'>Coming soon</div></div></div>";
+    
+    // Info box
+    html += "<div style='padding: 0.75rem; background: rgba(99, 102, 241, 0.08); border-radius: 10px; font-size: 0.78rem; color: var(--stone-600); margin-bottom: 1rem; line-height: 1.5;'>" +
+        "<strong>How it works:</strong> When you send an invoice, families can pay directly from the payment link using their bank account. " +
+        "ACH payments typically settle in 2–4 business days. Stripe charges 0.8% per transaction, capped at $5." +
+        "</div>";
+    
+    // Buttons
+    html += "<button onclick='saveStripeSettings()' class='modal-btn modal-btn-primary'>💾 Save Settings</button>";
+    
+    if(stripeConfig.connected) {
+        html += "<button onclick='disconnectStripe()' class='modal-btn' style='background: var(--rose-500); color: white; border: none; padding: 0.65rem 1rem; border-radius: 10px; font-size: 0.85rem; cursor: pointer; width: 100%; margin-bottom: 0.5rem;'>Disconnect Stripe</button>";
+    }
+    
+    html += "<button onclick='showPaymentsModal()' class='modal-btn modal-btn-secondary'>Back</button>";
+    
+    modal(html);
+}
+
+function saveStripeSettings() {
+    const pk = document.getElementById('stripePublishableKey').value.trim();
+    const sk = document.getElementById('stripeSecretKey').value.trim();
+    const testMode = document.getElementById('stripeTestMode').checked;
+    const achEnabled = document.getElementById('achToggle').checked;
+    
+    if(pk && sk && sk !== '••••••••' + stripeConfig.secretKeyHint) {
+        stripeConfig.connected = true;
+        stripeConfig.publishableKey = pk;
+        stripeConfig.secretKeyHint = sk.slice(-4);
+        stripeConfig.testMode = testMode || pk.startsWith('pk_test');
+        stripeConfig.achEnabled = achEnabled;
+        
+        toast('Stripe connected successfully!');
+    } else if(pk && stripeConfig.connected) {
+        // Just updating other settings
+        stripeConfig.publishableKey = pk;
+        stripeConfig.testMode = testMode || pk.startsWith('pk_test');
+        stripeConfig.achEnabled = achEnabled;
+        
+        toast('Stripe settings updated');
+    } else {
+        toast('Please enter both API keys');
+        return;
+    }
+    
+    saveData();
+    showPaymentsModal();
+}
+
+function disconnectStripe() {
+    if(confirm('Disconnect Stripe? Existing payment records will be kept, but you won\'t be able to accept new online payments.')) {
+        stripeConfig.connected = false;
+        stripeConfig.publishableKey = '';
+        stripeConfig.secretKeyHint = '';
+        toast('Stripe disconnected');
+        saveData();
+        showPaymentsModal();
+    }
+}
+
+function showSendPaymentLinkModal(firstName, lastName) {
+    const summary = getStudentPaymentSummary(firstName, lastName);
+    const balance = summary.totalOwed - summary.totalPaid;
+    const profile = studentProfiles.find(p => p.firstName === firstName && p.lastName === lastName);
+    const email = profile ? profile.guardianEmail : '';
+    const guardianName = profile ? profile.guardianName : 'Parent/Guardian';
+    
+    let html = "<h3 class='modal-title'>🏦 Send Payment Request</h3>" +
+        "<p class='modal-subtitle'>Send an ACH bank payment link to " + guardianName + "</p>";
+    
+    if(!stripeConfig.connected) {
+        html += "<div style='padding: 1.5rem; text-align: center;'>" +
+            "<div style='font-size: 2rem; margin-bottom: 0.75rem;'>🔗</div>" +
+            "<p style='color: var(--stone-500); margin-bottom: 1rem;'>Connect Stripe to send payment links</p>" +
+            "<button onclick='showStripeSettingsModal()' class='modal-btn modal-btn-primary' style='margin-bottom: 0.5rem;'>Connect Stripe</button>" +
+            "</div>" +
+            "<button onclick='showStudentPayments(\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn modal-btn-secondary'>Back</button>";
+        modal(html);
+        return;
+    }
+    
+    // Payment method selection
+    html += "<div class='section-title'>Payment Method</div>" +
+        "<div class='ach-payment-option selected' onclick='this.classList.add(\"selected\")'>" +
+        "<div class='ach-payment-option-icon'>🏦</div>" +
+        "<div class='ach-payment-option-info'>" +
+        "<div class='ach-payment-option-title'>ACH Bank Transfer</div>" +
+        "<div class='ach-payment-option-desc'>Directly from checking or savings account via Plaid</div>" +
+        "<div class='ach-payment-option-fee'>Fee: 0.8% (max $5.00)</div>" +
+        "</div></div>";
+    
+    // Amount
+    html += "<label class='form-label'>Amount</label>" +
+        "<div class='rate-input'>" +
+        "<span>$</span>" +
+        "<input type='number' id='achAmount' class='form-input' value='" + (balance > 0 ? balance.toFixed(2) : '') + "' step='0.01' placeholder='0.00' style='margin-bottom: 0;'>" +
+        "</div>";
+    
+    if(balance > 0) {
+        const fee = Math.min(5, balance * 0.008);
+        html += "<div style='font-size: 0.75rem; color: var(--stone-500); margin-top: 0.25rem;'>Outstanding balance: $" + balance.toFixed(2) + 
+            " • Processing fee: $" + fee.toFixed(2) + "</div>";
+    }
+    
+    // Recipient
+    html += "<label class='form-label'>Send To</label>" +
+        "<input type='email' id='achEmail' class='form-input' value='" + email + "' placeholder='parent@email.com'>" +
+        "<label class='form-label'>Memo <span class='form-label-optional'>(included in email)</span></label>" +
+        "<input type='text' id='achMemo' class='form-input' value='Piano lessons for " + firstName + " " + lastName + "' placeholder='Payment description'>";
+    
+    // Send button
+    html += "<button onclick='simulateSendPaymentLink(\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn modal-btn-primary' style='background: var(--violet-600);'>📨 Send Payment Link</button>" +
+        "<button onclick='showStudentPayments(\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn modal-btn-secondary'>Cancel</button>";
+    
+    modal(html);
+}
+
+function simulateSendPaymentLink(firstName, lastName) {
+    const amount = parseFloat(document.getElementById('achAmount').value);
+    const email = document.getElementById('achEmail').value.trim();
+    const memo = document.getElementById('achMemo').value.trim();
+    
+    if(!amount || amount <= 0) {
+        toast('Please enter a valid amount');
+        return;
+    }
+    if(!email) {
+        toast('Please enter an email address');
+        return;
+    }
+    
+    // Simulate creating the ACH payment
+    const bankNames = ['Chase', 'US Bank', 'Wells Fargo', 'Bank of America', 'TCF Bank', 'Bremer Bank'];
+    const randomBank = bankNames[Math.floor(Math.random() * bankNames.length)];
+    const randomLast4 = String(Math.floor(1000 + Math.random() * 9000));
+    
+    achPayments.push({
+        id: nextAchPaymentId++,
+        studentKey: firstName + ' ' + lastName,
+        amount: amount,
+        status: 'processing',
+        method: 'ach_debit',
+        last4: randomLast4,
+        bankName: randomBank,
+        stripePaymentId: 'pi_sim_' + Date.now(),
+        email: email,
+        memo: memo,
+        createdAt: new Date().toISOString(),
+        settledAt: null
+    });
+    
+    // Also record as a pending payment in the main payments system
+    payments.push({
+        id: nextPaymentId++,
+        studentKey: firstName + ' ' + lastName,
+        amount: amount,
+        date: new Date().toISOString().split('T')[0],
+        note: '🏦 ACH via Stripe (processing) • ' + randomBank + ' ••' + randomLast4,
+        createdAt: new Date().toISOString(),
+        achLinked: true,
+        achPaymentId: nextAchPaymentId - 1
+    });
+    
+    saveData();
+    toast('Payment link sent to ' + email);
+    showStudentPayments(firstName, lastName);
+}
+
+function showAchPaymentHistory() {
+    let html = "<h3 class='modal-title'>🏦 ACH Payment History</h3>" +
+        "<p class='modal-subtitle'>Online bank transfer records via Stripe</p>";
+    
+    // Summary stats
+    const succeeded = achPayments.filter(p => p.status === 'succeeded');
+    const processing = achPayments.filter(p => p.status === 'processing');
+    const failed = achPayments.filter(p => p.status === 'failed');
+    
+    const totalReceived = succeeded.reduce((sum, p) => sum + p.amount, 0);
+    const totalPending = processing.reduce((sum, p) => sum + p.amount, 0);
+    
+    html += "<div class='payment-summary'>" +
+        "<div class='payment-stat paid'>" +
+        "<div class='payment-stat-value'>$" + totalReceived.toFixed(0) + "</div>" +
+        "<div class='payment-stat-label'>Received</div></div>" +
+        "<div class='payment-stat' style='background: rgba(251, 191, 36, 0.15);'>" +
+        "<div class='payment-stat-value' style='color: var(--amber-500);'>$" + totalPending.toFixed(0) + "</div>" +
+        "<div class='payment-stat-label'>Processing</div></div>" +
+        "<div class='payment-stat' style='background: rgba(99, 102, 241, 0.15);'>" +
+        "<div class='payment-stat-value' style='color: var(--violet-500);'>" + achPayments.length + "</div>" +
+        "<div class='payment-stat-label'>Total Transfers</div></div></div>";
+    
+    // Transaction list
+    if(achPayments.length === 0) {
+        html += "<p style='text-align: center; color: var(--stone-500); padding: 2rem;'>No ACH payments yet</p>";
+    } else {
+        html += "<div class='scroll-container' style='max-height: 300px;'>";
+        
+        const sorted = [...achPayments].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        sorted.forEach(payment => {
+            const date = new Date(payment.createdAt);
+            const statusBadge = payment.status === 'succeeded' 
+                ? "<span class='stripe-badge succeeded'>✓ Settled</span>"
+                : payment.status === 'processing' 
+                    ? "<span class='stripe-badge processing'>⏳ Processing</span>"
+                    : "<span class='stripe-badge failed'>✕ Failed</span>";
+            
+            html += "<div class='payment-row' style='cursor: pointer;' onclick='showAchPaymentDetail(" + payment.id + ")'>" +
+                "<div class='payment-row-info'>" +
+                "<div class='payment-row-name'>$" + payment.amount.toFixed(2) + " <span class='stripe-badge ach'>ACH</span></div>" +
+                "<div class='payment-row-detail'>" + payment.studentKey + " • " + payment.bankName + " ••" + payment.last4 + " • " + date.toLocaleDateString() + "</div>" +
+                "</div>" +
+                statusBadge +
+                "</div>";
+        });
+        
+        html += "</div>";
+    }
+    
+    html += "<button onclick='showPaymentsModal()' class='modal-btn modal-btn-secondary' style='margin-top: 1rem;'>Back</button>";
+    
+    modal(html);
+}
+
+function showAchPaymentDetail(achId) {
+    const payment = achPayments.find(p => p.id === achId);
+    if(!payment) return;
+    
+    const date = new Date(payment.createdAt);
+    const fee = Math.min(5, payment.amount * 0.008);
+    
+    let html = "<h3 class='modal-title'>🏦 ACH Payment Detail</h3>";
+    
+    // Status timeline
+    const isProcessing = payment.status === 'processing';
+    const isSucceeded = payment.status === 'succeeded';
+    const isFailed = payment.status === 'failed';
+    
+    html += "<div class='ach-status-timeline'>" +
+        "<div class='ach-status-step complete'><div class='ach-status-dot'></div>Initiated</div>" +
+        "<div class='ach-status-step " + (isProcessing ? "active" : isSucceeded ? "complete" : "failed") + "'><div class='ach-status-dot'></div>" + (isFailed ? "Failed" : "Processing") + "</div>" +
+        "<div class='ach-status-step " + (isSucceeded ? "complete" : "") + "'><div class='ach-status-dot'></div>Settled</div></div>";
+    
+    // Details
+    html += "<div style='background: var(--stone-100); border-radius: 12px; padding: 1rem; margin: 1rem 0; font-size: 0.85rem;'>" +
+        "<div style='display: flex; justify-content: space-between; margin-bottom: 0.5rem;'><span style='color: var(--stone-500);'>Student</span><strong>" + payment.studentKey + "</strong></div>" +
+        "<div style='display: flex; justify-content: space-between; margin-bottom: 0.5rem;'><span style='color: var(--stone-500);'>Amount</span><strong>$" + payment.amount.toFixed(2) + "</strong></div>" +
+        "<div style='display: flex; justify-content: space-between; margin-bottom: 0.5rem;'><span style='color: var(--stone-500);'>Stripe Fee</span><span>$" + fee.toFixed(2) + "</span></div>" +
+        "<div style='display: flex; justify-content: space-between; margin-bottom: 0.5rem;'><span style='color: var(--stone-500);'>Net Amount</span><strong style='color: var(--emerald-600);'>$" + (payment.amount - fee).toFixed(2) + "</strong></div>" +
+        "<div style='display: flex; justify-content: space-between; margin-bottom: 0.5rem;'><span style='color: var(--stone-500);'>Bank</span><span>" + payment.bankName + " ••" + payment.last4 + "</span></div>" +
+        "<div style='display: flex; justify-content: space-between; margin-bottom: 0.5rem;'><span style='color: var(--stone-500);'>Initiated</span><span>" + date.toLocaleString() + "</span></div>";
+    
+    if(payment.settledAt) {
+        html += "<div style='display: flex; justify-content: space-between; margin-bottom: 0.5rem;'><span style='color: var(--stone-500);'>Settled</span><span>" + new Date(payment.settledAt).toLocaleString() + "</span></div>";
+    }
+    
+    if(payment.failureReason) {
+        html += "<div style='display: flex; justify-content: space-between; margin-bottom: 0;'><span style='color: var(--rose-500);'>Failure Reason</span><span style='color: var(--rose-500);'>" + payment.failureReason + "</span></div>";
+    }
+    
+    html += "<div style='display: flex; justify-content: space-between; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--stone-200);'>" +
+        "<span style='color: var(--stone-500);'>Stripe ID</span><span style='font-family: monospace; font-size: 0.75rem;'>" + payment.stripePaymentId + "</span></div>" +
+        "</div>";
+    
+    // Actions
+    if(isProcessing) {
+        html += "<div style='display: flex; gap: 0.5rem; margin-bottom: 0.5rem;'>" +
+            "<button onclick='simulateAchSettle(" + payment.id + ")' class='modal-btn modal-btn-success' style='flex: 1; margin-bottom: 0;'>✓ Simulate Settlement</button>" +
+            "<button onclick='simulateAchFail(" + payment.id + ")' class='modal-btn' style='flex: 1; margin-bottom: 0; background: var(--rose-500); color: white; border: none; padding: 0.65rem; border-radius: 10px; cursor: pointer;'>✕ Simulate Failure</button></div>";
+    }
+    
+    html += "<button onclick='showAchPaymentHistory()' class='modal-btn modal-btn-secondary'>Back</button>";
+    
+    modal(html);
+}
+
+function simulateAchSettle(achId) {
+    const payment = achPayments.find(p => p.id === achId);
+    if(payment) {
+        payment.status = 'succeeded';
+        payment.settledAt = new Date().toISOString();
+        
+        // Update linked manual payment note
+        const linked = payments.find(p => p.achLinked && p.achPaymentId === achId);
+        if(linked) {
+            linked.note = linked.note.replace('(processing)', '(settled ✓)');
+        }
+        
+        saveData();
+        toast('ACH payment settled: $' + payment.amount.toFixed(2));
+        showAchPaymentDetail(achId);
+    }
+}
+
+function simulateAchFail(achId) {
+    const payment = achPayments.find(p => p.id === achId);
+    if(payment) {
+        payment.status = 'failed';
+        payment.failureReason = 'Insufficient funds';
+        
+        // Remove linked manual payment since it failed
+        const linked = payments.find(p => p.achLinked && p.achPaymentId === achId);
+        if(linked) {
+            payments = payments.filter(p => p.id !== linked.id);
+        }
+        
+        saveData();
+        toast('ACH payment failed (simulated)');
+        showAchPaymentDetail(achId);
+    }
 }
 
 function generateInvoice(firstName, lastName) {
