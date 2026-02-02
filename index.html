@@ -2891,16 +2891,16 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(250, 250, 249, 0.8);
+            background: rgba(28, 25, 23, 0.5);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(214, 211, 209, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: background 0.3s;
         }
         
         [data-theme="dark"] .site-nav {
-            background: rgba(28, 25, 23, 0.8);
-            border-bottom-color: rgba(68, 64, 60, 0.4);
+            background: rgba(12, 10, 9, 0.6);
+            border-bottom-color: rgba(255, 255, 255, 0.06);
         }
         
         .site-nav-brand {
@@ -2910,7 +2910,7 @@
             font-family: var(--font-display);
             font-weight: 800;
             font-size: 1.25rem;
-            color: var(--stone-800);
+            color: white;
             text-decoration: none;
         }
         
@@ -2931,18 +2931,18 @@
         .site-nav-links a {
             font-size: 0.875rem;
             font-weight: 500;
-            color: var(--stone-500);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: color 0.2s;
             letter-spacing: 0.01em;
         }
         
         .site-nav-links a:hover {
-            color: var(--stone-800);
+            color: white;
         }
         
         [data-theme="dark"] .site-nav-links a:hover {
-            color: var(--stone-100);
+            color: white;
         }
         
         .site-portal-btn {
@@ -2973,23 +2973,21 @@
             padding: 8rem 2rem 6rem;
             position: relative;
             overflow: hidden;
+            background: var(--stone-900);
         }
         
         .site-hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(251, 191, 36, 0.12) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 30%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 60% 80%, rgba(251, 191, 36, 0.06) 0%, transparent 40%);
+            background: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=1920&q=80') center center / cover no-repeat;
+            filter: grayscale(1);
+            opacity: 0.45;
             pointer-events: none;
         }
         
         [data-theme="dark"] .site-hero::before {
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(251, 191, 36, 0.06) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 30%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
+            opacity: 0.35;
         }
         
         /* Piano keys decoration */
@@ -3008,7 +3006,7 @@
                 var(--stone-800) 90px, var(--stone-800) 120px,
                 white 120px, white 121px
             );
-            opacity: 0.08;
+            opacity: 0.15;
             pointer-events: none;
         }
         
@@ -3022,20 +3020,21 @@
         .site-hero-badge {
             display: inline-block;
             padding: 0.4rem 1rem;
-            background: rgba(20, 184, 166, 0.1);
-            border: 1px solid rgba(20, 184, 166, 0.2);
+            background: rgba(20, 184, 166, 0.2);
+            border: 1px solid rgba(20, 184, 166, 0.35);
             border-radius: 100px;
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--teal-700);
+            color: var(--teal-300);
             margin-bottom: 2rem;
             letter-spacing: 0.02em;
+            backdrop-filter: blur(8px);
         }
         
         [data-theme="dark"] .site-hero-badge {
-            background: rgba(20, 184, 166, 0.08);
-            border-color: rgba(20, 184, 166, 0.15);
-            color: var(--teal-400);
+            background: rgba(20, 184, 166, 0.15);
+            border-color: rgba(20, 184, 166, 0.25);
+            color: var(--teal-300);
         }
         
         .site-hero h1 {
@@ -3043,13 +3042,14 @@
             font-size: clamp(2.8rem, 6vw, 4.2rem);
             font-weight: 800;
             line-height: 1.1;
-            color: var(--stone-900);
+            color: white;
             margin-bottom: 1.5rem;
             letter-spacing: -0.025em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
         
         [data-theme="dark"] .site-hero h1 {
-            color: var(--stone-50);
+            color: white;
         }
         
         .site-hero h1 .accent {
@@ -3062,9 +3062,10 @@
         .site-hero-sub {
             font-size: 1.15rem;
             line-height: 1.7;
-            color: var(--stone-500);
+            color: rgba(255, 255, 255, 0.8);
             max-width: 540px;
             margin: 0 auto 2.5rem;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.2);
         }
         
         .site-hero-actions {
@@ -3180,7 +3181,7 @@
         .site-about-img {
             width: 100%;
             aspect-ratio: 4/3;
-            background: linear-gradient(135deg, var(--stone-200) 0%, var(--stone-100) 100%);
+            background: url('https://images.unsplash.com/photo-1552422535-c45813c61732?w=800&q=80') center center / cover no-repeat;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -3188,15 +3189,16 @@
             font-size: 5rem;
             overflow: hidden;
             position: relative;
+            filter: grayscale(1);
         }
         
         [data-theme="dark"] .site-about-img {
-            background: linear-gradient(135deg, var(--stone-700) 0%, var(--stone-600) 100%);
+            filter: grayscale(1) brightness(0.85);
         }
         
         .site-about-img::after {
-            content: '🎹';
-            font-size: 5rem;
+            content: '';
+            font-size: 0;
         }
         
         .site-about-text p {
@@ -3281,19 +3283,23 @@
         }
         
         .site-service-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
             margin-bottom: 1.25rem;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1);
         }
         
-        .site-service-card:nth-child(1) .site-service-icon { background: rgba(251, 191, 36, 0.12); }
-        .site-service-card:nth-child(2) .site-service-icon { background: rgba(20, 184, 166, 0.1); }
-        .site-service-card:nth-child(3) .site-service-icon { background: rgba(244, 114, 182, 0.1); }
+        .site-service-card:nth-child(1) .site-service-icon { background-image: url('https://images.unsplash.com/photo-1514119412350-e174d90d585e?w=120&q=80'); }
+        .site-service-card:nth-child(2) .site-service-icon { background-image: url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=120&q=80'); }
+        .site-service-card:nth-child(3) .site-service-icon { background-image: url('https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=120&q=80'); }
         
         .site-service-card h3 {
             font-family: var(--font-display);
@@ -3421,7 +3427,7 @@
         
         /* --- CTA --- */
         .site-cta {
-            background: linear-gradient(135deg, var(--stone-900) 0%, var(--stone-800) 100%);
+            background: var(--stone-900);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -3431,9 +3437,9 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: 
-                radial-gradient(ellipse at 30% 50%, rgba(20, 184, 166, 0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 50%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+            background: url('https://images.unsplash.com/photo-1512733596533-7b00ccbf3a3a?w=1920&q=80') center center / cover no-repeat;
+            filter: grayscale(1);
+            opacity: 0.3;
             pointer-events: none;
         }
         
@@ -3583,7 +3589,6 @@
         <!-- Hero -->
         <section class="site-hero">
             <div class="site-hero-content">
-                <div class="site-hero-badge site-anim site-anim-d1">🎵 Now Accepting New Students</div>
                 <h1 class="site-anim site-anim-d2">Where music meets <span class="accent">joy</span></h1>
                 <p class="site-hero-sub site-anim site-anim-d3">Private piano instruction for all ages and levels. From first notes to recital-ready — learn at your own pace in a warm, encouraging environment.</p>
                 <div class="site-hero-actions site-anim site-anim-d4">
@@ -3630,19 +3635,19 @@
                 </div>
                 <div class="site-services-grid">
                     <div class="site-service-card">
-                        <div class="site-service-icon">🌱</div>
+                        <div class="site-service-icon"></div>
                         <h3>Beginner Foundations</h3>
                         <p>Perfect for ages 5+ with no prior experience. Build rhythm, reading, and technique through playful, encouraging lessons.</p>
                         <div class="site-service-price">$XX <span>/ 30 min</span></div>
                     </div>
                     <div class="site-service-card">
-                        <div class="site-service-icon">🎵</div>
+                        <div class="site-service-icon"></div>
                         <h3>Intermediate Growth</h3>
                         <p>Expand your repertoire, strengthen sight-reading, and develop musical expression. Ideal for students with 1–3 years of experience.</p>
                         <div class="site-service-price">$XX <span>/ 45 min</span></div>
                     </div>
                     <div class="site-service-card">
-                        <div class="site-service-icon">🏆</div>
+                        <div class="site-service-icon"></div>
                         <h3>Advanced &amp; Exam Prep</h3>
                         <p>Intensive preparation for RCM, ABRSM, or conservatory exams. Focused technique, theory integration, and performance coaching.</p>
                         <div class="site-service-price">$XX <span>/ 60 min</span></div>
