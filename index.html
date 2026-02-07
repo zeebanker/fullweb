@@ -10,17 +10,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Loonie Bird">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#0284c7">
+    <meta name="theme-color" content="#14b8a6">
     <meta name="description" content="Music lesson scheduling app for teachers">
     
     <!-- App Icon (180x180 for iOS) -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%230284c7'/><circle cx='90' cy='85' r='50' fill='%23fbbf24'/><ellipse cx='90' cy='95' rx='35' ry='25' fill='%23f59e0b'/><circle cx='75' cy='75' r='8' fill='%231c1917'/><circle cx='105' cy='75' r='8' fill='%231c1917'/><path d='M80 100 Q90 115 100 100' stroke='%231c1917' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M55 55 Q45 35 60 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><path d='M125 55 Q135 35 120 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><text x='90' y='155' text-anchor='middle' font-family='system-ui' font-size='24' font-weight='bold' fill='white'>♪</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%2314b8a6'/><circle cx='90' cy='85' r='50' fill='%23fbbf24'/><ellipse cx='90' cy='95' rx='35' ry='25' fill='%23f59e0b'/><circle cx='75' cy='75' r='8' fill='%231c1917'/><circle cx='105' cy='75' r='8' fill='%231c1917'/><path d='M80 100 Q90 115 100 100' stroke='%231c1917' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M55 55 Q45 35 60 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><path d='M125 55 Q135 35 120 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><text x='90' y='155' text-anchor='middle' font-family='system-ui' font-size='24' font-weight='bold' fill='white'>â™ª</text></svg>">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230284c7'/><circle cx='16' cy='14' r='9' fill='%23fbbf24'/><circle cx='13' cy='12' r='2' fill='%231c1917'/><circle cx='19' cy='12' r='2' fill='%231c1917'/><text x='16' y='28' text-anchor='middle' font-size='10' fill='white'>♪</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314b8a6'/><circle cx='16' cy='14' r='9' fill='%23fbbf24'/><circle cx='13' cy='12' r='2' fill='%231c1917'/><circle cx='19' cy='12' r='2' fill='%231c1917'/><text x='16' y='28' text-anchor='middle' font-size='10' fill='white'>â™ª</text></svg>">
     
     <!-- Web App Manifest (inline) -->
-    <link rel="manifest" href="data:application/json,{%22name%22:%22Loonie%20Bird%22,%22short_name%22:%22Loonie%20Bird%22,%22description%22:%22Music%20lesson%20scheduling%20app%22,%22start_url%22:%22.%22,%22display%22:%22standalone%22,%22background_color%22:%22%23fafaf9%22,%22theme_color%22:%22%230284c7%22}">
+    <link rel="manifest" href="data:application/json,{%22name%22:%22Loonie%20Bird%22,%22short_name%22:%22Loonie%20Bird%22,%22description%22:%22Music%20lesson%20scheduling%20app%22,%22start_url%22:%22.%22,%22display%22:%22standalone%22,%22background_color%22:%22%23fafaf9%22,%22theme_color%22:%22%2314b8a6%22}">
     
     <!-- Splash Screens for iOS -->
     <meta name="apple-mobile-web-app-orientations" content="portrait">
@@ -44,9 +44,9 @@
             --teal-50: #f0f9ff;
             --teal-100: #e0f2fe;
             --teal-200: #bae6fd;
-            --teal-500: #0ea5e9;
-            --teal-600: #0284c7;
-            --teal-700: #0369a1;
+            --teal-500: #2dd4bf;
+            --teal-600: #14b8a6;
+            --teal-700: #0d9488;
             --teal-800: #075985;
             --teal-900: #0c4a6e;
             
@@ -72,7 +72,6 @@
             --violet-500: #8b5cf6;
             --violet-700: #6d28d9;
             --emerald-500: #10b981;
-            --sky-500: #0ea5e9;
             
             /* Shadows */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -139,7 +138,8 @@
         }
         
         [data-theme="dark"] #loginScreen::before {
-            opacity: 0.25;
+            opacity: 0.80;
+            filter: grayscale(0);
         }
         
         [data-theme="dark"] .calendar-table thead th {
@@ -170,6 +170,47 @@
         
         [data-theme="dark"] .lesson-slot {
             box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Dark mode lesson colors */
+        [data-theme="dark"] .lesson-overlap-0 {
+            background: linear-gradient(135deg, #134e4a 0%, #115e59 100%);
+            border: 2px solid #14b8a6;
+            color: #99f6e4;
+        }
+        
+        [data-theme="dark"] .lesson-overlap-1 {
+            background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+            border: 2px solid #fbbf24;
+            color: #fef3c7;
+        }
+        
+        [data-theme="dark"] .lesson-overlap-2 {
+            background: linear-gradient(135deg, #831843 0%, #9f1239 100%);
+            border: 2px solid #f472b6;
+            color: #fce7f3;
+        }
+        
+        [data-theme="dark"] .lesson-overlap-3 {
+            background: linear-gradient(135deg, #5b21b6 0%, #6d28d9 100%);
+            border: 2px solid #a78bfa;
+            color: #ddd6fe;
+        }
+        
+        [data-theme="dark"] .lesson-overlap-4 {
+            background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%);
+            border: 2px solid #f87171;
+            color: #fecaca;
+        }
+        
+        [data-theme="dark"] .lesson-overlap-5 {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            border: 2px solid #60a5fa;
+            color: #bfdbfe;
+        }
+        
+        [data-theme="dark"] body.teacher-mode .lesson-slot[class*="lesson-overlap"]:hover {
+            filter: brightness(1.15);
         }
         
         [data-theme="dark"] .modal-content {
@@ -269,21 +310,30 @@
             padding: 0; 
         }
         
+        html {
+            overflow-x: hidden;
+            min-height: 100%;
+            scroll-padding-top: 80px; /* Account for fixed nav */
+            scroll-snap-type: y proximity; /* proximity instead of mandatory for smoother control */
+            scroll-behavior: smooth;
+        }
+        
         body { 
             font-family: var(--font-body);
             line-height: 1.6;
             color: var(--stone-800);
             background: var(--stone-100);
             min-height: 100vh;
-            /* iOS safe areas */
+            /* iOS safe areas - removed bottom to prevent white bar */
             padding-top: env(safe-area-inset-top);
-            padding-bottom: env(safe-area-inset-bottom);
             padding-left: env(safe-area-inset-left);
             padding-right: env(safe-area-inset-right);
             -webkit-tap-highlight-color: transparent;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             user-select: none;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
         
         /* Allow text selection in specific areas */
@@ -311,13 +361,14 @@
         
         /* ===== LOGIN SCREEN ===== */
         #loginScreen {
-            min-height: 100vh;
+            height: 100vh;
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 2rem 2rem 1rem;
             background: #1c1917;
             position: relative;
+            overflow: hidden;
         }
         
         #loginScreen::before {
@@ -325,15 +376,17 @@
             position: absolute;
             inset: 0;
             background: url('https://images.unsplash.com/photo-1552422535-c45813c61732?w=1920&q=80') center/cover no-repeat;
-            filter: grayscale(1);
-            opacity: 0.35;
+            filter: grayscale(0);
+            opacity: 0.80;
+            z-index: 0;
         }
         
         #loginScreen::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, transparent 30%, rgba(28, 25, 23, 0.7) 100%);
+            background: radial-gradient(ellipse at center, transparent 40%, rgba(28, 25, 23, 0.5) 100%);
+            z-index: 0;
         }
         
         .login-card {
@@ -370,6 +423,47 @@
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes datePulseTeal {
+            0% { color: inherit; }
+            50% { color: #14b8a6; }
+            100% { color: inherit; }
+        }
+        
+        @keyframes datePulseOrange {
+            0% { color: inherit; }
+            50% { color: #f97316; }
+            100% { color: inherit; }
+        }
+        
+        .date-pulse-teal .day-date {
+            animation: datePulseTeal 0.6s ease-in-out;
+        }
+        
+        .date-pulse-orange .day-date {
+            animation: datePulseOrange 0.6s ease-in-out;
+        }
+        
+        @keyframes cardShine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .dashboard-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .dashboard-card:hover::after {
+            left: 100%;
         }
         
         .login-logo h1 {
@@ -534,10 +628,11 @@
         
         /* ===== TEACHER DASHBOARD ===== */
         #teacherDashboard {
-            min-height: 100vh;
+            height: 100vh;
             padding: 2rem;
             background: #1c1917;
             position: relative;
+            overflow: hidden;
         }
         
         #teacherDashboard::before {
@@ -547,6 +642,7 @@
             background: url('https://images.pexels.com/photos/210764/pexels-photo-210764.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
             filter: grayscale(1);
             opacity: 1;
+            z-index: 0;
         }
         
         #teacherDashboard::after {
@@ -554,6 +650,7 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at center, transparent 30%, rgba(28, 25, 23, 0.7) 100%);
+            z-index: 0;
         }
         
         [data-theme="dark"] #teacherDashboard {
@@ -564,11 +661,105 @@
             opacity: 0.25;
         }
         
+        #fullScreenView {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1c1917;
+            padding: 2rem;
+            overflow: hidden;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #fullScreenView::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('https://images.pexels.com/photos/210764/pexels-photo-210764.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+            filter: grayscale(1);
+            opacity: 1;
+            z-index: 0;
+        }
+        
+        #fullScreenView::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 30%, rgba(28, 25, 23, 0.7) 100%);
+            z-index: 0;
+        }
+        
+        [data-theme="dark"] #fullScreenView {
+            background: #0f0e0d;
+        }
+        
+        [data-theme="dark"] #fullScreenView::before {
+            opacity: 0.25;
+        }
+        
+        #fullScreenContent {
+            position: relative;
+            z-index: 1;
+            overflow-y: auto;
+            flex: 1;
+            padding: 0 0 2rem 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        #fullScreenContent::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .fullscreen-header {
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+        
+        .fullscreen-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--teal-500) 0%, var(--teal-600) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+        
+        .fullscreen-content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-height: 200px;
+        }
+        
+        #fullScreenContentArea {
+            min-height: auto;
+        }
+        
+        [data-theme="dark"] .fullscreen-content-wrapper {
+            background: rgba(41, 37, 36, 0.95);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
         .dashboard-container {
             max-width: 720px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            max-height: 100vh;
+            overflow-y: auto;
+            padding-bottom: 2rem;
         }
         
         .dashboard-header {
@@ -596,7 +787,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
-            max-width: 420px;
+            max-width: 240px;
             margin: 0 auto;
         }
         
@@ -607,32 +798,33 @@
         }
         
         .dashboard-card {
-            background: rgba(255, 255, 255, 0.55);
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            border-radius: 16px;
-            padding: 1.4rem;
+            background: white;
+            border-radius: 20px;
+            padding: 1.25rem;
             cursor: pointer;
-            transition: all 0.2s ease;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(0, 0, 0, 0.06);
             box-shadow: 0 4px 16px rgba(0,0,0,0.08);
             position: relative;
             overflow: hidden;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
         }
         
         [data-theme="dark"] .dashboard-card {
-            background: rgba(15, 14, 13, 0.35);
+            background: #292524;
+            border-color: rgba(255, 255, 255, 0.08);
             box-shadow: 0 4px 16px rgba(0,0,0,0.4);
         }
         
         .dashboard-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.16);
         }
         
         [data-theme="dark"] .dashboard-card:hover {
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.6);
         }
         
         .dashboard-card::before {
@@ -641,37 +833,62 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
+            height: 5px;
+            border-radius: 20px 20px 0 0;
         }
         
-        .dashboard-card-schedule::before { background: none; }
-        .dashboard-card-schedule:hover { border-color: var(--teal-300); }
-        .dashboard-card-students::before { background: var(--orange); }
-        .dashboard-card-students:hover { border-color: var(--orange); }
+        .dashboard-card-schedule::before { 
+            background: linear-gradient(90deg, #14b8a6 0%, #06b6d4 100%);
+        }
+        .dashboard-card-schedule:hover { 
+            border-color: #06b6d4;
+            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+        }
+        [data-theme="dark"] .dashboard-card-schedule:hover { 
+            border-color: #06b6d4;
+            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+        }
+        
+        .dashboard-card-students::before { 
+            background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
+        }
+        .dashboard-card-students:hover { 
+            border-color: var(--orange); 
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+        }
+        [data-theme="dark"] .dashboard-card-students:hover { 
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+        }
         .draft-stamp {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-22deg);
             font-family: var(--font-display);
-            font-size: 1.1rem;
+            font-size: 0.65rem;
             font-weight: 800;
-            letter-spacing: 0.12em;
-            color: rgba(239, 68, 68, 0.7);
-            border: 3px solid rgba(239, 68, 68, 0.7);
-            border-radius: 8px;
-            padding: 0.15rem 0.75rem;
+            letter-spacing: 0.08em;
+            color: rgba(239, 68, 68, 0.8);
+            border: 2px solid rgba(239, 68, 68, 0.8);
+            border-radius: 6px;
+            padding: 0.2rem 0.5rem;
             text-transform: uppercase;
             pointer-events: none;
             z-index: 5;
             white-space: nowrap;
+            line-height: 1;
         }
         
-        .dashboard-card-payments::before { background: var(--stone-600); }
-        .dashboard-card-payments:hover { border-color: var(--stone-400); }
-        .dashboard-card-payments.has-due { border-color: var(--orange); background: linear-gradient(to bottom, rgba(249, 115, 22, 0.06) 0%, rgba(255,255,255,0) 40%), white; }
-        .dashboard-card-payments.has-due::before { background: var(--orange); }
-        [data-theme="dark"] .dashboard-card-payments.has-due { background: linear-gradient(to bottom, rgba(249, 115, 22, 0.1) 0%, rgba(255,255,255,0) 40%), #292524; }
+        .dashboard-card-payments::before { 
+            background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%);
+        }
+        .dashboard-card-payments:hover { 
+            border-color: var(--violet-300); 
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        }
+        [data-theme="dark"] .dashboard-card-payments:hover { 
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        }
         .dashboard-card-swaps::before { background: var(--orange); }
         .dashboard-card-swaps:hover { border-color: var(--orange); }
         .dashboard-card-reschedules::before { background: var(--stone-500); }
@@ -680,46 +897,146 @@
         .dashboard-card-blocks:hover { border-color: var(--stone-300); }
         
         .dashboard-card-icon {
-            font-size: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .dashboard-card-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+        
+        .dashboard-card-schedule .dashboard-card-icon {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+            color: var(--teal-600);
+        }
+        
+        .dashboard-card-schedule:hover .dashboard-card-icon {
+            background: white;
+            color: var(--teal-600);
+        }
+        
+        .dashboard-card-students .dashboard-card-icon {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(251, 146, 60, 0.15) 100%);
+            color: var(--orange);
+        }
+        
+        .dashboard-card-students:hover .dashboard-card-icon {
+            background: white;
+            color: var(--orange);
+        }
+        
+        .dashboard-card-payments .dashboard-card-icon {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
+            color: var(--violet-500);
+        }
+        
+        .dashboard-card-payments:hover .dashboard-card-icon {
+            background: white;
+            color: var(--violet-500);
+        }
+        
+        .dashboard-card:hover .dashboard-card-icon {
+            transform: scale(1.1) rotate(5deg);
         }
         
         .dashboard-card-label {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--stone-800);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            word-wrap: break-word;
+            transition: color 0.3s ease;
         }
         
         [data-theme="dark"] .dashboard-card-label {
-            color: var(--stone-200);
+            color: var(--stone-100);
+        }
+        
+        .dashboard-card:hover .dashboard-card-label {
+            color: white;
         }
         
         .dashboard-card-desc {
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             color: var(--stone-500);
             line-height: 1.3;
+            word-wrap: break-word;
+            flex-grow: 1;
+            transition: color 0.3s ease;
+        }
+        
+        [data-theme="dark"] .dashboard-card-desc {
+            color: var(--stone-400);
+        }
+        
+        .dashboard-card:hover .dashboard-card-desc {
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .dashboard-card-stat {
             margin-top: 0.75rem;
-            font-size: 0.8rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--teal-600);
             min-height: 1.2em;
+            transition: all 0.3s ease;
         }
         
-        [data-theme="dark"] .dashboard-card-stat {
+        .dashboard-card-schedule .dashboard-card-stat {
+            color: var(--teal-600);
+        }
+        
+        [data-theme="dark"] .dashboard-card-schedule .dashboard-card-stat {
             color: var(--teal-400);
         }
         
-        .dashboard-card-stat .stat-alert {
+        .dashboard-card-students .dashboard-card-stat {
             color: var(--orange);
+        }
+        
+        [data-theme="dark"] .dashboard-card-students .dashboard-card-stat {
+            color: #fb923c;
+        }
+        
+        .dashboard-card-payments .dashboard-card-stat {
+            color: var(--violet-500);
+        }
+        
+        [data-theme="dark"] .dashboard-card-payments .dashboard-card-stat {
+            color: #a78bfa;
+        }
+        
+        .dashboard-card:hover .dashboard-card-stat {
+            color: white;
+            border-top-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .dashboard-card:hover .dashboard-card-stat .stat-alert {
+            color: white;
+        }
+        
+        [data-theme="dark"] .dashboard-card-stat {
+            border-top-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        .dashboard-card-stat .stat-alert {
+            color: var(--violet-500);
             font-weight: 700;
         }
         
         [data-theme="dark"] .dashboard-card-stat .stat-alert {
-            color: var(--orange);
+            color: #a78bfa;
         }
         
         .dashboard-footer {
@@ -737,26 +1054,33 @@
         }
         
         .dashboard-logout {
-            padding: 0.6rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.6);
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            border: none;
+            border-radius: 12px;
+            color: white;
             cursor: pointer;
             transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
         }
         
         .dashboard-logout:hover {
-            background: rgba(255, 255, 255, 0.18);
-            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+        }
+        
+        .dashboard-logout:active {
+            transform: translateY(0);
         }
         
         [data-theme="dark"] .dashboard-logout {
-            background: rgba(255, 255, 255, 0.08);
-            color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
         }
         
         #teacherDashboard .theme-toggle {
@@ -774,11 +1098,40 @@
         #mainApp {
             display: none;
             flex-direction: column;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+            background: #1c1917;
+            position: relative;
+        }
+        
+        #mainApp::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.pexels.com/photos/210764/pexels-photo-210764.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+            filter: grayscale(1);
+            opacity: 1;
+            z-index: 0;
+        }
+        
+        #mainApp::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 30%, rgba(28, 25, 23, 0.7) 100%);
+            z-index: 0;
         }
         
         #mainApp.active {
             display: flex;
+        }
+        
+        [data-theme="dark"] #mainApp {
+            background: #0f0e0d;
+        }
+        
+        [data-theme="dark"] #mainApp::before {
+            opacity: 0.25;
         }
         
         /* ===== HEADER ===== */
@@ -790,6 +1143,7 @@
             top: 0;
             z-index: 100;
             box-shadow: var(--shadow-sm);
+            position: relative;
         }
         
         .header-content {
@@ -804,10 +1158,98 @@
             margin-bottom: 1rem;
         }
         
+        /* Hide header-top in teacher mode */
+        body.teacher-mode .header-top {
+            display: none;
+        }
+        
+        /* Hide header-top in student mode too */
+        body.student-mode .header-top {
+            display: none;
+        }
+        
+        /* Show teacher back button in teacher mode */
+        body.teacher-mode #teacherBackBtn {
+            display: flex !important;
+        }
+        
+        /* Show student logout button in student mode */
+        body.student-mode #studentLogoutBtn {
+            display: flex !important;
+        }
+        
+        /* Show student info badge in student mode */
+        body.student-mode #studentInfoBadge {
+            display: flex !important;
+        }
+        
+        /* Remove margin from teacher controls when header-top is hidden */
+        body.teacher-mode #teacherControls {
+            margin-bottom: 0;
+        }
+        
+        /* Remove margin from student controls when header-top is hidden */
+        body.student-mode #studentControls {
+            margin-bottom: 0;
+        }
+        
         .header-brand {
             display: flex;
             align-items: center;
             gap: 0.75rem;
+        }
+        
+        .back-arrow-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--teal-500) 0%, var(--teal-600) 100%);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .back-arrow-btn svg {
+            flex-shrink: 0;
+        }
+        
+        .back-arrow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+        
+        .back-arrow-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Orange logout variant */
+        .back-arrow-btn.logout-btn {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+        }
+        
+        .back-arrow-btn.logout-btn:hover {
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+        }
+        
+        [data-theme="dark"] .back-arrow-btn {
+            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
+        }
+        
+        [data-theme="dark"] .back-arrow-btn.logout-btn {
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
         }
         
         .header-brand .bird-icon {
@@ -903,14 +1345,15 @@
         }
         
         .btn-block {
-            background: linear-gradient(135deg, #292524 0%, #1c1917 100%);
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
             color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.25);
         }
         
         .btn-block:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fdba74 0%, #fb923c 100%);
         }
         
         .btn-students {
@@ -973,22 +1416,22 @@
         .btn-swap {
             padding: 1rem 2rem;
             font-size: 1rem;
-            background: var(--stone-800);
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: white;
-            box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
             position: relative;
         }
         
         .btn-swap:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
         }
         
         .btn-swap .badge {
             position: absolute;
             top: -6px;
             right: -6px;
-            background: var(--teal-600);
+            background: #ea580c;
             color: white;
             font-size: 0.75rem;
             font-weight: 700;
@@ -998,7 +1441,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 6px rgba(244, 63, 94, 0.4);
+            box-shadow: 0 2px 6px rgba(249, 115, 22, 0.4);
         }
         
         .btn-reschedule-student {
@@ -1024,7 +1467,7 @@
         }
         
         .btn-nav {
-            padding: 0.625rem 1rem;
+            padding: 0.625rem;
             background: var(--stone-100);
             border: 1px solid var(--stone-200);
             border-radius: 8px;
@@ -1034,6 +1477,20 @@
             color: var(--stone-700);
             cursor: pointer;
             transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            min-width: 38px;
+            min-height: 38px;
+        }
+        
+        .btn-nav svg {
+            flex-shrink: 0;
+        }
+        
+        .btn-nav span {
+            line-height: 1;
         }
         
         .btn-nav:hover {
@@ -1284,11 +1741,6 @@
             
             .header-controls {
                 gap: 0.5rem;
-            }
-            
-            #themeToggle,
-            button.theme-toggle {
-                padding: 0.5rem;
             }
             
             .student-badge {
@@ -1552,13 +2004,19 @@
         /* ===== CALENDAR ===== */
         .calendar-container {
             flex: 1;
-            padding: 1.5rem;
+            padding: 1.5rem 1.5rem 0;
             overflow: hidden;
+            margin-bottom: 0;
+            min-height: 0;
+            display: block;
+            visibility: visible;
+            position: relative;
+            z-index: 1;
         }
         
         .calendar-wrapper {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 0 auto 0;
             background: white;
             border-radius: 16px;
             box-shadow: var(--shadow-lg);
@@ -1566,6 +2024,8 @@
             max-height: calc(100vh - 180px);
             overflow-y: auto;
             position: relative;
+            z-index: 1;
+            visibility: visible;
         }
         
         .calendar-table {
@@ -1828,50 +2288,68 @@
             text-overflow: ellipsis;
         }
         
+        /* Student's own lesson - orange */
+        .lesson-slot.my-lesson {
+            background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%) !important;
+            border: 2px solid #fb923c !important;
+            color: #9a3412 !important;
+            box-shadow: 0 2px 8px rgba(251, 146, 60, 0.25) !important;
+        }
+        
+        .lesson-slot.my-lesson:hover {
+            box-shadow: 0 4px 12px rgba(251, 146, 60, 0.35) !important;
+        }
+        
+        [data-theme="dark"] .lesson-slot.my-lesson {
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%) !important;
+            border: 2px solid #fdba74 !important;
+            color: #fff7ed !important;
+        }
+        
         .lesson-30 { height: 40px; }
         .lesson-45 { height: 60px; }
         .lesson-60 { height: 80px; }
         
         /* Lesson color variants */
         .lesson-overlap-0 {
-            background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
-            border: 2px solid #a8a29e;
-            color: #44403c;
+            background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+            border: 2px solid #5eead4;
+            color: #0f766e;
         }
         
         .lesson-overlap-1 {
-            background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
-            border: 2px solid #a8a29e;
-            color: #44403c;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #fbbf24;
+            color: #92400e;
         }
         
         .lesson-overlap-2 {
-            background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
-            border: 2px solid #a8a29e;
-            color: #44403c;
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+            border: 2px solid #f472b6;
+            color: #831843;
         }
         
         .lesson-overlap-3 {
-            background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
-            border: 2px solid #a8a29e;
-            color: #44403c;
+            background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+            border: 2px solid #a78bfa;
+            color: #5b21b6;
         }
         
         .lesson-overlap-4 {
-            background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
-            border: 2px solid #a8a29e;
-            color: #44403c;
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+            border: 2px solid #f87171;
+            color: #991b1b;
         }
         
         .lesson-overlap-5 {
-            background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
-            border: 2px solid #a8a29e;
-            color: #44403c;
+            background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+            border: 2px solid #60a5fa;
+            color: #1e40af;
         }
 
         /* Teacher mode hover */
         body.teacher-mode .lesson-slot[class*="lesson-overlap"]:hover {
-            background: linear-gradient(135deg, #e7e5e4 0%, #d6d3d1 100%) !important;
+            filter: brightness(0.92);
         }
         
         /* Student's own lessons - teal highlight */
@@ -1909,8 +2387,14 @@
             left: 3px;
             right: 3px;
             z-index: 10;
-            background: linear-gradient(135deg, #78716c 0%, #57534e 100%);
-            color: #e7e5e4;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 4px,
+                var(--stone-300) 4px,
+                var(--stone-300) 5px
+            );
+            color: var(--stone-600);
             padding: 8px;
             font-size: 0.7rem;
             font-weight: 600;
@@ -1919,19 +2403,27 @@
             transition: all 0.15s ease;
             box-sizing: border-box;
             border-radius: 8px;
+            border: 1px solid var(--stone-300);
         }
         
         body.teacher-mode .blocked-slot:hover {
-            background: linear-gradient(135deg, #57534e 0%, #44403c 100%);
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 4px,
+                var(--stone-400) 4px,
+                var(--stone-400) 5px
+            );
+            border-color: var(--stone-400);
         }
         
         [data-theme="dark"] .blocked-slot {
             background: repeating-linear-gradient(
                 45deg,
-                var(--stone-600),
-                var(--stone-600) 8px,
-                var(--stone-700) 8px,
-                var(--stone-700) 16px
+                transparent,
+                transparent 4px,
+                var(--stone-600) 4px,
+                var(--stone-600) 5px
             );
             color: var(--stone-400);
             border-color: var(--stone-600);
@@ -1940,24 +2432,28 @@
         [data-theme="dark"] body.teacher-mode .blocked-slot:hover {
             background: repeating-linear-gradient(
                 45deg,
-                var(--stone-500),
-                var(--stone-500) 8px,
-                var(--stone-600) 8px,
-                var(--stone-600) 16px
+                transparent,
+                transparent 4px,
+                var(--stone-500) 4px,
+                var(--stone-500) 5px
             );
+            border-color: var(--stone-500);
         }
         
         /* ===== MODAL ===== */
         #modal {
             position: fixed;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(28, 25, 23, 0.45);
             backdrop-filter: blur(8px) saturate(120%);
             -webkit-backdrop-filter: blur(8px) saturate(120%);
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 1000;
+            z-index: 999999;
             padding: 1rem;
             animation: fadeIn 0.2s ease;
         }
@@ -1981,12 +2477,21 @@
                 0 8px 32px rgba(28, 25, 23, 0.12),
                 0 2px 8px rgba(28, 25, 23, 0.08),
                 inset 0 1px 0 rgba(255, 255, 255, 0.6);
-            max-width: 480px;
+            max-width: 90vw;
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             padding: 2rem;
             animation: glassSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            margin: auto;
+        }
+        
+        @media (min-width: 640px) {
+            #modalContent {
+                max-width: 600px;
+            }
         }
         
         @keyframes glassSlideUp {
@@ -2006,6 +2511,22 @@
             font-weight: 600;
             color: var(--stone-900);
             margin-bottom: 1.5rem;
+        }
+        
+        .modal-title-orange {
+            color: var(--orange);
+        }
+        
+        [data-theme="dark"] .modal-title-orange {
+            color: #fb923c;
+        }
+        
+        .modal-title-purple {
+            color: var(--violet-500);
+        }
+        
+        [data-theme="dark"] .modal-title-purple {
+            color: #a78bfa;
         }
         
         .modal-subtitle {
@@ -3244,7 +3765,7 @@
             font-family: var(--font-body);
             color: var(--stone-800);
             background: var(--stone-50);
-            min-height: 100vh;
+            padding-bottom: 0;
         }
         
         [data-theme="dark"] #publicWebsite {
@@ -3287,6 +3808,10 @@
         }
         
         .site-nav-brand svg { color: var(--teal-600); }
+        
+        .site-theme-toggle {
+            display: none; /* Hidden - dark mode controlled by system preference on mobile only */
+        }
         
         [data-theme="dark"] .site-nav-brand {
             color: var(--stone-100);
@@ -3352,6 +3877,8 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
         }
         
         .site-hero::before {
@@ -3404,8 +3931,7 @@
         
         [data-theme="dark"] .site-hero-badge {
             color: #fb923c;
-            border-color: rgba(56, 189, 248, 0.35);
-            color: var(--sky-300);
+            border-color: rgba(251, 146, 60, 0.35);
         }
         
         .site-hero h1 {
@@ -3424,7 +3950,7 @@
         }
         
         .site-hero h1 .accent {
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -3452,7 +3978,7 @@
         
         .site-btn-primary {
             padding: 0.9rem 2rem;
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
             color: white;
             border: none;
             border-radius: 12px;
@@ -3468,9 +3994,9 @@
         }
         
         .site-btn-primary:hover {
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(14, 165, 233, 0.35);
+            box-shadow: 0 6px 24px rgba(20, 184, 166, 0.35);
         }
         
         .site-btn-secondary {
@@ -3505,7 +4031,20 @@
         
         /* --- Section Shared --- */
         .site-section {
-            padding: 6rem 2rem;
+            padding: 6rem 2rem 0;
+            scroll-snap-align: start;
+        }
+        
+        /* Extra bottom padding for About, Lessons, Testimonials, Contact */
+        .site-about,
+        .site-services,
+        .site-testimonials,
+        .site-cta {
+            min-height: calc(100vh - 80px); /* Full viewport minus nav height */
+            padding-bottom: 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .site-section-label {
@@ -3514,7 +4053,7 @@
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #0284c7;
+            color: #14b8a6;
             margin-bottom: 0.75rem;
         }
         
@@ -3609,7 +4148,7 @@
             font-family: var(--font-display);
             font-size: 2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -3767,7 +4306,7 @@
         .site-testimonial-stars {
             display: flex;
             gap: 2px;
-            color: #0ea5e9;
+            color: #2dd4bf;
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
@@ -3794,7 +4333,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+            background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -3807,7 +4346,7 @@
             background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%); 
         }
         .site-testimonial-card:nth-child(3) .site-testimonial-avatar { 
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); 
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); 
         }
         
         .site-testimonial-name {
@@ -3867,53 +4406,6 @@
         }
         
         /* --- Footer --- */
-        .site-footer {
-            padding: 3rem 2rem;
-            background: var(--stone-900);
-            border-top: 1px solid var(--stone-800);
-        }
-        
-        .site-footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .site-footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--stone-400);
-        }
-        
-        .site-footer-copy {
-            font-size: 0.8rem;
-            color: var(--stone-600);
-        }
-        
-        .site-footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .site-footer-links a {
-            font-size: 0.8rem;
-            color: var(--stone-500);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .site-footer-links a:hover {
-            color: var(--stone-300);
-        }
-        
         /* --- Responsive --- */
         @media (max-width: 768px) {
             .site-nav-links a:not(.site-portal-btn-wrap) { display: none; }
@@ -3921,7 +4413,6 @@
             .site-services-grid { grid-template-columns: 1fr; }
             .site-testimonials-grid { grid-template-columns: 1fr; }
             .site-hero { padding: 7rem 1.5rem 4rem; }
-            .site-footer-inner { flex-direction: column; text-align: center; }
         }
         
         /* --- Entrance animations --- */
@@ -3952,9 +4443,14 @@
     <!-- ===== PUBLIC WEBSITE ===== -->
     <div id="publicWebsite">
         <nav class="site-nav">
-            <a href="#" class="site-nav-brand" onclick="event.preventDefault();">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Melanie's Piano Studio
-            </a>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <button onclick="toggleDarkMode()" class="site-theme-toggle" id="siteThemeToggle" title="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+                <a href="#" class="site-nav-brand" onclick="event.preventDefault();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Melanie's Piano Studio
+                </a>
+            </div>
             <div class="site-nav-links">
                 <a href="#about" onclick="smoothScroll(event, 'about')">About</a>
                 <a href="#lessons" onclick="smoothScroll(event, 'lessons')">Lessons</a>
@@ -3973,7 +4469,7 @@
                 <p class="site-hero-sub site-anim site-anim-d3">Private piano instruction for all ages and levels. From first notes to recital-ready — learn at your own pace in a warm, encouraging environment.</p>
                 <div class="site-hero-actions site-anim site-anim-d4">
                     <button onclick="smoothScroll(event, 'lessons')" class="site-btn-primary">View Lesson Options</button>
-                    <button onclick="smoothScroll(event, 'contact')" class="site-btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Get in Touch</button>
+                    <button onclick="showContactForm()" class="site-btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Get in Touch</button>
                 </div>
                 <div class="site-hero-badge">Welcoming New Students</div>
             </div>
@@ -4024,7 +4520,7 @@
                     <div class="site-service-card">
                         <div class="site-service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
                         <h3>Intermediate Growth</h3>
-                        <p>Expand your repertoire, strengthen sight-reading, and develop musical expression. Ideal for students with 1–3 years of experience.</p>
+                        <p>Expand your repertoire, strengthen sight-reading, and develop musical expression. Ideal for students with 1—3 years of experience.</p>
                         <div class="site-service-price">$XX <span>/ 45 min</span></div>
                     </div>
                     <div class="site-service-card">
@@ -4088,23 +4584,9 @@
                 <span class="site-section-label" style="color: var(--orange);">Get Started</span>
                 <h2>Ready to begin your musical journey?</h2>
                 <p>Reach out for a free introductory consultation. I'd love to learn about your goals and find the perfect lesson plan for you or your child.</p>
-                <button class="site-btn-primary" onclick="alert('Contact form placeholder — replace with your email or booking link!')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Get in Touch</button>
+                <button class="site-btn-primary" onclick="showContactForm()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Get in Touch</button>
             </div>
         </section>
-        
-        <!-- Footer -->
-        <footer class="site-footer">
-            <div class="site-footer-inner">
-                <div class="site-footer-brand">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--teal-600)"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Melanie's Piano Studio
-                </div>
-                <div class="site-footer-copy">© 2026 Melanie's Piano Studio. All rights reserved.</div>
-                <div class="site-footer-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                </div>
-            </div>
-        </footer>
     </div>
     
     <!-- Login Screen -->
@@ -4139,10 +4621,9 @@
             <div class="login-help">
                 <p>Need a code? Contact your teacher</p>
                 <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
-                    <button onclick="toggleDarkMode()" class="theme-toggle" id="loginThemeToggle" title="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
                     <button onclick="clearAllData()" style="padding: 0.5rem 1rem; background: var(--stone-200); border: none; border-radius: 8px; font-size: 0.75rem; color: var(--stone-500); cursor: pointer;">Reset All Data</button>
                 </div>
-                <button onclick="backToWebsite()" class="back-to-site">← Back to Website</button>
+                <button onclick="backToWebsite()" class="back-to-site"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg> Back to Website</button>
             </div>
         </div>
     </div>
@@ -4161,14 +4642,14 @@
                     <div class="dashboard-card-stat" id="dashTodayLessons"></div>
                 </div>
                 
-                <div class="dashboard-card dashboard-card-students" onclick="openDashboardModal(showStudentsModal)">
+                <div class="dashboard-card dashboard-card-students" onclick="showStudentsFullScreen()">
                     <div class="dashboard-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                     <div class="dashboard-card-label">Student Roster</div>
                     <div class="dashboard-card-desc">Profiles, contacts, and family codes</div>
                     <div class="dashboard-card-stat" id="dashStudentCount"></div>
                 </div>
                 
-                <div class="dashboard-card dashboard-card-payments" onclick="openDashboardModal(showPaymentsModal)" style="overflow: hidden;">
+                <div class="dashboard-card dashboard-card-payments" onclick="showPaymentsFullScreen()" style="overflow: hidden;">
                     <div class="draft-stamp">UNDER CONSTRUCTION</div>
                     <div class="dashboard-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                     <div class="dashboard-card-label">Payments</div>
@@ -4178,8 +4659,9 @@
             </div>
             
             <div class="dashboard-footer">
-                <button onclick="toggleDarkMode()" class="theme-toggle" id="dashThemeToggle" title="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
-                <button onclick="logout()" class="dashboard-logout">Logout</button>
+                <button onclick="logout()" class="dashboard-logout" title="Logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </button>
             </div>
         </div>
     </div>
@@ -4190,17 +4672,23 @@
             <div class="header-content">
                 <div class="header-top">
                     <div class="header-brand">
-                        <button onclick="toggleDarkMode()" class="theme-toggle" id="themeToggle" title="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
-                        <span class="bird-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--teal-600)"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+                        <button id="headerBackBtn" onclick="goToDashboard()" class="back-arrow-btn" title="Back to Dashboard">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 12H5M12 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
                     </div>
                     <div class="header-user">
                         <div class="user-badge" id="loginStatus"></div>
-                        <button onclick="goToDashboard()" class="logout-btn" id="dashboardBtn" style="background: var(--teal-600); color: white;">Dashboard</button>
-                        <button onclick="logout()" class="logout-btn">Logout</button>
                     </div>
                 </div>
                 
                 <div id="teacherControls" class="control-bar">
+                    <button id="teacherBackBtn" onclick="goToDashboard()" class="back-arrow-btn" title="Back to Dashboard" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
                     <button onclick="showAddModal()" class="btn btn-add">
                         <span>+</span> Add Lesson
                     </button>
@@ -4211,29 +4699,30 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg> Requests
                     </button>
                     <div class="week-nav">
-                        <button onclick="changeWeek(-1)" class="btn-nav">← Previous</button>
+                        <button onclick="changeWeek(-1)" class="btn-nav" title="Previous week"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
                         <button id="weekLabel" onclick="goToToday()" class="btn-nav btn-today">Today</button>
-                        <button onclick="changeWeek(1)" class="btn-nav">Next →</button>
+                        <button onclick="changeWeek(1)" class="btn-nav" title="Next week"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
                         <button onclick="toggleMiniCalendar(event)" class="btn-nav btn-mini-cal" title="Jump to week"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></button>
                         <div id="miniCalendar" class="mini-calendar hidden"></div>
                     </div>
                 </div>
                 
                 <div id="studentControls" class="control-bar hidden">
-                    <button onclick="showMyLessonsForSwap()" class="btn btn-swap">
+                    <button id="studentLogoutBtn" onclick="logoutStudent()" class="back-arrow-btn logout-btn" title="Logout" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    </button>
+                    <button onclick="showSwapRequestsFullScreen()" class="btn btn-swap">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg> Swap Lesson with another student
                         <span id="mySwapBadge" class="badge hidden">0</span>
                     </button>
-                    <button onclick="showMyLessonsForReschedule()" class="btn btn-reschedule-student">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Request Teacher for a Reschedule
-                    </button>
                     <div class="week-nav">
-                        <button onclick="changeWeek(-1)" class="btn-nav">← Previous</button>
+                        <button onclick="changeWeek(-1)" class="btn-nav" title="Previous week"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
                         <button id="weekLabel2" onclick="goToToday()" class="btn-nav btn-today">Today</button>
-                        <button onclick="changeWeek(1)" class="btn-nav">Next →</button>
+                        <button onclick="changeWeek(1)" class="btn-nav" title="Next week"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
                         <button onclick="toggleMiniCalendar(event)" class="btn-nav btn-mini-cal" title="Jump to week"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></button>
                         <div id="miniCalendar2" class="mini-calendar hidden"></div>
                     </div>
+                    <div class="user-badge" id="studentInfoBadge" style="display: none;"></div>
                 </div>
             </div>
         </header>
@@ -4246,6 +4735,11 @@
         
         <!-- Floating Action Button -->
         <button id="fab" class="fab hidden" onclick="showAddModal()" title="Add Lesson">+</button>
+    </div>
+    
+    <!-- Full Screen View Container -->
+    <div id="fullScreenView" style="display: none;">
+        <div id="fullScreenContent"></div>
     </div>
     
     <!-- Modal -->
@@ -4294,7 +4788,7 @@ function saveData() {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
         if(indicator) {
             setTimeout(() => {
-                indicator.textContent = '✓ Saved';
+                indicator.textContent = ' Saved';
                 indicator.className = 'save-indicator saved';
                 setTimeout(() => {
                     indicator.textContent = 'Saved';
@@ -4373,25 +4867,14 @@ function toggleDarkMode() {
 
 function updateThemeIcon() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const icon = isDark ? '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+    const icon = isDark ? '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
     const title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
     
-    const btn = document.getElementById('themeToggle');
-    if(btn) {
-        btn.innerHTML = icon;
-        btn.title = title;
-    }
-    
-    const loginBtn = document.getElementById('loginThemeToggle');
-    if(loginBtn) {
-        loginBtn.innerHTML = icon;
-        loginBtn.title = title;
-    }
-    
-    const dashBtn = document.getElementById('dashThemeToggle');
-    if(dashBtn) {
-        dashBtn.innerHTML = icon;
-        dashBtn.title = title;
+    // Only update website landing page theme toggle
+    const siteBtn = document.getElementById('siteThemeToggle');
+    if(siteBtn) {
+        siteBtn.innerHTML = icon;
+        siteBtn.title = title;
     }
 }
 
@@ -4805,6 +5288,12 @@ if(!hadSavedData) {
     initializeRecurringLessons();
     initializeRecurringBlocks();
 }
+
+// Force light mode on desktop (>768px), allow system preference on mobile
+if (window.innerWidth > 768) {
+    document.documentElement.removeAttribute('data-theme');
+}
+
 // Update theme icon on load
 updateThemeIcon();
 
@@ -4813,8 +5302,9 @@ function loginAsTeacher() {
     loggedInStudent = null;
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('teacherDashboard').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
     updateDashboardStats();
-    toast("Logged in as Teacher");
 }
 
 function updateDashboardStats() {
@@ -4892,23 +5382,35 @@ function updateDashboardStats() {
 }
 
 function goToCalendar() {
-    _returnToDashboard = false;
-    document.body.classList.remove('student-mode');
-    document.body.classList.add('teacher-mode');
-    document.getElementById('teacherDashboard').style.display = 'none';
-    document.getElementById('mainApp').classList.add('active');
-    document.getElementById('teacherControls').classList.remove('hidden');
-    document.getElementById('studentControls').classList.add('hidden');
-    document.getElementById('dashboardBtn').style.display = '';
-    document.getElementById('fab').classList.remove('hidden');
-    document.getElementById('loginStatus').innerHTML = 'Teacher Mode';
-    render();
+    try {
+        _returnToDashboard = false;
+        document.body.classList.remove('student-mode');
+        document.body.classList.add('teacher-mode');
+        document.getElementById('teacherDashboard').style.display = 'none';
+        document.getElementById('mainApp').classList.add('active');
+        document.getElementById('teacherControls').classList.remove('hidden');
+        document.getElementById('studentControls').classList.add('hidden');
+        document.getElementById('fab').classList.remove('hidden');
+        document.getElementById('loginStatus').innerHTML = 'Teacher Mode';
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
+        // Force render after DOM is fully painted
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                render();
+            });
+        });
+    } catch (error) {
+        console.error('Error in goToCalendar:', error);
+    }
 }
 
 function goToDashboard() {
     document.getElementById('mainApp').classList.remove('active');
     document.getElementById('teacherDashboard').style.display = 'block';
     document.getElementById('fab').classList.add('hidden');
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
     updateDashboardStats();
 }
 
@@ -4935,11 +5437,29 @@ function loginAsStudent() {
     document.getElementById('mainApp').classList.add('active');
     document.getElementById('teacherControls').classList.add('hidden');
     document.getElementById('studentControls').classList.remove('hidden');
-    document.getElementById('dashboardBtn').style.display = 'none';
     document.getElementById('fab').classList.add('hidden');
-    document.getElementById('loginStatus').innerHTML = '<button onclick="showMyInfo()" class="theme-toggle" title="My Info" style="margin-right: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>' + student.firstName + ' ' + student.lastName;
-    render();
-    toast("Welcome, " + student.firstName + "!");
+    
+    // Change back arrow to logout button for students (keep teal styling)
+    const headerBtn = document.getElementById('headerBackBtn');
+    headerBtn.onclick = logoutStudent;
+    headerBtn.title = 'Logout';
+    // Don't add logout-btn class - keep teal styling
+    headerBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>';
+    
+    // Show student initials instead of full name
+    const initials = student.firstName.charAt(0) + student.lastName.charAt(0);
+    document.getElementById('loginStatus').innerHTML = '<button onclick="showMyInfoFullScreen()" class="theme-toggle" title="My Info" style="margin-right: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>' + initials;
+    
+    // Also populate the student info badge in the control bar
+    document.getElementById('studentInfoBadge').innerHTML = '<button onclick="showMyInfoFullScreen()" class="theme-toggle" title="My Info" style="margin-right: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>' + initials;
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    // Force render after DOM is fully painted
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            render();
+        });
+    });
     
     // Check for notifications
     setTimeout(() => checkStudentNotifications(student.firstName + ' ' + student.lastName), 500);
@@ -5045,7 +5565,7 @@ function showSwapNotifications(notifications, fullName) {
                 html += "<p style='font-size: 0.875rem;'>The swap with <strong>" + otherNamePrivate + "</strong> was approved by your teacher!</p>";
             }
             
-            // Show old → new time
+            // Show old â†’ new time
             if(oldDay !== undefined && newDay !== undefined) {
                 html += "<div style='margin-top: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.15); border-radius: 10px;'>" +
                     "<div style='display: flex; align-items: center; gap: 0.75rem;'>" +
@@ -5053,7 +5573,7 @@ function showSwapNotifications(notifications, fullName) {
                     "<div style='font-size: 0.7rem; font-weight: 600; opacity: 0.7; margin-bottom: 0.2rem;'>OLD TIME</div>" +
                     "<div style='font-size: 0.85rem; text-decoration: line-through; opacity: 0.6;'>" + days[oldDay] + " " + oldTime + "</div>" +
                     "</div>" +
-                    "<div style='font-size: 1.2rem;'>→</div>" +
+                    "<div style='font-size: 1.2rem;'>â†’</div>" +
                     "<div style='flex: 1; text-align: center;'>" +
                     "<div style='font-size: 0.7rem; font-weight: 600; opacity: 0.7; margin-bottom: 0.2rem;'>NEW TIME</div>" +
                     "<div style='font-size: 1rem; font-weight: 700;'>" + days[newDay] + " " + newTime + "</div>" +
@@ -5221,18 +5741,26 @@ function showRescheduleNotifications(notifications, fullName) {
 function openStudentPortal() {
     document.getElementById('publicWebsite').style.display = 'none';
     document.getElementById('loginScreen').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
 }
 
 function backToWebsite() {
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('publicWebsite').style.display = '';
+    document.body.style.overflow = '';
+    document.body.style.height = '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function smoothScroll(e, id) {
     e.preventDefault();
     const el = document.getElementById(id);
-    if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if(el) {
+        // For the last section (contact), use 'center' to avoid scrolling past content
+        const block = id === 'contact' ? 'center' : 'start';
+        el.scrollIntoView({ behavior: 'smooth', block: block });
+    }
 }
 
 function logout() {
@@ -5244,11 +5772,32 @@ function logout() {
     document.getElementById('fab').classList.add('hidden');
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('publicWebsite').style.display = '';
+    document.body.style.overflow = '';
+    document.body.style.height = '';
     document.getElementById('familyCodeInput').value = '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function logoutStudent() {
+    // Reset the back button to its original state for teachers
+    const headerBtn = document.getElementById('headerBackBtn');
+    headerBtn.onclick = goToDashboard;
+    headerBtn.title = 'Back to Dashboard';
+    // No need to remove logout-btn class since it's not added anymore
+    headerBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
+    
+    // Call the regular logout function
+    logout();
+}
+
 function render() {
+    const calendarEl = document.getElementById("calendar");
+    if (!calendarEl) {
+        // Calendar element not ready, try again shortly
+        requestAnimationFrame(() => render());
+        return;
+    }
+    
     const weekLessons = lessons.filter(l => l.week === currentWeek);
     const times = allTimes;
     
@@ -5453,7 +6002,9 @@ function render() {
                     clickableAttr = "onclick='showDetails(" + lesson.id + ")'";
                 }
                 
-                html += "<div class='lesson-slot " + heightClass + colorClass + "' style='top:" + topPosition + "px; left:" + leftPosition + "%; width:" + width + "%; " + cursorStyle + "' " + draggableAttr + " data-id='" + lesson.id + "' " + clickableAttr + ">";
+                const myLessonClass = isMyLesson ? ' my-lesson' : '';
+                
+                html += "<div class='lesson-slot " + heightClass + colorClass + myLessonClass + "' style='top:" + topPosition + "px; left:" + leftPosition + "%; width:" + width + "%; " + cursorStyle + "' " + draggableAttr + " data-id='" + lesson.id + "' " + clickableAttr + ">";
                 html += "<div class='student-name'>" + name + " " + lesson.duration + " min</div>";
                 html += "</div>";
             });
@@ -5522,19 +6073,33 @@ function scrollToCurrentTime() {
 function changeWeek(direction) {
     currentWeek += direction;
     render();
+    
+    // Trigger pulse animation - alternate between teal and orange based on week number
+    const headers = document.querySelectorAll('.calendar-table th');
+    const pulseClass = Math.abs(currentWeek) % 2 === 0 ? 'date-pulse-teal' : 'date-pulse-orange';
+    
+    headers.forEach(header => {
+        header.classList.remove('date-pulse-teal', 'date-pulse-orange');
+        // Force reflow to restart animation
+        void header.offsetWidth;
+        header.classList.add(pulseClass);
+    });
+    
+    // Remove animation class after it completes
+    setTimeout(() => {
+        headers.forEach(header => {
+            header.classList.remove('date-pulse-teal', 'date-pulse-orange');
+        });
+    }, 600);
 }
 
 function updateWeekLabel() {
     const label = document.getElementById('weekLabel');
     const label2 = document.getElementById('weekLabel2');
-    let text = 'Today';
-    if(currentWeek === 1) text = 'Next Week';
-    else if(currentWeek === -1) text = 'Last Week';
-    else if(currentWeek > 0) text = currentWeek + ' Weeks Ahead';
-    else if(currentWeek < 0) text = Math.abs(currentWeek) + ' Weeks Ago';
     
-    if(label) label.textContent = text;
-    if(label2) label2.textContent = text;
+    // Keep the button text fixed as "Today"
+    if(label) label.textContent = 'Today';
+    if(label2) label2.textContent = 'Today';
 }
 
 function updateMySwapBadge() {
@@ -5672,12 +6237,12 @@ function renderCompactSwapCard(request) {
     const lesson1 = lessons.find(l => l.id === request.requestingLessonId);
     const lesson2 = lessons.find(l => l.id === request.targetLessonId);
     const isApproved = request.status === 'approved';
-    const icon = isApproved ? '✓' : '✕';
+    const icon = isApproved ? '' : 'âœ•';
     const color = isApproved ? 'var(--teal-600)' : 'var(--stone-500)';
     const bg = isApproved ? 'rgba(13,148,136,0.06)' : 'rgba(168,162,158,0.08)';
     const resolvedDate = request.resolvedAt ? new Date(request.resolvedAt).toLocaleDateString() : '';
     
-    let detail = request.requestingStudent + ' ↔ ' + request.targetStudent;
+    let detail = request.requestingStudent + ' â† ' + request.targetStudent;
     
     return "<div style='display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; margin-bottom: 0.25rem; background: " + bg + "; border-radius: 8px; font-size: 0.8rem;'>" +
         "<span style='color: " + color + "; font-weight: 700; flex-shrink: 0;'>" + icon + "</span>" +
@@ -5689,14 +6254,14 @@ function renderCompactSwapCard(request) {
 
 function renderCompactMoveCard(request) {
     const isApproved = request.status === 'approved';
-    const icon = isApproved ? '✓' : '✕';
+    const icon = isApproved ? '' : 'âœ•';
     const color = isApproved ? 'var(--teal-600)' : 'var(--stone-500)';
     const bg = isApproved ? 'rgba(13,148,136,0.06)' : 'rgba(168,162,158,0.08)';
     const resolvedDate = request.resolvedAt ? new Date(request.resolvedAt).toLocaleDateString() : '';
     
     let detail = request.studentName + ' — ' + days[request.currentDay] + ' ' + request.currentTime;
     if(isApproved && request.newDay !== undefined) {
-        detail += ' → ' + days[request.newDay] + ' ' + request.newTime;
+        detail += ' â†’ ' + days[request.newDay] + ' ' + request.newTime;
     }
     
     return "<div style='display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; margin-bottom: 0.25rem; background: " + bg + "; border-radius: 8px; font-size: 0.8rem;'>" +
@@ -5721,15 +6286,15 @@ function renderSwapRequestCard(request, showActions) {
         statusLabel = 'Students Agreed';
     } else if(request.status === 'pending') {
         statusClass = 'info-box-warning';
-        statusIcon = '…';
+        statusIcon = '—¦';
         statusLabel = 'Pending';
     } else if(request.status === 'approved') {
         statusClass = 'info-box-success';
-        statusIcon = '✓';
+        statusIcon = '';
         statusLabel = 'Completed';
     } else {
         statusClass = 'info-box-danger';
-        statusIcon = '✕';
+        statusIcon = 'âœ•';
         statusLabel = 'Declined';
     }
     
@@ -5755,7 +6320,7 @@ function renderSwapRequestCard(request, showActions) {
     html += "</div>";
     
     // Arrow
-    html += "<div style='text-align: center; color: var(--stone-400); font-size: 1rem;'>⬍</div>";
+    html += "<div style='text-align: center; color: var(--stone-400); font-size: 1rem;'>↔</div>";
     
     // Target info
     html += "<div style='font-size: 0.875rem; margin-top: 0.5rem;'>" +
@@ -5792,7 +6357,7 @@ function renderSwapRequestCard(request, showActions) {
         const formattedTime = agreedDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
         
         html += "<div style='font-size: 0.75rem; margin-top: 0.75rem; padding: 0.5rem; background: var(--teal-50); border-radius: 6px; color: var(--teal-700);'>" +
-            "✓ " + (request.agreedBy || request.targetStudent) + " agreed on " + formattedDate + " at " + formattedTime +
+            " " + (request.agreedBy || request.targetStudent) + " agreed on " + formattedDate + " at " + formattedTime +
             "</div>";
     }
     
@@ -5823,14 +6388,14 @@ function renderSwapRequestCard(request, showActions) {
         if(request.status === 'student_agreed') {
             // Both students agreed - teacher just needs to approve
             html += "<div style='display: flex; gap: 0.5rem; margin-top: 0.75rem;'>" +
-                "<button onclick='teacherApproveSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✓ Approve Swap</button>" +
-                "<button onclick='teacherDeclineSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✗ Decline</button>" +
+                "<button onclick='teacherApproveSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Approve Swap</button>" +
+                "<button onclick='teacherDeclineSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Decline</button>" +
                 "</div>";
         } else if(request.status === 'pending') {
             // Still waiting for student - teacher can approve directly or decline
             html += "<div style='display: flex; gap: 0.5rem; margin-top: 0.75rem;'>" +
-                "<button onclick='teacherApproveSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✓ Approve Now</button>" +
-                "<button onclick='teacherDeclineSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✗ Decline</button>" +
+                "<button onclick='teacherApproveSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Approve Now</button>" +
+                "<button onclick='teacherDeclineSwap(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Decline</button>" +
                 "</div>" +
                 "<p style='font-size: 0.7rem; color: var(--stone-400); margin-top: 0.5rem; text-align: center;'>Or wait for " + request.targetStudent + " to respond</p>";
         }
@@ -6077,7 +6642,7 @@ function updateDropTooltip(e, time, cell, snapY, isBlocked) {
         tooltip.textContent = time;
         tooltip.style.background = 'var(--stone-700)';
     } else {
-        tooltip.textContent = '▸ ' + time;
+        tooltip.textContent = 'â–¸ ' + time;
         tooltip.style.background = 'var(--stone-800)';
     }
     tooltip.style.display = 'block';
@@ -6340,10 +6905,9 @@ function showDetails(id) {
     
     if(loginMode === 'student' && isMyLesson && !isPast) {
         if(tooSoon) {
-            html += "<div class='info-box info-box-warning' style='margin-bottom: 0.75rem;'>This lesson starts within the next hour. Swap and reschedule requests are no longer available.</div>";
+            html += "<div class='info-box info-box-warning' style='margin-bottom: 0.75rem;'>This lesson starts within the next hour. Swap requests are no longer available.</div>";
         } else {
             html += "<button onclick='showStudentSwapOptions(" + id + ",\"" + loggedInStudent.firstName + "\",\"" + loggedInStudent.lastName + "\")' class='modal-btn modal-btn-violet'>Swap with Student</button>";
-            html += "<button onclick='showRequestTeacherReschedule(" + id + ")' class='modal-btn modal-btn-amber'>Ask Teacher to Reschedule</button>";
         }
     }
     
@@ -6788,23 +7352,145 @@ function forceNew() {
     toast("Lesson added (with conflict)");
 }
 
-let _returnToDashboard = false;
+function showContactForm() {
+    let html = "<h3 class='modal-title' style='color: var(--orange);'>Get in Touch</h3>";
+    html += "<p class='modal-subtitle'>Looking to start piano lessons? I'd love to hear from you!</p>";
+    
+    html += "<form onsubmit='submitContactForm(event)' id='contactForm'>";
+    
+    // Parent/Guardian Name
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>Parent/Guardian Name <span style='color: var(--orange);'>*</span></label>";
+    html += "<input type='text' name='parentName' class='form-input' required placeholder='Your name'>";
+    html += "</div>";
+    
+    // Student Name
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>Student Name <span style='color: var(--stone-400);'>(if different)</span></label>";
+    html += "<input type='text' name='studentName' class='form-input' placeholder='Student name'>";
+    html += "</div>";
+    
+    // Email
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>Email Address <span style='color: var(--orange);'>*</span></label>";
+    html += "<input type='email' name='email' class='form-input' required placeholder='your@email.com'>";
+    html += "</div>";
+    
+    // Phone
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>Phone Number <span style='color: var(--orange);'>*</span></label>";
+    html += "<input type='tel' name='phone' class='form-input' required placeholder='(555) 123-4567'>";
+    html += "</div>";
+    
+    // Age/Grade
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>Student Age/Grade Level</label>";
+    html += "<input type='text' name='ageGrade' class='form-input' placeholder='e.g., 8 years old, Grade 3'>";
+    html += "</div>";
+    
+    // Interest Level
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>What are you interested in?</label>";
+    html += "<select name='interest' class='form-select'>";
+    html += "<option value=''>Select an option...</option>";
+    html += "<option value='beginner'>Beginner lessons</option>";
+    html += "<option value='intermediate'>Intermediate lessons</option>";
+    html += "<option value='exam'>Exam preparation</option>";
+    html += "<option value='adult'>Adult lessons</option>";
+    html += "<option value='exploring'>Just exploring options</option>";
+    html += "</select>";
+    html += "</div>";
+    
+    // Preferred Days
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>Preferred lesson day(s)</label>";
+    html += "<div style='display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.5rem;'>";
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    days.forEach(day => {
+        html += "<label style='display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem;'>";
+        html += "<input type='checkbox' name='days' value='" + day + "' style='width: 18px; height: 18px;'>";
+        html += "<span>" + day + "</span>";
+        html += "</label>";
+    });
+    html += "</div>";
+    html += "</div>";
+    
+    // Preferred Time
+    html += "<div style='margin-bottom: 1rem;'>";
+    html += "<label class='form-label'>Preferred time</label>";
+    html += "<select name='time' class='form-select'>";
+    html += "<option value=''>Select a time...</option>";
+    html += "<option value='morning'>Morning (9am-12pm)</option>";
+    html += "<option value='afternoon'>Afternoon (12pm-4pm)</option>";
+    html += "<option value='evening'>Evening (4pm-7pm)</option>";
+    html += "<option value='flexible'>Flexible</option>";
+    html += "</select>";
+    html += "</div>";
+    
+    // Message
+    html += "<div style='margin-bottom: 1.5rem;'>";
+    html += "<label class='form-label'>Message <span style='color: var(--stone-400);'>(optional)</span></label>";
+    html += "<textarea name='message' class='form-input' rows='4' placeholder='Tell me about your musical goals or any questions you have...'></textarea>";
+    html += "</div>";
+    
+    html += "<button type='submit' class='modal-btn' style='background: linear-gradient(135deg, #f97316 0%, #fb923c 100%); color: white; border: none;'>Send Message</button>";
+    html += "<button type='button' onclick='closeModal()' class='modal-btn modal-btn-secondary'>Cancel</button>";
+    html += "</form>";
+    
+    modal(html);
+}
 
-function openDashboardModal(showFn) {
-    _returnToDashboard = true;
-    showFn();
+function submitContactForm(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    // Get selected days
+    const selectedDays = [];
+    const dayCheckboxes = form.querySelectorAll('input[name="days"]:checked');
+    dayCheckboxes.forEach(cb => selectedDays.push(cb.value));
+    
+    // Build email body
+    let emailBody = "New Lesson Inquiry from Loonie Bird Website\n\n";
+    emailBody += "Parent/Guardian: " + formData.get('parentName') + "\n";
+    if(formData.get('studentName')) emailBody += "Student Name: " + formData.get('studentName') + "\n";
+    emailBody += "Email: " + formData.get('email') + "\n";
+    emailBody += "Phone: " + formData.get('phone') + "\n";
+    if(formData.get('ageGrade')) emailBody += "Age/Grade: " + formData.get('ageGrade') + "\n";
+    if(formData.get('interest')) emailBody += "Interest: " + formData.get('interest') + "\n";
+    if(selectedDays.length > 0) emailBody += "Preferred Days: " + selectedDays.join(', ') + "\n";
+    if(formData.get('time')) emailBody += "Preferred Time: " + formData.get('time') + "\n";
+    if(formData.get('message')) emailBody += "\nMessage:\n" + formData.get('message') + "\n";
+    
+    // Create mailto link (replace with your email)
+    const mailtoLink = "mailto:your-email@example.com?subject=" + encodeURIComponent("Piano Lesson Inquiry") + 
+                       "&body=" + encodeURIComponent(emailBody);
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    closeModal();
+    toast('Opening your email client... Thank you for your interest!');
 }
 
 function modal(html) {
-    document.getElementById('modalContent').innerHTML = html;
-    document.getElementById('modal').classList.add('active');
+    if(_fullScreenMode) {
+        // In full-screen mode, show content in the full-screen area
+        document.getElementById('fullScreenContentArea').innerHTML = html;
+    } else {
+        // Normal modal behavior
+        document.getElementById('modalContent').innerHTML = html;
+        document.getElementById('modal').classList.add('active');
+    }
 }
 
 function closeModal() {
-    document.getElementById('modal').classList.remove('active');
-    if(_returnToDashboard) {
-        _returnToDashboard = false;
-        goToDashboard();
+    if(_fullScreenMode) {
+        // In full-screen mode, "Close" button exits back to previous view
+        exitFullScreenView();
+    } else {
+        document.getElementById('modal').classList.remove('active');
     }
 }
 
@@ -6837,10 +7523,10 @@ function toast(msg, type = 'auto') {
     
     // Icon mapping
     const icons = {
-        success: '✓',
-        error: '✕',
-        warning: '⚠',
-        info: 'ℹ',
+        success: '',
+        error: 'âœ•',
+        warning: 'âš ',
+        info: 'â„¹',
         default: '•'
     };
     
@@ -6849,7 +7535,7 @@ function toast(msg, type = 'auto') {
         <div class="toast-content">
             <span class="toast-icon">${icons[type] || icons.default}</span>
             <span class="toast-message">${msg}</span>
-            <button class="toast-close" onclick="hideToast()">✕</button>
+            <button class="toast-close" onclick="hideToast()">âœ•</button>
         </div>
         <div class="toast-progress">
             <div class="toast-progress-bar"></div>
@@ -7031,7 +7717,7 @@ function checkBlockConflicts(blockDay, blockTime, blockDuration, blockWeek, repe
 }
 
 function showBlockConflictModal(conflicts, blockDay, blockTime, blockDuration, blockReason, repeatType) {
-    let html = "<h3 class='modal-title' style='color: var(--orange);'>⚠️ Lesson Conflict</h3>" +
+    let html = "<h3 class='modal-title' style='color: var(--orange);'>âš ï¸ Lesson Conflict</h3>" +
         "<p class='modal-subtitle'>Blocking this time will overlap with " + conflicts.length + " lesson" + (conflicts.length > 1 ? "s" : "") + ":</p>";
     
     html += "<div class='scroll-container' style='max-height: 200px; margin-bottom: 1rem;'>";
@@ -8031,10 +8717,10 @@ function showStudentsModal() {
     const activeStudents = studentList.filter(s => !s.retired);
     const retiredStudents = studentList.filter(s => s.retired);
     
-    let html = "<h3 class='modal-title'>Student Management</h3>";
+    let html = "<h3 class='modal-title modal-title-orange'>Student Management</h3>";
     html += "<p class='modal-subtitle'>Manage your students and their schedules</p>";
     
-    html += "<button onclick='showAddStudentModal()' class='modal-btn modal-btn-success'>+ Add New Student</button>";
+    html += "<button onclick='showAddStudentModal()' class='modal-btn' style='background: linear-gradient(135deg, #f97316 0%, #fb923c 100%); color: white; border: none;'>+ Add New Student</button>";
     
     if(studentList.length === 0) {
         html += "<p style='color: var(--stone-500);'>No students yet. Add a student to get started.</p>";
@@ -8050,8 +8736,8 @@ function showStudentsModal() {
                     "<div class='student-meta'>" + student.lessonCount + " total lessons • " + student.weeklyLessons + " this week</div>" +
                     "</div>" +
                     "<div class='student-actions'>" +
-                    "<button onclick='viewStudentSchedule(\"" + student.firstName + "\",\"" + student.lastName + "\")' class='btn btn-small' style='background: var(--teal-500); color: white;'>View</button>" +
-                    "<button onclick='retireStudent(\"" + student.firstName + "\",\"" + student.lastName + "\")' class='btn btn-small' style='background: var(--orange); color: white;'>Retire</button>" +
+                    "<button onclick='viewStudentSchedule(\"" + student.firstName + "\",\"" + student.lastName + "\")' class='btn btn-small' style='background: var(--orange); color: white;'>View</button>" +
+                    "<button onclick='retireStudent(\"" + student.firstName + "\",\"" + student.lastName + "\")' class='btn btn-small' style='background: var(--stone-400); color: white;'>Retire</button>" +
                     "</div>" +
                     "</div>" +
                     "</div>";
@@ -8238,7 +8924,7 @@ function viewStudentSchedule(firstName, lastName) {
                 const dateInfo = getDateForLesson(lesson);
                 html += "<div style='font-size: 0.8rem; padding-left: 0.75rem; border-left: 2px solid var(--teal-400); margin-bottom: 0.25rem; color: var(--stone-600);'>" +
                     days[lesson.day] + ", " + dateInfo + " at " + lesson.time + " (" + lesson.duration + " min)" +
-                    (lesson.isRecurring ? " ↻" : "") +
+                    (lesson.isRecurring ? " â†»" : "") +
                     "</div>";
             });
             html += "</div>";
@@ -8294,7 +8980,7 @@ function editStudentProfile(firstName, lastName) {
     if(profile.photo) {
         photoHtml = "<div class='photo-upload-preview'>" +
             "<img src='" + profile.photo + "' id='photoPreview' class='photo-preview-img'>" +
-            "<button type='button' onclick='removeStudentPhoto(\"" + firstName + "\",\"" + lastName + "\")' class='photo-remove-btn'>✕ Remove</button>" +
+            "<button type='button' onclick='removeStudentPhoto(\"" + firstName + "\",\"" + lastName + "\")' class='photo-remove-btn'>âœ• Remove</button>" +
             "</div>";
     } else {
         photoHtml = "<div class='photo-upload-preview'>" +
@@ -8383,7 +9069,7 @@ function renderGuardiansEditor() {
         html += "<div class='guardian-card' id='guardian-" + index + "'>" +
             "<div class='guardian-header'>" +
             "<div class='section-title'>Parent/Guardian " + guardianNum + "</div>" +
-            (!isFirst ? "<button type='button' onclick='removeGuardian(" + index + ")' class='btn-remove-guardian'>✕ Remove</button>" : "") +
+            (!isFirst ? "<button type='button' onclick='removeGuardian(" + index + ")' class='btn-remove-guardian'>âœ• Remove</button>" : "") +
             "</div>" +
             "<label class='form-label'>Name</label>" +
             "<input type='text' id='guardianName-" + index + "' value='" + escapeHtml(guardian.name || '') + "' placeholder='John Doe' class='form-input' onchange='updateGuardian(" + index + ", \"name\", this.value)'>" +
@@ -8464,7 +9150,7 @@ function previewStudentPhoto(input) {
             // Replace placeholder or update existing image
             const container = preview.parentElement;
             container.innerHTML = "<img src='" + tempPhotoData + "' id='photoPreview' class='photo-preview-img'>" +
-                "<button type='button' onclick='clearPhotoPreview()' class='photo-remove-btn'>✕ Remove</button>";
+                "<button type='button' onclick='clearPhotoPreview()' class='photo-remove-btn'>âœ• Remove</button>";
         }
     };
     reader.readAsDataURL(file);
@@ -8621,7 +9307,7 @@ function renderNewStudentGuardians() {
         html += "<div class='guardian-card' id='new-guardian-" + index + "'>" +
             "<div class='guardian-header'>" +
             "<div class='section-title'>Parent/Guardian " + guardianNum + "</div>" +
-            (!isFirst ? "<button type='button' onclick='removeNewGuardian(" + index + ")' class='btn-remove-guardian'>✕ Remove</button>" : "") +
+            (!isFirst ? "<button type='button' onclick='removeNewGuardian(" + index + ")' class='btn-remove-guardian'>âœ• Remove</button>" : "") +
             "</div>" +
             "<label class='form-label'>Name</label>" +
             "<input type='text' id='newGuardianName-" + index + "' value='" + escapeHtml(guardian.name || '') + "' placeholder='John Doe' class='form-input' onchange='updateNewGuardian(" + index + ", \"name\", this.value)'>" +
@@ -8881,7 +9567,7 @@ function showMyLessonsForSwap() {
             html += "<div class='swap-request-card'>" +
                 "<div class='text-sm mb-2'><strong>" + theirName + "</strong> wants to swap:</div>" +
                 "<div class='text-xs' style='color: var(--stone-600);'>Their: " + formatLessonDate(theirLesson.week, theirLesson.day) + " at " + theirLesson.time + "</div>" +
-                "<div class='swap-arrow'>⬍</div>" +
+                "<div class='swap-arrow'>↔</div>" +
                 "<div class='text-xs' style='color: var(--stone-600);'>Your: " + formatLessonDate(myLesson.week, myLesson.day) + " at " + myLesson.time + "</div>";
             
             if(request.reason) {
@@ -8892,8 +9578,8 @@ function showMyLessonsForSwap() {
             }
             
             html += "<div style='display: flex; gap: 0.5rem; margin-top: 0.75rem;'>" +
-                "<button onclick='approveSwapInPortal(" + request.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✓ Accept</button>" +
-                "<button onclick='showDeclineSwapModal(" + request.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✗ Decline</button>" +
+                "<button onclick='approveSwapInPortal(" + request.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Accept</button>" +
+                "<button onclick='showDeclineSwapModal(" + request.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Decline</button>" +
                 "</div>" +
                 "</div>";
         });
@@ -8914,7 +9600,7 @@ function showMyLessonsForSwap() {
             html += "<div class='swap-request-card' style='opacity: 0.85;'>" +
                 "<div class='text-sm mb-2'>Sent to <strong>" + theirName + "</strong></div>" +
                 "<div class='text-xs' style='color: var(--stone-600);'>Your: " + formatLessonDate(myLesson.week, myLesson.day) + " at " + myLesson.time + "</div>" +
-                "<div class='swap-arrow'>⬍</div>" +
+                "<div class='swap-arrow'>↔</div>" +
                 "<div class='text-xs' style='color: var(--stone-600);'>Their: " + formatLessonDate(theirLesson.week, theirLesson.day) + " at " + theirLesson.time + "</div>";
             
             if(request.reason) {
@@ -8948,7 +9634,6 @@ function showMyLessonsForSwap() {
                     "<div class='lesson-list-time'>" + formatLessonDate(lesson.week, lesson.day) + " at " + lesson.time + "</div>" +
                     "<div class='lesson-list-duration'>" + lesson.duration + " min" + (lesson.isRecurring ? " • Recurring" : "") + "</div>" +
                     "</div>" +
-                    "<span style='color: var(--stone-700); font-weight: 600;'>→</span>" +
                     "</div>";
             }
         });
@@ -9033,7 +9718,7 @@ function showMyLessonsForReschedule() {
                     "<div class='lesson-list-time'>" + formatLessonDate(lesson.week, lesson.day) + " at " + lesson.time + "</div>" +
                     "<div class='lesson-list-duration'>" + lesson.duration + " min" + (lesson.isRecurring ? " • Recurring" : "") + "</div>" +
                     "</div>" +
-                    "<span style='color: var(--orange); font-weight: 600;'>→</span>" +
+                    "<span style='color: var(--orange); font-weight: 600;'>â†’</span>" +
                     "</div>";
             }
         });
@@ -9061,8 +9746,7 @@ function showMyInfo() {
     // Store current photo for preview
     window.tempPhotoData = student.photo || null;
     
-    let html = "<h3 class='modal-title'>My Info</h3>" +
-        "<p class='modal-subtitle'>View and update your information</p>";
+    let html = "";
     
     // Show last updated info if exists
     if(student.lastUpdated) {
@@ -9079,17 +9763,21 @@ function showMyInfo() {
         html += "<p class='modal-subtitle' style='font-size: 0.75rem; margin-top: -0.5rem;'>Last updated by " + escapeHtml(updatedBy) + " on " + formattedDate + "</p>";
     }
     
-    html += "<label class='form-label'>First Name</label>" +
-        "<input type='text' id='editMyFirstName' value='" + escapeHtml(student.firstName) + "' class='form-input' readonly style='background: var(--stone-100); cursor: not-allowed;'>" +
+    html += "<div style='text-align: center; color: var(--teal-600); font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem; font-family: var(--font-display);'>My Info</div>" +
         
-        "<label class='form-label'>Last Name</label>" +
-        "<input type='text' id='editMyLastName' value='" + escapeHtml(student.lastName) + "' class='form-input' readonly style='background: var(--stone-100); cursor: not-allowed;'>" +
+        "<div style='margin-bottom: 0.75rem;'>" +
+        "<span style='font-size: 0.9rem; font-weight: 600; color: var(--stone-600);'>Name: </span>" +
+        "<span style='font-size: 0.9rem; color: var(--stone-900);'>" + escapeHtml(student.firstName) + " " + escapeHtml(student.lastName) + "</span>" +
+        "</div>" +
         
-        "<label class='form-label'>Date of Birth</label>" +
-        "<input type='date' id='editMyDob' value='" + (student.dob || '') + "' class='form-input' readonly style='background: var(--stone-100); cursor: not-allowed;'>" +
+        "<div style='margin-bottom: 1rem;'>" +
+        "<span style='font-size: 0.9rem; font-weight: 600; color: var(--stone-600);'>Date of Birth: </span>" +
+        "<span style='font-size: 0.9rem; color: var(--stone-900);'>" + (student.dob ? new Date(student.dob + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Not set') + "</span>" +
+        "</div>" +
         
         // Photo upload section
         "<div class='section-divider'></div>" +
+        "<p style='text-align: center; font-size: 0.85rem; color: var(--stone-600); margin: 1rem 0 1.25rem; font-style: italic;'>You can update your photo and address below</p>" +
         "<div class='photo-upload-section'>" +
         "<div class='photo-upload-preview'>";
     
@@ -9101,29 +9789,29 @@ function showMyInfo() {
     
     html += "</div>" +
         "<div class='photo-upload-controls'>" +
-        "<label class='form-label'>Update Photo <span class='form-label-optional'>(Optional)</span></label>" +
+        "<label class='form-label' style='font-weight: 600;'>Update Photo <span class='form-label-optional'>(Optional)</span></label>" +
         "<input type='file' id='myPhotoInput' accept='image/*' onchange='previewMyPhoto(this)' class='form-input' style='padding: 0.5rem;'>" +
-        "<p style='font-size: 0.7rem; color: var(--stone-400); margin-top: 0.25rem;'>JPG, PNG, or GIF. Max 1MB recommended.</p>" +
+        "<p style='font-size: 0.7rem; color: var(--stone-500); margin-top: 0.25rem;'>JPG, PNG, or GIF. Max 1MB recommended.</p>" +
         "</div>" +
         "</div>" +
         
         "<div class='section-divider'></div>" +
         
         // Address section
-        "<div class='section-title'>Address</div>" +
-        "<label class='form-label'>Street Address</label>" +
+        "<div class='section-title' style='color: var(--stone-700); margin-bottom: 0.75rem;'>Address</div>" +
+        "<label class='form-label' style='font-weight: 600;'>Street Address</label>" +
         "<input type='text' id='editMyStreet' value='" + escapeHtml(student.address?.street || '') + "' placeholder='123 Main Street' class='form-input'>" +
         
-        "<label class='form-label'>City</label>" +
+        "<label class='form-label' style='font-weight: 600;'>City</label>" +
         "<input type='text' id='editMyCity' value='" + escapeHtml(student.address?.city || '') + "' placeholder='Minneapolis' class='form-input'>" +
         
         "<div style='display: flex; gap: 0.75rem;'>" +
         "<div style='flex: 1;'>" +
-        "<label class='form-label'>State</label>" +
+        "<label class='form-label' style='font-weight: 600;'>State</label>" +
         "<input type='text' id='editMyState' value='" + escapeHtml(student.address?.state || '') + "' placeholder='MN' class='form-input' maxlength='2' style='text-transform: uppercase;'>" +
         "</div>" +
         "<div style='flex: 1;'>" +
-        "<label class='form-label'>ZIP Code</label>" +
+        "<label class='form-label' style='font-weight: 600;'>ZIP Code</label>" +
         "<input type='text' id='editMyZip' value='" + escapeHtml(student.address?.zip || '') + "' placeholder='55401' class='form-input' maxlength='10'>" +
         "</div>" +
         "</div>" +
@@ -9131,7 +9819,7 @@ function showMyInfo() {
         "<div class='section-divider'></div>" +
         
         // Guardians section
-        "<div class='section-title'>Parent/Guardian Contact Info</div>";
+        "<div class='section-title' style='color: var(--stone-700); margin-bottom: 0.75rem;'>Parent/Guardian Contact Info</div>";
     
     // Ensure guardians array exists, migrate from old fields if needed
     if(!student.guardians || student.guardians.length === 0) {
@@ -9158,14 +9846,24 @@ function showMyInfo() {
     }
     
     student.guardians.forEach((guardian, index) => {
-        html += "<div class='guardian-card'>" +
-            "<div class='section-title' style='font-size: 0.75rem; margin-bottom: 0.5rem;'>Guardian " + (index + 1) + "</div>" +
-            "<label class='form-label'>Name</label>" +
-            "<input type='text' id='editMyGuardianName-" + index + "' value='" + escapeHtml(guardian.name || '') + "' placeholder='John Doe' class='form-input' readonly style='background: var(--stone-100); cursor: not-allowed;'>" +
-            "<label class='form-label'>Phone</label>" +
-            "<input type='tel' id='editMyGuardianPhone-" + index + "' value='" + escapeHtml(guardian.phone || '') + "' placeholder='(555) 123-4567' class='form-input' readonly style='background: var(--stone-100); cursor: not-allowed;'>" +
-            "<label class='form-label'>Email</label>" +
-            "<input type='email' id='editMyGuardianEmail-" + index + "' value='" + escapeHtml(guardian.email || '') + "' placeholder='parent@example.com' class='form-input' readonly style='background: var(--stone-100); cursor: not-allowed;'>" +
+        html += "<div style='border-bottom: 1px solid var(--stone-200); padding-bottom: 0.75rem; margin-bottom: 0.75rem;'>" +
+            "<div style='font-size: 0.75rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.5rem;'>Guardian " + (index + 1) + "</div>" +
+            
+            "<div style='margin-bottom: 0.4rem;'>" +
+            "<span style='font-size: 0.85rem; font-weight: 600; color: var(--stone-600);'>Name: </span>" +
+            "<span style='font-size: 0.85rem; color: var(--stone-900);'>" + (guardian.name ? escapeHtml(guardian.name) : '<span style=\"color: var(--stone-400);\">Not set</span>') + "</span>" +
+            "</div>" +
+            
+            "<div style='margin-bottom: 0.4rem;'>" +
+            "<span style='font-size: 0.85rem; font-weight: 600; color: var(--stone-600);'>Phone: </span>" +
+            "<span style='font-size: 0.85rem; color: var(--stone-900);'>" + (guardian.phone ? escapeHtml(guardian.phone) : '<span style=\"color: var(--stone-400);\">Not set</span>') + "</span>" +
+            "</div>" +
+            
+            "<div>" +
+            "<span style='font-size: 0.85rem; font-weight: 600; color: var(--stone-600);'>Email: </span>" +
+            "<span style='font-size: 0.85rem; color: var(--stone-900);'>" + (guardian.email ? escapeHtml(guardian.email) : '<span style=\"color: var(--stone-400);\">Not set</span>') + "</span>" +
+            "</div>" +
+            
             "</div>";
     });
     
@@ -9350,22 +10048,26 @@ function confirmStudentSwapRequest(myLessonId, theirLessonId, firstName, lastNam
     const theirName = formatNamePrivate(theirLesson.firstName, theirLesson.lastName);
     
     const html = "<h3 class='modal-title'>Confirm Swap Request</h3>" +
-        "<div class='profile-section'>" +
-        "<div class='text-sm mb-2'><strong>You want to swap:</strong></div>" +
-        "<div style='padding-left: 1rem; margin-bottom: 0.75rem;'>" +
-        "<div class='text-sm'><strong>Your lesson</strong></div>" +
-        "<div class='text-xs' style='color: var(--stone-600);'>" + formatLessonDate(myLesson.week, myLesson.day) + " at " + myLesson.time + "</div>" +
+        "<div class='swap-confirmation-box' style='background: var(--stone-50); border: 1px solid var(--stone-200); border-radius: 12px; padding: 1rem; margin-bottom: 1.25rem;'>" +
+        "<div style='display: flex; align-items: center; gap: 1rem;'>" +
+        "<div style='flex: 1;'>" +
+        "<div style='font-size: 0.7rem; font-weight: 600; color: var(--stone-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;'>Your Lesson</div>" +
+        "<div style='font-size: 0.9rem; font-weight: 600; color: var(--stone-900);'>" + formatLessonDate(myLesson.week, myLesson.day) + "</div>" +
+        "<div style='font-size: 0.85rem; color: var(--stone-600);'>" + myLesson.time + " (" + myLesson.duration + " min)</div>" +
         "</div>" +
-        "<div class='swap-arrow'>⬍</div>" +
-        "<div style='padding-left: 1rem;'>" +
-        "<div class='text-sm'><strong>" + theirName + "</strong></div>" +
-        "<div class='text-xs' style='color: var(--stone-600);'>" + formatLessonDate(theirLesson.week, theirLesson.day) + " at " + theirLesson.time + "</div>" +
+        "<div style='font-size: 1.5rem; color: var(--teal-600);'>↔</div>" +
+        "<div style='flex: 1;'>" +
+        "<div style='font-size: 0.7rem; font-weight: 600; color: var(--stone-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;'>Swap With</div>" +
+        "<div style='font-size: 0.9rem; font-weight: 600; color: var(--stone-900);'>" + theirName + "</div>" +
+        "<div style='font-size: 0.85rem; color: var(--stone-600);'>" + formatLessonDate(theirLesson.week, theirLesson.day) + "</div>" +
+        "<div style='font-size: 0.85rem; color: var(--stone-600);'>" + theirLesson.time + " (" + theirLesson.duration + " min)</div>" +
+        "</div>" +
         "</div>" +
         "</div>" +
         "<label class='form-label'>Reason for swap request <span style='color: var(--stone-600);'>*</span></label>" +
         "<textarea id='swapReason' class='form-input' style='resize: vertical; min-height: 70px;' placeholder='e.g., I have a dentist appointment, soccer practice conflict, family event...'></textarea>" +
         "<div class='info-box info-box-info'>" +
-        "ℹ️ " + theirName + " will see your reason and can approve or decline." +
+        "" + theirName + " will see your reason and can approve or decline." +
         "</div>" +
         "<button onclick='createStudentSwapRequest(" + myLessonId + "," + theirLessonId + ",\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn modal-btn-violet'>Send Request</button>" +
         "<button onclick='showStudentSwapOptions(" + myLessonId + ",\"" + firstName + "\",\"" + lastName + "\")' class='modal-btn modal-btn-secondary'>Back</button>";
@@ -9627,7 +10329,7 @@ function showRequestTeacherReschedule(lessonId) {
                 "<div style='font-weight: 600; color: var(--stone-700);'>" + dayName + " at " + slot.time + "</div>" +
                 "<div style='font-size: 0.75rem; color: var(--stone-500);'>" + slot.dateStr + " • " + weekLabel + "</div>" +
                 "</div>" +
-                "<span class='slot-check' style='display: none; color: var(--teal-500); font-size: 1.25rem;'>✓</span>" +
+                "<span class='slot-check' style='display: none; color: var(--teal-500); font-size: 1.25rem;'></span>" +
                 "</div>" +
                 "</div>";
         });
@@ -9774,7 +10476,7 @@ function showRescheduleOptions(lessonId) {
                 "<div style='font-weight: 700; color: var(--teal-700);'>" + dayName + " at " + slot.time + "</div>" +
                 "<div style='font-size: 0.8rem; color: var(--stone-500);'>" + slot.dateStr + " • " + weekLabel + "</div>" +
                 "</div>" +
-                "<span style='color: var(--teal-600); font-size: 1.2rem;'>→</span>" +
+                "<span style='color: var(--teal-600); font-size: 1.2rem;'>â†’</span>" +
                 "</div>" +
                 "</div>";
         });
@@ -9800,7 +10502,7 @@ function selectRescheduleSlot(lessonId, newDay, newTime, newWeek) {
         "<div style='font-size: 0.8rem; color: var(--stone-500);'>FROM:</div>" +
         "<div style='font-weight: 700; color: var(--stone-800);'>" + days[lesson.day] + ", " + currentDate + " at " + lesson.time + "</div>" +
         "</div>" +
-        "<div style='text-align: center; color: var(--stone-400); padding: 0.5rem;'>↓</div>" +
+        "<div style='text-align: center; color: var(--stone-400); padding: 0.5rem;'>â†</div>" +
         "<div class='info-box' style='background: var(--teal-50); border-color: var(--teal-200);'>" +
         "<div style='font-size: 0.8rem; color: var(--stone-500);'>TO:</div>" +
         "<div style='font-weight: 700; color: var(--teal-700);'>" + days[newDay] + ", " + newDate + " at " + newTime + "</div>" +
@@ -9809,8 +10511,8 @@ function selectRescheduleSlot(lessonId, newDay, newTime, newWeek) {
         "<p style='font-size: 0.9rem; color: var(--stone-600); margin-bottom: 1rem;'>" +
         "Your teacher will be notified of this request. The change will only happen if they approve it." +
         "</p>" +
-        "<button onclick='submitMoveRequest(" + lessonId + ", " + newDay + ", \"" + newTime + "\", " + newWeek + ")' class='modal-btn modal-btn-primary'>✓ Send Request</button>" +
-        "<button onclick='showRescheduleOptions(" + lessonId + ")' class='modal-btn modal-btn-secondary'>← Back</button>";
+        "<button onclick='submitMoveRequest(" + lessonId + ", " + newDay + ", \"" + newTime + "\", " + newWeek + ")' class='modal-btn modal-btn-primary'> Send Request</button>" +
+        "<button onclick='showRescheduleOptions(" + lessonId + ")' class='modal-btn modal-btn-secondary'>â† Back</button>";
     
     modal(html);
 }
@@ -9952,7 +10654,7 @@ function showTeacherPickTimeModal(requestId) {
                 "<div style='font-weight: 700; color: var(--teal-700);'>" + dayName + " at " + slot.time + "</div>" +
                 "<div style='font-size: 0.8rem; color: var(--stone-500);'>" + slot.dateStr + " • " + weekLabel + "</div>" +
                 "</div>" +
-                "<span style='font-size: 1.25rem;'>→</span>" +
+                "<span style='font-size: 1.25rem;'>â†’</span>" +
                 "</div>" +
                 "</div>";
         });
@@ -10009,15 +10711,15 @@ function renderMoveRequestCard(request, showActions) {
     
     if(request.status === 'pending') {
         statusClass = 'info-box-warning';
-        statusIcon = '…';
+        statusIcon = '—¦';
         statusLabel = 'Pending';
     } else if(request.status === 'approved') {
         statusClass = 'info-box-success';
-        statusIcon = '✓';
+        statusIcon = '';
         statusLabel = 'Approved';
     } else {
         statusClass = 'info-box-danger';
-        statusIcon = '✕';
+        statusIcon = 'âœ•';
         statusLabel = 'Declined';
     }
     
@@ -10046,7 +10748,7 @@ function renderMoveRequestCard(request, showActions) {
         if(request.suggestedDay !== null && request.suggestedDay !== undefined) {
             const suggestedDate = getDateForLesson({day: request.suggestedDay, week: request.suggestedWeek});
             html += "<div style='background: var(--teal-50); border: 1px solid var(--teal-300); border-radius: 6px; padding: 0.5rem; margin-top: 0.5rem;'>" +
-                "<div style='font-size: 0.7rem; text-transform: uppercase; font-weight: 600; color: var(--teal-700);'>▸ Student's Preferred Time</div>" +
+                "<div style='font-size: 0.7rem; text-transform: uppercase; font-weight: 600; color: var(--teal-700);'>â–¸ Student's Preferred Time</div>" +
                 "<div style='font-weight: 700; color: var(--teal-800); margin-top: 0.25rem;'>" + days[request.suggestedDay] + " at " + request.suggestedTime + "</div>" +
                 "<div style='font-size: 0.75rem; color: var(--teal-600);'>" + suggestedDate + "</div>" +
                 "</div>";
@@ -10063,12 +10765,12 @@ function renderMoveRequestCard(request, showActions) {
             // If student suggested a time, show approve and decline
             if(request.suggestedDay !== null && request.suggestedDay !== undefined) {
                 html += "<div style='display: flex; gap: 0.5rem; margin-top: 0.75rem;'>" +
-                    "<button onclick='teacherAssignNewTime(" + request.id + ", " + request.suggestedDay + ", \"" + request.suggestedTime + "\", " + request.suggestedWeek + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✓ Approve</button>" +
-                    "<button onclick='teacherDeclineMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✗ Decline</button>" +
+                    "<button onclick='teacherAssignNewTime(" + request.id + ", " + request.suggestedDay + ", \"" + request.suggestedTime + "\", " + request.suggestedWeek + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Approve</button>" +
+                    "<button onclick='teacherDeclineMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Decline</button>" +
                     "</div>";
             } else {
                 html += "<div style='display: flex; gap: 0.5rem; margin-top: 0.75rem;'>" +
-                    "<button onclick='teacherDeclineMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✗ Decline</button>" +
+                    "<button onclick='teacherDeclineMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Decline</button>" +
                     "</div>";
             }
         }
@@ -10079,7 +10781,7 @@ function renderMoveRequestCard(request, showActions) {
         // From/To times
         html += "<div style='font-size: 0.85rem;'>" +
             "<div style='color: var(--stone-500);'>From: <strong>" + days[request.currentDay] + " " + request.currentTime + "</strong> (" + currentDate + ")</div>" +
-            "<div style='text-align: center; color: var(--stone-400); padding: 0.25rem;'>↓</div>" +
+            "<div style='text-align: center; color: var(--stone-400); padding: 0.25rem;'>â†</div>" +
             "<div style='color: var(--teal-700);'>To: <strong>" + days[request.newDay] + " " + request.newTime + "</strong> (" + newDate + ")</div>" +
             "</div>";
         
@@ -10089,8 +10791,8 @@ function renderMoveRequestCard(request, showActions) {
         // Action buttons for regular reschedule
         if(showActions) {
             html += "<div style='display: flex; gap: 0.5rem; margin-top: 0.75rem;'>" +
-                "<button onclick='teacherApproveMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✓ Approve</button>" +
-                "<button onclick='teacherDeclineMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'>✗ Decline</button>" +
+                "<button onclick='teacherApproveMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Approve</button>" +
+                "<button onclick='teacherDeclineMoveRequest(" + request.id + ")' class='btn btn-small' style='flex: 1; background: var(--teal-600); color: white;'> Decline</button>" +
                 "</div>";
         }
     }
@@ -10165,7 +10867,7 @@ function showPaymentsModal() {
     
     const outstanding = totalOwed - totalPaid;
     
-    let html = "<h3 class='modal-title'>Payment Tracking</h3>" +
+    let html = "<h3 class='modal-title modal-title-purple'>Payment Tracking</h3>" +
         "<p class='modal-subtitle'>Manage lesson payments and invoices</p>";
     
     // Stripe ACH banner
@@ -10276,7 +10978,7 @@ function showStudentPayments(firstName, lastName) {
         "<div class='payment-stat-label'>Paid</div>" +
         "</div>" +
         "<div class='payment-stat " + statusClass + "'>" +
-        "<div class='payment-stat-value'>" + (balance <= 0 ? '✓' : '$' + balance.toFixed(0)) + "</div>" +
+        "<div class='payment-stat-value'>" + (balance <= 0 ? '' : '$' + balance.toFixed(0)) + "</div>" +
         "<div class='payment-stat-label'>" + (balance <= 0 ? 'Paid Up' : 'Balance Due') + "</div>" +
         "</div>" +
         "</div>";
@@ -10307,7 +11009,7 @@ function showStudentPayments(firstName, lastName) {
                 "<div class='payment-row-name'>$" + payment.amount.toFixed(2) + achBadge + "</div>" +
                 "<div class='payment-row-detail'>" + date.toLocaleDateString() + (payment.note ? ' • ' + payment.note : '') + "</div>" +
                 "</div>" +
-                (payment.achLinked ? "" : "<button onclick='deletePayment(" + payment.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='background: var(--teal-600); color: white; font-size: 0.7rem;'>✕</button>") +
+                (payment.achLinked ? "" : "<button onclick='deletePayment(" + payment.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='background: var(--teal-600); color: white; font-size: 0.7rem;'>âœ•</button>") +
                 "</div>";
         });
         html += "</div>";
@@ -10467,7 +11169,7 @@ function getStripeStatusBanner() {
             "<span style='font-size: 1.1rem;'>Link</span>" +
             "<div style='flex:1;'><strong>Connect Stripe</strong><br>" +
             "<span style='font-size: 0.75rem; opacity: 0.8;'>Enable online ACH bank payments</span></div>" +
-            "<span style='font-size: 0.8rem;'>→</span></div>";
+            "<span style='font-size: 0.8rem;'>â†’</span></div>";
     }
 }
 
@@ -10521,7 +11223,7 @@ function showStripeSettingsModal() {
     // Info box
     html += "<div style='padding: 0.75rem; background: rgba(99, 102, 241, 0.08); border-radius: 10px; font-size: 0.78rem; color: var(--stone-600); margin-bottom: 1rem; line-height: 1.5;'>" +
         "<strong>How it works:</strong> When you send an invoice, families can pay directly from the payment link using their bank account. " +
-        "ACH payments typically settle in 2–4 business days. Stripe charges 0.8% per transaction, capped at $5." +
+        "ACH payments typically settle in 2—4 business days. Stripe charges 0.8% per transaction, capped at $5." +
         "</div>";
     
     // Buttons
@@ -10718,10 +11420,10 @@ function showAchPaymentHistory() {
         sorted.forEach(payment => {
             const date = new Date(payment.createdAt);
             const statusBadge = payment.status === 'succeeded' 
-                ? "<span class='stripe-badge succeeded'>✓ Settled</span>"
+                ? "<span class='stripe-badge succeeded'> Settled</span>"
                 : payment.status === 'processing' 
-                    ? "<span class='stripe-badge processing'>⏳ Processing</span>"
-                    : "<span class='stripe-badge failed'>✕ Failed</span>";
+                    ? "<span class='stripe-badge processing'>â³ Processing</span>"
+                    : "<span class='stripe-badge failed'>âœ• Failed</span>";
             
             html += "<div class='payment-row' style='cursor: pointer;' onclick='showAchPaymentDetail(" + payment.id + ")'>" +
                 "<div class='payment-row-info'>" +
@@ -10783,8 +11485,8 @@ function showAchPaymentDetail(achId) {
     // Actions
     if(isProcessing) {
         html += "<div style='display: flex; gap: 0.5rem; margin-bottom: 0.5rem;'>" +
-            "<button onclick='simulateAchSettle(" + payment.id + ")' class='modal-btn modal-btn-success' style='flex: 1; margin-bottom: 0;'>✓ Simulate Settlement</button>" +
-            "<button onclick='simulateAchFail(" + payment.id + ")' class='modal-btn' style='flex: 1; margin-bottom: 0; background: var(--teal-600); color: white; border: none; padding: 0.65rem; border-radius: 10px; cursor: pointer;'>✕ Simulate Failure</button></div>";
+            "<button onclick='simulateAchSettle(" + payment.id + ")' class='modal-btn modal-btn-success' style='flex: 1; margin-bottom: 0;'> Simulate Settlement</button>" +
+            "<button onclick='simulateAchFail(" + payment.id + ")' class='modal-btn' style='flex: 1; margin-bottom: 0; background: var(--teal-600); color: white; border: none; padding: 0.65rem; border-radius: 10px; cursor: pointer;'>âœ• Simulate Failure</button></div>";
     }
     
     html += "<button onclick='showAchPaymentHistory()' class='modal-btn modal-btn-secondary'>Back</button>";
@@ -10801,7 +11503,7 @@ function simulateAchSettle(achId) {
         // Update linked manual payment note
         const linked = payments.find(p => p.achLinked && p.achPaymentId === achId);
         if(linked) {
-            linked.note = linked.note.replace('(processing)', '(settled ✓)');
+            linked.note = linked.note.replace('(processing)', '(settled )');
         }
         
         saveData();
@@ -10918,8 +11620,6 @@ function printInvoice() {
     }
 }
 
-console.log("Loonie Bird loaded successfully!");
-
 // Hide splash screen after load
 window.addEventListener('load', function() {
     setTimeout(function() {
@@ -11014,9 +11714,9 @@ function renderMiniCalendar() {
     const daysInPrevMonth = new Date(year, month, 0).getDate();
     
     let html = '<div class="mini-cal-header">';
-    html += '<button class="mini-cal-nav" onclick="event.stopPropagation(); miniCalChangeMonth(-1)">‹</button>';
+    html += '<button class="mini-cal-nav" onclick="event.stopPropagation(); miniCalChangeMonth(-1)">—¹</button>';
     html += '<span class="mini-cal-title">' + monthNames[month] + ' ' + year + '</span>';
-    html += '<button class="mini-cal-nav" onclick="event.stopPropagation(); miniCalChangeMonth(1)">›</button>';
+    html += '<button class="mini-cal-nav" onclick="event.stopPropagation(); miniCalChangeMonth(1)">—º</button>';
     html += '</div>';
     
     html += '<div class="mini-cal-grid">';
@@ -11066,6 +11766,75 @@ function renderMiniCalendar() {
     
     html += '</div>';
     el.innerHTML = html;
+}
+
+// ===== FULL SCREEN VIEW FUNCTIONS =====
+let _fullScreenMode = false;
+let _fullScreenReturnView = null;
+
+function showFullScreenView(contentFn, title) {
+    _fullScreenMode = true;
+    _fullScreenReturnView = loginMode === 'teacher' ? 'dashboard' : 'calendar';
+    
+    // Hide other views
+    document.getElementById('teacherDashboard').style.display = 'none';
+    document.getElementById('mainApp').classList.remove('active');
+    document.getElementById('loginScreen').style.display = 'none';
+    
+    // Prevent body and html scroll
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    
+    // Show full screen view with flex display
+    const view = document.getElementById('fullScreenView');
+    view.style.display = 'flex';
+    
+    // Build content without back button - Close buttons in content will handle navigation
+    let html = '<div class="fullscreen-header">';
+    html += '<h1 class="fullscreen-title">' + title + '</h1>';
+    html += '</div>';
+    html += '<div class="fullscreen-content-wrapper" id="fullScreenContentArea">';
+    html += '</div>';
+    
+    document.getElementById('fullScreenContent').innerHTML = html;
+    
+    // Call the content function to populate the area
+    contentFn();
+}
+
+function exitFullScreenView() {
+    _fullScreenMode = false;
+    document.getElementById('fullScreenView').style.display = 'none';
+    
+    // Restore body and html scroll
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+    
+    // Return to appropriate view
+    if(_fullScreenReturnView === 'dashboard') {
+        goToDashboard();
+    } else {
+        document.getElementById('mainApp').classList.add('active');
+        render();
+    }
+}
+
+function showStudentsFullScreen() {
+    showFullScreenView(showStudentsModal, '');
+}
+
+function showPaymentsFullScreen() {
+    showFullScreenView(showPaymentsModal, '');
+}
+
+function showSwapRequestsFullScreen() {
+    showFullScreenView(showMyLessonsForSwap, '');
+}
+
+function showMyInfoFullScreen() {
+    showFullScreenView(showMyInfo, '');
 }
 
 function miniCalSelectDate(year, month, day) {
