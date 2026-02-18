@@ -19,8 +19,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314b8a6'/><circle cx='16' cy='14' r='9' fill='%23fbbf24'/><circle cx='13' cy='12' r='2' fill='%231c1917'/><circle cx='19' cy='12' r='2' fill='%231c1917'/><text x='16' y='28' text-anchor='middle' font-size='10' fill='white'>â™ª</text></svg>">
     
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="manifest.json">
+    <!-- Web App Manifest (inline) -->
+    <link rel="manifest" href="data:application/json,{%22name%22:%22Loonie%20Bird%22,%22short_name%22:%22Loonie%20Bird%22,%22description%22:%22Music%20lesson%20scheduling%20app%22,%22start_url%22:%22.%22,%22display%22:%22standalone%22,%22background_color%22:%22%23fafaf9%22,%22theme_color%22:%22%2314b8a6%22}">
     
     <!-- Splash Screens for iOS -->
     <meta name="apple-mobile-web-app-orientations" content="portrait">
@@ -4429,384 +4429,7 @@
         .site-anim-d2 { animation-delay: 0.2s; }
         .site-anim-d3 { animation-delay: 0.3s; }
         .site-anim-d4 { animation-delay: 0.4s; }
-        
-        /* ===== MESSAGING SYSTEM ===== */
-        .dashboard-card-messages::before { 
-            background: var(--violet-500); 
-        }
-        .dashboard-card-messages:hover { 
-            border-color: var(--violet-400); 
-        }
-        [data-theme="dark"] .dashboard-card-messages:hover { 
-            border-color: var(--violet-600); 
-        }
-        .dashboard-card-messages .dashboard-card-icon {
-            color: var(--violet-600);
-        }
-        .dashboard-card-messages:hover .dashboard-card-icon {
-            color: var(--violet-700);
-        }
-        
-        .message-container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            background: var(--stone-50);
-        }
-        
-        .message-sidebar {
-            width: 100%;
-            max-width: 380px;
-            border-right: 1px solid var(--stone-200);
-            background: white;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .message-main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background: var(--stone-50);
-        }
-        
-        .message-header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--stone-200);
-            background: white;
-        }
-        
-        .message-header h2 {
-            font-size: 1.5rem;
-            color: var(--stone-800);
-            margin-bottom: 0.25rem;
-        }
-        
-        .message-header-subtitle {
-            color: var(--stone-500);
-            font-size: 0.875rem;
-        }
-        
-        .conversation-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 0.5rem;
-        }
-        
-        .conversation-item {
-            padding: 1rem 1.25rem;
-            border-radius: 12px;
-            margin-bottom: 0.5rem;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            border: 2px solid transparent;
-            background: var(--stone-50);
-            position: relative;
-        }
-        
-        .conversation-item:hover {
-            background: var(--stone-100);
-            border-color: var(--violet-200);
-        }
-        
-        .conversation-item.active {
-            background: var(--violet-50);
-            border-color: var(--violet-500);
-        }
-        
-        .conversation-item.has-unread {
-            background: var(--violet-50);
-            border-color: var(--violet-200);
-            font-weight: 600;
-        }
-        
-        .conversation-item.has-unread::before {
-            content: '';
-            position: absolute;
-            left: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background: var(--violet-600);
-            border-radius: 50%;
-        }
-        
-        .conversation-name {
-            font-weight: 600;
-            color: var(--stone-800);
-            margin-bottom: 0.25rem;
-            font-size: 0.9rem;
-        }
-        
-        .conversation-preview {
-            color: var(--stone-500);
-            font-size: 0.8rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .conversation-time {
-            color: var(--stone-400);
-            font-size: 0.7rem;
-            margin-top: 0.25rem;
-        }
-        
-        .conversation-item.has-unread .conversation-preview,
-        .conversation-item.has-unread .conversation-name {
-            color: var(--violet-800);
-        }
-        
-        .message-thread {
-            flex: 1;
-            overflow-y: auto;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .message-bubble {
-            max-width: 65%;
-            padding: 0.875rem 1.125rem;
-            border-radius: 16px;
-            line-height: 1.5;
-            word-wrap: break-word;
-        }
-        
-        .message-bubble.sent {
-            align-self: flex-end;
-            background: linear-gradient(135deg, var(--teal-500) 0%, var(--teal-600) 100%);
-            color: white;
-            border-bottom-right-radius: 4px;
-            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.25);
-        }
-        
-        .message-bubble.received {
-            align-self: flex-start;
-            background: white;
-            color: var(--stone-800);
-            border: 1px solid var(--stone-200);
-            border-bottom-left-radius: 4px;
-        }
-        
-        .message-timestamp {
-            font-size: 0.7rem;
-            opacity: 0.7;
-            margin-top: 0.5rem;
-        }
-        
-        .message-sender-name {
-            font-weight: 600;
-            font-size: 0.75rem;
-            margin-bottom: 0.25rem;
-            opacity: 0.85;
-        }
-        
-        .message-compose {
-            padding: 1.5rem 2rem;
-            background: white;
-            border-top: 1px solid var(--stone-200);
-        }
-        
-        .message-input-wrapper {
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-end;
-        }
-        
-        .message-input {
-            flex: 1;
-            padding: 0.875rem 1.125rem;
-            border: 2px solid var(--stone-200);
-            border-radius: 24px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            resize: none;
-            min-height: 48px;
-            max-height: 150px;
-            transition: border-color 0.15s ease;
-        }
-        
-        .message-input:focus {
-            outline: none;
-            border-color: var(--violet-500);
-        }
-        
-        .message-send-btn {
-            background: linear-gradient(135deg, var(--violet-500) 0%, var(--violet-600) 100%);
-            color: white;
-            border: none;
-            border-radius: 24px;
-            padding: 0.875rem 1.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            height: 48px;
-        }
-        
-        .message-send-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-        
-        .message-send-btn:active {
-            transform: translateY(0);
-        }
-        
-        .message-empty-state {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: var(--stone-400);
-            padding: 3rem;
-            text-align: center;
-        }
-        
-        .message-empty-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--stone-100);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            color: var(--violet-500);
-        }
-        
-        .message-empty-text {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--stone-600);
-        }
-        
-        .message-empty-subtext {
-            font-size: 0.875rem;
-            color: var(--stone-400);
-        }
-        
-        .new-message-btn {
-            margin: 1rem;
-            padding: 0.875rem 1.25rem;
-            background: linear-gradient(135deg, var(--violet-500) 0%, var(--violet-600) 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .new-message-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-        
-        .message-badge {
-            background: var(--violet-600);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.125rem 0.5rem;
-            border-radius: 12px;
-            min-width: 20px;
-            text-align: center;
-            margin-left: 0.5rem;
-        }
-        
-        .conversation-search {
-            padding: 1rem;
-            border-bottom: 1px solid var(--stone-200);
-        }
-        
-        .conversation-search input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--stone-200);
-            border-radius: 12px;
-            font-family: var(--font-body);
-            font-size: 0.875rem;
-        }
-        
-        .conversation-search input:focus {
-            outline: none;
-            border-color: var(--violet-500);
-        }
-        
-        [data-theme="dark"] .message-sidebar,
-        [data-theme="dark"] .message-header,
-        [data-theme="dark"] .message-compose {
-            background: #1c1917;
-            border-color: #44403c;
-        }
-        
-        [data-theme="dark"] .message-main {
-            background: #292524;
-        }
-        
-        [data-theme="dark"] .conversation-item {
-            background: #292524;
-        }
-        
-        [data-theme="dark"] .conversation-item:hover {
-            background: #44403c;
-        }
-        
-        [data-theme="dark"] .conversation-item.active {
-            background: #44403c;
-            border-color: var(--violet-600);
-        }
-        
-        [data-theme="dark"] .message-bubble.sent {
-            background: linear-gradient(135deg, var(--teal-600) 0%, var(--teal-700) 100%);
-            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
-        }
-        
-        [data-theme="dark"] .message-bubble.received {
-            background: #1c1917;
-            border-color: #44403c;
-            color: #f5f5f4;
-        }
-        
-        [data-theme="dark"] .message-input {
-            background: #292524;
-            border-color: #44403c;
-            color: #f5f5f4;
-        }
-        
-        @media (max-width: 768px) {
-            .message-sidebar {
-                max-width: 100%;
-            }
-            
-            .message-bubble {
-                max-width: 85%;
-            }
-            
-            .message-thread {
-                padding: 1rem;
-            }
-        }
     </style>
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/service-worker.js");
-        }
-    </script>
-
 </head>
 <body>
     <!-- iOS Splash Screen -->
@@ -5033,13 +4656,6 @@
                     <div class="dashboard-card-desc">Invoices, balances, and payment history</div>
                     <div class="dashboard-card-stat" id="dashPaymentStat"></div>
                 </div>
-                
-                <div class="dashboard-card dashboard-card-messages" onclick="showMessagesFullScreen()">
-                    <div class="dashboard-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-                    <div class="dashboard-card-label">Messages</div>
-                    <div class="dashboard-card-desc">Chat with students and families</div>
-                    <div class="dashboard-card-stat" id="dashMessageStat">0 unread</div>
-                </div>
             </div>
             
             <div class="dashboard-footer">
@@ -5094,10 +4710,6 @@
                 <div id="studentControls" class="control-bar hidden">
                     <button id="studentLogoutBtn" onclick="logoutStudent()" class="back-arrow-btn logout-btn" title="Logout" style="display: none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                    </button>
-                    <button onclick="showStudentMessagesFullScreen()" class="btn btn-messages">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Message Teacher
-                        <span id="studentMessageBadge" class="badge hidden">0</span>
                     </button>
                     <button onclick="showSwapRequestsFullScreen()" class="btn btn-swap">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg> Swap Lesson with another student
@@ -5160,14 +4772,12 @@ function saveData() {
         seenNotifications: seenNotifications,
         seenRescheduleNotifications: seenRescheduleNotifications,
         studentNotifications: window.studentNotifications || [],
-        messages: messages,
         nextId: nextId,
         nextSeriesId: nextSeriesId,
         nextBlockId: nextBlockId,
         nextSwapId: nextSwapId,
         nextMoveId: nextMoveId,
         nextPaymentId: nextPaymentId,
-        nextMessageId: nextMessageId,
         stripeConfig: stripeConfig,
         achPayments: achPayments,
         nextAchPaymentId: nextAchPaymentId,
@@ -5212,14 +4822,12 @@ function loadData() {
             if(data.seenNotifications) seenNotifications = data.seenNotifications;
             if(data.seenRescheduleNotifications) seenRescheduleNotifications = data.seenRescheduleNotifications;
             if(data.studentNotifications) window.studentNotifications = data.studentNotifications;
-            if(data.messages) messages = data.messages;
             if(data.nextId) nextId = data.nextId;
             if(data.nextSeriesId) nextSeriesId = data.nextSeriesId;
             if(data.nextBlockId) nextBlockId = data.nextBlockId;
             if(data.nextSwapId) nextSwapId = data.nextSwapId;
             if(data.nextMoveId) nextMoveId = data.nextMoveId;
             if(data.nextPaymentId) nextPaymentId = data.nextPaymentId;
-            if(data.nextMessageId) nextMessageId = data.nextMessageId;
             if(data.stripeConfig) stripeConfig = data.stripeConfig;
             if(data.achPayments) achPayments = data.achPayments;
             if(data.nextAchPaymentId) nextAchPaymentId = data.nextAchPaymentId;
@@ -5542,16 +5150,6 @@ let moveRequests = [
     {id: 1, studentName: "Olivia Davis", lessonId: 3, currentDay: 2, currentTime: "15:00", currentWeek: 0, newDay: 3, newTime: "16:00", newWeek: 1, duration: 45, status: "pending", timestamp: "2025-01-28T10:00:00Z"}
 ];
 let nextMoveId = 2;
-
-// Messaging system
-let messages = [
-    // Demo messages
-    {id: 1, conversationId: "Emma Smith", from: "teacher", to: "Emma Smith", text: "Great progress on your scales this week!", timestamp: "2025-02-08T10:00:00Z", read: true},
-    {id: 2, conversationId: "Emma Smith", from: "Emma Smith", to: "teacher", text: "Thank you! I've been practicing every day.", timestamp: "2025-02-08T10:15:00Z", read: true},
-    {id: 3, conversationId: "Noah Wilson", from: "Noah Wilson", to: "teacher", text: "Can I request a different time for next week?", timestamp: "2025-02-09T14:00:00Z", read: false},
-    {id: 4, conversationId: "Sophia Garcia", from: "teacher", to: "Sophia Garcia", text: "Don't forget your recital is coming up next month!", timestamp: "2025-02-09T16:00:00Z", read: false}
-];
-let nextMessageId = 5;
 let loginMode = null;
 let loggedInStudent = null;
 let seenNotifications = {}; // Track which resolved swaps each student has seen
@@ -5781,9 +5379,6 @@ function updateDashboardStats() {
     if(blockEl) {
         blockEl.textContent = thisWeekBlocks + ' block' + (thisWeekBlocks !== 1 ? 's' : '') + ' this week';
     }
-    
-    // Update message badges
-    updateMessageBadges();
 }
 
 function goToCalendar() {
@@ -5859,10 +5454,6 @@ function loginAsStudent() {
     document.getElementById('studentInfoBadge').innerHTML = '<button onclick="showMyInfoFullScreen()" class="theme-toggle" title="My Info" style="margin-right: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>' + initials;
     document.body.style.overflow = 'hidden';
     document.body.style.height = '100vh';
-    
-    // Update message badges for student
-    updateMessageBadges();
-    
     // Force render after DOM is fully painted
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -12244,339 +11835,6 @@ function showSwapRequestsFullScreen() {
 
 function showMyInfoFullScreen() {
     showFullScreenView(showMyInfo, '');
-}
-
-// ===== MESSAGING FUNCTIONS =====
-function showMessagesFullScreen() {
-    showFullScreenView(showMessagesView, 'Messages');
-}
-
-function showStudentMessagesFullScreen() {
-    showFullScreenView(showStudentMessagesView, 'Messages');
-}
-
-function getConversations() {
-    // Get unique conversation IDs (students)
-    const convIds = new Set();
-    messages.forEach(msg => {
-        convIds.add(msg.conversationId);
-    });
-    
-    // Build conversation list with last message
-    const conversations = [];
-    convIds.forEach(id => {
-        const convMessages = messages.filter(m => m.conversationId === id);
-        const lastMsg = convMessages[convMessages.length - 1];
-        const unreadCount = convMessages.filter(m => !m.read && m.from !== 'teacher').length;
-        
-        conversations.push({
-            id: id,
-            name: id,
-            lastMessage: lastMsg.text,
-            lastTimestamp: lastMsg.timestamp,
-            unreadCount: unreadCount,
-            hasUnread: unreadCount > 0
-        });
-    });
-    
-    // Sort by most recent
-    conversations.sort((a, b) => new Date(b.lastTimestamp) - new Date(a.lastTimestamp));
-    return conversations;
-}
-
-function getUnreadMessageCount() {
-    if (loginMode === 'teacher') {
-        return messages.filter(m => !m.read && m.from !== 'teacher').length;
-    } else if (loggedInStudent) {
-        const studentName = loggedInStudent.firstName + ' ' + loggedInStudent.lastName;
-        return messages.filter(m => !m.read && m.conversationId === studentName && m.from === 'teacher').length;
-    }
-    return 0;
-}
-
-function markConversationRead(conversationId, reader) {
-    messages.forEach(msg => {
-        if (msg.conversationId === conversationId && msg.from !== reader) {
-            msg.read = true;
-        }
-    });
-    saveData();
-    updateMessageBadges();
-}
-
-function sendMessage(conversationId, text, from, to) {
-    const newMessage = {
-        id: nextMessageId++,
-        conversationId: conversationId,
-        from: from,
-        to: to,
-        text: text,
-        timestamp: new Date().toISOString(),
-        read: false
-    };
-    messages.push(newMessage);
-    saveData();
-    return newMessage;
-}
-
-function formatMessageTime(timestamp) {
-    const date = new Date(timestamp);
-    const now = new Date();
-    const diffMs = now - date;
-    const diffMins = Math.floor(diffMs / 60000);
-    
-    if (diffMins < 1) return 'Just now';
-    if (diffMins < 60) return diffMins + 'm ago';
-    if (diffMins < 1440) return Math.floor(diffMins / 60) + 'h ago';
-    
-    const days = Math.floor(diffMins / 1440);
-    if (days === 1) return 'Yesterday';
-    if (days < 7) return days + 'd ago';
-    
-    return date.toLocaleDateString();
-}
-
-function formatMessageTimestamp(timestamp) {
-    const date = new Date(timestamp);
-    return date.toLocaleString('en-US', { 
-        month: 'short', 
-        day: 'numeric', 
-        hour: 'numeric', 
-        minute: '2-digit',
-        hour12: true 
-    });
-}
-
-let currentConversationId = null;
-
-function showMessagesView() {
-    const conversations = getConversations();
-    
-    let html = '<div style="display: flex; height: 100%; background: var(--stone-50);">';
-    
-    // Sidebar with conversation list
-    html += '<div class="message-sidebar">';
-    html += '<div class="message-header">';
-    html += '<h2>Messages</h2>';
-    html += '<div class="message-header-subtitle">' + conversations.length + ' conversation' + (conversations.length !== 1 ? 's' : '') + '</div>';
-    html += '</div>';
-    
-    html += '<div class="conversation-list">';
-    if (conversations.length === 0) {
-        html += '<div style="padding: 2rem; text-align: center; color: var(--stone-400);">';
-        html += '<p>No messages yet</p>';
-        html += '</div>';
-    } else {
-        conversations.forEach(conv => {
-            const active = currentConversationId === conv.id ? 'active' : '';
-            const unreadClass = conv.hasUnread ? 'has-unread' : '';
-            html += '<div class="conversation-item ' + active + ' ' + unreadClass + '" onclick="selectConversation(\'' + conv.id + '\')">';
-            html += '<div class="conversation-name">' + conv.name + '</div>';
-            html += '<div class="conversation-preview">' + conv.lastMessage.substring(0, 50) + (conv.lastMessage.length > 50 ? '...' : '') + '</div>';
-            html += '<div class="conversation-time">' + formatMessageTime(conv.lastTimestamp) + '</div>';
-            html += '</div>';
-        });
-    }
-    html += '</div>';
-    html += '</div>';
-    
-    // Main message area
-    html += '<div class="message-main">';
-    html += '<div id="messageThreadArea"></div>';
-    html += '</div>';
-    
-    html += '</div>';
-    
-    html += '<button onclick="exitFullScreenView()" class="modal-close-btn" title="Close">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-    html += '</button>';
-    
-    document.getElementById('fullScreenContentArea').innerHTML = html;
-    
-    // Auto-select first conversation if any
-    if (conversations.length > 0 && !currentConversationId) {
-        selectConversation(conversations[0].id);
-    } else if (currentConversationId) {
-        selectConversation(currentConversationId);
-    } else {
-        showEmptyMessageState();
-    }
-}
-
-function showStudentMessagesView() {
-    const studentName = loggedInStudent.firstName + ' ' + loggedInStudent.lastName;
-    const conversationMessages = messages.filter(m => m.conversationId === studentName);
-    
-    // Mark messages as read
-    markConversationRead(studentName, studentName);
-    
-    let html = '<div style="display: flex; flex-direction: column; height: 100%; background: var(--stone-50);">';
-    
-    html += '<div class="message-header">';
-    html += '<h2>Message Teacher</h2>';
-    html += '<div class="message-header-subtitle">Chat with your teacher</div>';
-    html += '</div>';
-    
-    html += '<div class="message-thread" id="studentMessageThread">';
-    if (conversationMessages.length === 0) {
-        html += '<div class="message-empty-state">';
-        html += '<div class="message-empty-icon">';
-        html += '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
-        html += '</div>';
-        html += '<div class="message-empty-text">No messages yet</div>';
-        html += '<div class="message-empty-subtext">Start a conversation with your teacher</div>';
-        html += '</div>';
-    } else {
-        conversationMessages.forEach(msg => {
-            const bubbleClass = msg.from === 'teacher' ? 'received' : 'sent';
-            html += '<div class="message-bubble ' + bubbleClass + '">';
-            if (msg.from === 'teacher') {
-                html += '<div class="message-sender-name">Teacher</div>';
-            }
-            html += '<div>' + escapeHtml(msg.text) + '</div>';
-            html += '<div class="message-timestamp">' + formatMessageTimestamp(msg.timestamp) + '</div>';
-            html += '</div>';
-        });
-    }
-    html += '</div>';
-    
-    html += '<div class="message-compose">';
-    html += '<div class="message-input-wrapper">';
-    html += '<textarea class="message-input" id="studentMessageInput" placeholder="Type your message..." onkeypress="if(event.key===\'Enter\' && !event.shiftKey) { event.preventDefault(); sendStudentMessage(); }"></textarea>';
-    html += '<button class="message-send-btn" onclick="sendStudentMessage()">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-    html += 'Send';
-    html += '</button>';
-    html += '</div>';
-    html += '</div>';
-    
-    html += '</div>';
-    
-    html += '<button onclick="exitFullScreenView()" class="modal-close-btn" title="Close">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-    html += '</button>';
-    
-    document.getElementById('fullScreenContentArea').innerHTML = html;
-    
-    // Scroll to bottom
-    setTimeout(() => {
-        const thread = document.getElementById('studentMessageThread');
-        if (thread) thread.scrollTop = thread.scrollHeight;
-    }, 100);
-}
-
-function selectConversation(conversationId) {
-    currentConversationId = conversationId;
-    markConversationRead(conversationId, 'teacher');
-    
-    const conversationMessages = messages.filter(m => m.conversationId === conversationId);
-    
-    let html = '<div class="message-header">';
-    html += '<h2>' + conversationId + '</h2>';
-    html += '<div class="message-header-subtitle">' + conversationMessages.length + ' message' + (conversationMessages.length !== 1 ? 's' : '') + '</div>';
-    html += '</div>';
-    
-    html += '<div class="message-thread" id="messageThread">';
-    conversationMessages.forEach(msg => {
-        const bubbleClass = msg.from === 'teacher' ? 'sent' : 'received';
-        html += '<div class="message-bubble ' + bubbleClass + '">';
-        if (msg.from !== 'teacher') {
-            html += '<div class="message-sender-name">' + msg.from + '</div>';
-        }
-        html += '<div>' + escapeHtml(msg.text) + '</div>';
-        html += '<div class="message-timestamp">' + formatMessageTimestamp(msg.timestamp) + '</div>';
-        html += '</div>';
-    });
-    html += '</div>';
-    
-    html += '<div class="message-compose">';
-    html += '<div class="message-input-wrapper">';
-    html += '<textarea class="message-input" id="messageInput" placeholder="Type your message..." onkeypress="if(event.key===\'Enter\' && !event.shiftKey) { event.preventDefault(); sendTeacherMessage(); }"></textarea>';
-    html += '<button class="message-send-btn" onclick="sendTeacherMessage()">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-    html += 'Send';
-    html += '</button>';
-    html += '</div>';
-    html += '</div>';
-    
-    document.getElementById('messageThreadArea').innerHTML = html;
-    
-    // Scroll to bottom
-    setTimeout(() => {
-        const thread = document.getElementById('messageThread');
-        if (thread) thread.scrollTop = thread.scrollHeight;
-    }, 100);
-    
-    // Update sidebar to show active conversation
-    showMessagesView();
-}
-
-function showEmptyMessageState() {
-    let html = '<div class="message-empty-state">';
-    html += '<div class="message-empty-icon">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
-    html += '</div>';
-    html += '<div class="message-empty-text">Select a conversation</div>';
-    html += '<div class="message-empty-subtext">Choose a student to view messages</div>';
-    html += '</div>';
-    
-    document.getElementById('messageThreadArea').innerHTML = html;
-}
-
-function sendTeacherMessage() {
-    const input = document.getElementById('messageInput');
-    const text = input.value.trim();
-    
-    if (!text || !currentConversationId) return;
-    
-    sendMessage(currentConversationId, text, 'teacher', currentConversationId);
-    input.value = '';
-    
-    // Refresh the conversation view
-    selectConversation(currentConversationId);
-    updateMessageBadges();
-}
-
-function sendStudentMessage() {
-    const input = document.getElementById('studentMessageInput');
-    const text = input.value.trim();
-    
-    if (!text || !loggedInStudent) return;
-    
-    const studentName = loggedInStudent.firstName + ' ' + loggedInStudent.lastName;
-    sendMessage(studentName, text, studentName, 'teacher');
-    input.value = '';
-    
-    // Refresh the view
-    showStudentMessagesView();
-    updateMessageBadges();
-}
-
-function updateMessageBadges() {
-    const unreadCount = getUnreadMessageCount();
-    
-    // Update dashboard stat
-    const dashStat = document.getElementById('dashMessageStat');
-    if (dashStat) {
-        dashStat.textContent = unreadCount + ' unread';
-    }
-    
-    // Update student badge
-    const studentBadge = document.getElementById('studentMessageBadge');
-    if (studentBadge) {
-        if (unreadCount > 0) {
-            studentBadge.textContent = unreadCount;
-            studentBadge.classList.remove('hidden');
-        } else {
-            studentBadge.classList.add('hidden');
-        }
-    }
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
 }
 
 function miniCalSelectDate(year, month, day) {
