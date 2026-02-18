@@ -1,0 +1,28 @@
+{
+  "name": "Loonie Bird",
+  "short_name": "Loonie Bird",
+  "description": "Music lesson scheduling app for teachers",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#14b8a6",
+  "background_color": "#fafaf9",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='40' fill='%2314b8a6'/><circle cx='96' cy='90' r='52' fill='%23fbbf24'/><ellipse cx='96' cy='100' rx='36' ry='26' fill='%23f59e0b'/><circle cx='80' cy='80' r='8' fill='%231c1917'/><circle cx='112' cy='80' r='8' fill='%231c1917'/><path d='M85 105 Q96 120 107 105' stroke='%231c1917' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M58 58 Q48 38 63 43' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><path d='M134 58 Q144 38 129 43' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><text x='96' y='160' text-anchor='middle' font-family='system-ui' font-size='26' font-weight='bold' fill='white'>♪</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='110' fill='%2314b8a6'/><circle cx='256' cy='240' r='140' fill='%23fbbf24'/><ellipse cx='256' cy='270' rx='95' ry='70' fill='%23f59e0b'/><circle cx='215' cy='215' r='22' fill='%231c1917'/><circle cx='297' cy='215' r='22' fill='%231c1917'/><path d='M225 280 Q256 320 287 280' stroke='%231c1917' stroke-width='12' fill='none' stroke-linecap='round'/><path d='M155 155 Q125 100 170 115' stroke='%23fbbf24' stroke-width='18' fill='none' stroke-linecap='round'/><path d='M357 155 Q387 100 342 115' stroke='%23fbbf24' stroke-width='18' fill='none' stroke-linecap='round'/><text x='256' y='430' text-anchor='middle' font-family='system-ui' font-size='70' font-weight='bold' fill='white'>♪</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity", "music"],
+  "lang": "en",
+  "dir": "ltr"
+}
