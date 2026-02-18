@@ -19,8 +19,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314b8a6'/><circle cx='16' cy='14' r='9' fill='%23fbbf24'/><circle cx='13' cy='12' r='2' fill='%231c1917'/><circle cx='19' cy='12' r='2' fill='%231c1917'/><text x='16' y='28' text-anchor='middle' font-size='10' fill='white'>â™ª</text></svg>">
     
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="manifest.json">
+    <!-- Web App Manifest (inline) -->
+    <link rel="manifest" href="data:application/json,{%22name%22:%22Loonie%20Bird%22,%22short_name%22:%22Loonie%20Bird%22,%22description%22:%22Music%20lesson%20scheduling%20app%22,%22start_url%22:%22.%22,%22display%22:%22standalone%22,%22background_color%22:%22%23fafaf9%22,%22theme_color%22:%22%2314b8a6%22}">
     
     <!-- Splash Screens for iOS -->
     <meta name="apple-mobile-web-app-orientations" content="portrait">
@@ -896,25 +896,6 @@
         .dashboard-card-blocks::before { background: linear-gradient(90deg, var(--stone-400), var(--stone-500)); }
         .dashboard-card-blocks:hover { border-color: var(--stone-300); }
         
-        .dashboard-card-profile::before { 
-            background: linear-gradient(90deg, #e11d48 0%, #f43f5e 100%);
-        }
-        .dashboard-card-profile:hover { 
-            border-color: #f43f5e; 
-            background: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);
-        }
-        [data-theme="dark"] .dashboard-card-profile:hover { 
-            background: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);
-        }
-        .dashboard-card-profile .dashboard-card-icon {
-            background: linear-gradient(135deg, rgba(225, 29, 72, 0.15) 0%, rgba(244, 63, 94, 0.15) 100%);
-            color: #e11d48;
-        }
-        .dashboard-card-profile:hover .dashboard-card-icon {
-            background: white;
-            color: #e11d48;
-        }
-        
         .dashboard-card-icon {
             width: 44px;
             height: 44px;
@@ -1212,239 +1193,6 @@
             margin-bottom: 0;
         }
         
-        /* ===== STUDENT DASHBOARD ===== */
-        #studentDashboard {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 100;
-            background: #1c1917;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        #studentDashboard::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: url('https://images.pexels.com/photos/210764/pexels-photo-210764.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
-            filter: grayscale(1);
-            opacity: 1;
-            z-index: 0;
-        }
-        
-        #studentDashboard::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(ellipse at center, transparent 30%, rgba(28, 25, 23, 0.7) 100%);
-            z-index: 0;
-        }
-        
-        [data-theme="dark"] #studentDashboard {
-            background: #0f0e0d;
-        }
-        
-        [data-theme="dark"] #studentDashboard::before {
-            opacity: 0.25;
-        }
-        
-        .student-dash-inner {
-            max-width: 560px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem 3rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .student-dash-greeting {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .student-dash-greeting h1 {
-            font-family: var(--font-display);
-            font-size: 1.65rem;
-            font-weight: 700;
-            color: #fafaf9;
-            margin-bottom: 0.35rem;
-            line-height: 1.3;
-        }
-        
-        [data-theme="dark"] .student-dash-greeting h1 {
-            color: var(--stone-100);
-        }
-        
-        .student-dash-greeting p {
-            font-size: 1.05rem;
-            color: #a8a29e;
-            font-weight: 400;
-        }
-        
-        .student-dash-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .student-dash-card {
-            background: rgba(255, 255, 255, 0.95);
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
-            border-radius: 18px;
-            padding: 1.4rem 1.5rem;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-        
-        [data-theme="dark"] .student-dash-card {
-            background: rgba(41, 37, 36, 0.95);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .student-dash-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 5px;
-        }
-        
-        .student-dash-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-        
-        .student-dash-card:active {
-            transform: translateY(0);
-        }
-        
-        .student-dash-card-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .student-dash-card-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-        
-        .student-dash-card-text h3 {
-            font-family: var(--font-display);
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--stone-800);
-            margin-bottom: 0.2rem;
-        }
-        
-        [data-theme="dark"] .student-dash-card-text h3 {
-            color: var(--stone-100);
-        }
-        
-        .student-dash-card-text p {
-            font-size: 0.85rem;
-            color: var(--stone-500);
-            line-height: 1.4;
-        }
-        
-        /* Swap card - teal */
-        .student-dash-card-swap::before { background: linear-gradient(180deg, #14b8a6, #06b6d4); }
-        .student-dash-card-swap .student-dash-card-icon {
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(6, 182, 212, 0.15));
-            color: var(--teal-600);
-        }
-        .student-dash-card-swap:hover {
-            border-color: #06b6d4;
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.04), rgba(6, 182, 212, 0.06));
-        }
-        .student-dash-card-swap:hover .student-dash-card-icon {
-            background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
-            color: white;
-        }
-        
-        /* Admin card - violet */
-        .student-dash-card-admin::before { background: linear-gradient(180deg, #8b5cf6, #a78bfa); }
-        .student-dash-card-admin .student-dash-card-icon {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(167, 139, 250, 0.15));
-            color: var(--violet-500);
-        }
-        .student-dash-card-admin:hover {
-            border-color: var(--violet-300);
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.04), rgba(167, 139, 250, 0.06));
-        }
-        .student-dash-card-admin:hover .student-dash-card-icon {
-            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-            color: white;
-        }
-        
-        /* Lessons card - orange */
-        .student-dash-card-lessons::before { background: linear-gradient(180deg, #f97316, #fb923c); }
-        .student-dash-card-lessons .student-dash-card-icon {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(251, 146, 60, 0.15));
-            color: var(--orange);
-        }
-        .student-dash-card-lessons:hover {
-            border-color: var(--orange);
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.04), rgba(251, 146, 60, 0.06));
-        }
-        .student-dash-card-lessons:hover .student-dash-card-icon {
-            background: linear-gradient(135deg, #f97316, #fb923c);
-            color: white;
-        }
-        
-        .student-dash-logout {
-            display: flex;
-            justify-content: center;
-            margin-top: 2.5rem;
-        }
-        
-        .student-dash-logout button {
-            background: none;
-            border: 1.5px solid rgba(255, 255, 255, 0.25);
-            border-radius: 12px;
-            padding: 0.65rem 1.8rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #a8a29e;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: var(--font-body);
-        }
-        
-        .student-dash-logout button:hover {
-            border-color: rgba(255, 255, 255, 0.4);
-            color: #fafaf9;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        [data-theme="dark"] .student-dash-logout button:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            color: var(--stone-200);
-            background: rgba(255, 255, 255, 0.08);
-        }
-        
-        .student-dash-badge {
-            background: #ef4444;
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.15rem 0.5rem;
-            border-radius: 10px;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-
         .header-brand {
             display: flex;
             align-items: center;
@@ -1643,19 +1391,6 @@
         }
         
         .btn-payments:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-            border-color: var(--stone-400);
-        }
-        
-        .btn-print {
-            background: white;
-            color: var(--stone-800);
-            border: 1px solid var(--stone-300);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-        
-        .btn-print:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             border-color: var(--stone-400);
@@ -2307,7 +2042,7 @@
         
         .calendar-table th:not(:first-child),
         .calendar-table td:not(:first-child) {
-            /* width auto-distributed by table-layout: fixed */
+            width: calc((100% - 80px) / 7);
         }
         
         .calendar-table thead th {
@@ -4694,384 +4429,7 @@
         .site-anim-d2 { animation-delay: 0.2s; }
         .site-anim-d3 { animation-delay: 0.3s; }
         .site-anim-d4 { animation-delay: 0.4s; }
-        
-        /* ===== MESSAGING SYSTEM ===== */
-        .dashboard-card-messages::before { 
-            background: var(--violet-500); 
-        }
-        .dashboard-card-messages:hover { 
-            border-color: var(--violet-400); 
-        }
-        [data-theme="dark"] .dashboard-card-messages:hover { 
-            border-color: var(--violet-600); 
-        }
-        .dashboard-card-messages .dashboard-card-icon {
-            color: var(--violet-600);
-        }
-        .dashboard-card-messages:hover .dashboard-card-icon {
-            color: var(--violet-700);
-        }
-        
-        .message-container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            background: var(--stone-50);
-        }
-        
-        .message-sidebar {
-            width: 100%;
-            max-width: 380px;
-            border-right: 1px solid var(--stone-200);
-            background: white;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .message-main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background: var(--stone-50);
-        }
-        
-        .message-header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--stone-200);
-            background: white;
-        }
-        
-        .message-header h2 {
-            font-size: 1.5rem;
-            color: var(--stone-800);
-            margin-bottom: 0.25rem;
-        }
-        
-        .message-header-subtitle {
-            color: var(--stone-500);
-            font-size: 0.875rem;
-        }
-        
-        .conversation-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 0.5rem;
-        }
-        
-        .conversation-item {
-            padding: 1rem 1.25rem;
-            border-radius: 12px;
-            margin-bottom: 0.5rem;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            border: 2px solid transparent;
-            background: var(--stone-50);
-            position: relative;
-        }
-        
-        .conversation-item:hover {
-            background: var(--stone-100);
-            border-color: var(--violet-200);
-        }
-        
-        .conversation-item.active {
-            background: var(--violet-50);
-            border-color: var(--violet-500);
-        }
-        
-        .conversation-item.has-unread {
-            background: var(--violet-50);
-            border-color: var(--violet-200);
-            font-weight: 600;
-        }
-        
-        .conversation-item.has-unread::before {
-            content: '';
-            position: absolute;
-            left: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background: var(--violet-600);
-            border-radius: 50%;
-        }
-        
-        .conversation-name {
-            font-weight: 600;
-            color: var(--stone-800);
-            margin-bottom: 0.25rem;
-            font-size: 0.9rem;
-        }
-        
-        .conversation-preview {
-            color: var(--stone-500);
-            font-size: 0.8rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .conversation-time {
-            color: var(--stone-400);
-            font-size: 0.7rem;
-            margin-top: 0.25rem;
-        }
-        
-        .conversation-item.has-unread .conversation-preview,
-        .conversation-item.has-unread .conversation-name {
-            color: var(--violet-800);
-        }
-        
-        .message-thread {
-            flex: 1;
-            overflow-y: auto;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .message-bubble {
-            max-width: 65%;
-            padding: 0.875rem 1.125rem;
-            border-radius: 16px;
-            line-height: 1.5;
-            word-wrap: break-word;
-        }
-        
-        .message-bubble.sent {
-            align-self: flex-end;
-            background: linear-gradient(135deg, var(--teal-500) 0%, var(--teal-600) 100%);
-            color: white;
-            border-bottom-right-radius: 4px;
-            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.25);
-        }
-        
-        .message-bubble.received {
-            align-self: flex-start;
-            background: white;
-            color: var(--stone-800);
-            border: 1px solid var(--stone-200);
-            border-bottom-left-radius: 4px;
-        }
-        
-        .message-timestamp {
-            font-size: 0.7rem;
-            opacity: 0.7;
-            margin-top: 0.5rem;
-        }
-        
-        .message-sender-name {
-            font-weight: 600;
-            font-size: 0.75rem;
-            margin-bottom: 0.25rem;
-            opacity: 0.85;
-        }
-        
-        .message-compose {
-            padding: 1.5rem 2rem;
-            background: white;
-            border-top: 1px solid var(--stone-200);
-        }
-        
-        .message-input-wrapper {
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-end;
-        }
-        
-        .message-input {
-            flex: 1;
-            padding: 0.875rem 1.125rem;
-            border: 2px solid var(--stone-200);
-            border-radius: 24px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            resize: none;
-            min-height: 48px;
-            max-height: 150px;
-            transition: border-color 0.15s ease;
-        }
-        
-        .message-input:focus {
-            outline: none;
-            border-color: var(--violet-500);
-        }
-        
-        .message-send-btn {
-            background: linear-gradient(135deg, var(--violet-500) 0%, var(--violet-600) 100%);
-            color: white;
-            border: none;
-            border-radius: 24px;
-            padding: 0.875rem 1.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            height: 48px;
-        }
-        
-        .message-send-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-        
-        .message-send-btn:active {
-            transform: translateY(0);
-        }
-        
-        .message-empty-state {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: var(--stone-400);
-            padding: 3rem;
-            text-align: center;
-        }
-        
-        .message-empty-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--stone-100);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            color: var(--violet-500);
-        }
-        
-        .message-empty-text {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--stone-600);
-        }
-        
-        .message-empty-subtext {
-            font-size: 0.875rem;
-            color: var(--stone-400);
-        }
-        
-        .new-message-btn {
-            margin: 1rem;
-            padding: 0.875rem 1.25rem;
-            background: linear-gradient(135deg, var(--violet-500) 0%, var(--violet-600) 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .new-message-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-        
-        .message-badge {
-            background: var(--violet-600);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.125rem 0.5rem;
-            border-radius: 12px;
-            min-width: 20px;
-            text-align: center;
-            margin-left: 0.5rem;
-        }
-        
-        .conversation-search {
-            padding: 1rem;
-            border-bottom: 1px solid var(--stone-200);
-        }
-        
-        .conversation-search input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--stone-200);
-            border-radius: 12px;
-            font-family: var(--font-body);
-            font-size: 0.875rem;
-        }
-        
-        .conversation-search input:focus {
-            outline: none;
-            border-color: var(--violet-500);
-        }
-        
-        [data-theme="dark"] .message-sidebar,
-        [data-theme="dark"] .message-header,
-        [data-theme="dark"] .message-compose {
-            background: #1c1917;
-            border-color: #44403c;
-        }
-        
-        [data-theme="dark"] .message-main {
-            background: #292524;
-        }
-        
-        [data-theme="dark"] .conversation-item {
-            background: #292524;
-        }
-        
-        [data-theme="dark"] .conversation-item:hover {
-            background: #44403c;
-        }
-        
-        [data-theme="dark"] .conversation-item.active {
-            background: #44403c;
-            border-color: var(--violet-600);
-        }
-        
-        [data-theme="dark"] .message-bubble.sent {
-            background: linear-gradient(135deg, var(--teal-600) 0%, var(--teal-700) 100%);
-            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
-        }
-        
-        [data-theme="dark"] .message-bubble.received {
-            background: #1c1917;
-            border-color: #44403c;
-            color: #f5f5f4;
-        }
-        
-        [data-theme="dark"] .message-input {
-            background: #292524;
-            border-color: #44403c;
-            color: #f5f5f4;
-        }
-        
-        @media (max-width: 768px) {
-            .message-sidebar {
-                max-width: 100%;
-            }
-            
-            .message-bubble {
-                max-width: 85%;
-            }
-            
-            .message-thread {
-                padding: 1rem;
-            }
-        }
     </style>
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/service-worker.js");
-        }
-    </script>
-
 </head>
 <body>
     <!-- iOS Splash Screen -->
@@ -5298,19 +4656,6 @@
                     <div class="dashboard-card-desc">Invoices, balances, and payment history</div>
                     <div class="dashboard-card-stat" id="dashPaymentStat"></div>
                 </div>
-                
-                <div class="dashboard-card dashboard-card-messages" onclick="showMessagesFullScreen()">
-                    <div class="dashboard-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-                    <div class="dashboard-card-label">Messages</div>
-                    <div class="dashboard-card-desc">Chat with students and families</div>
-                    <div class="dashboard-card-stat" id="dashMessageStat">0 unread</div>
-                </div>
-                <div class="dashboard-card dashboard-card-profile" onclick="showTeacherProfileFullScreen()">
-                    <div class="dashboard-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></div>
-                    <div class="dashboard-card-label">Profile Settings</div>
-                    <div class="dashboard-card-desc">Your name, email, and contact info</div>
-                    <div class="dashboard-card-stat" id="dashProfileStat"></div>
-                </div>
             </div>
             
             <div class="dashboard-footer">
@@ -5353,9 +4698,6 @@
                     <button onclick="showScheduleRequests()" class="btn btn-requests" id="teacherRequestsBtn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg> Requests
                     </button>
-                    <button onclick="printWeekSchedule()" class="btn btn-print" title="Print Schedule">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg> Print
-                    </button>
                     <div class="week-nav">
                         <button onclick="changeWeek(-1)" class="btn-nav" title="Previous week"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
                         <button id="weekLabel" onclick="goToToday()" class="btn-nav btn-today">Today</button>
@@ -5366,12 +4708,8 @@
                 </div>
                 
                 <div id="studentControls" class="control-bar hidden">
-                    <button id="studentLogoutBtn" onclick="showStudentDashboard()" class="back-arrow-btn" title="Back to Dashboard" style="display: none;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    </button>
-                    <button onclick="showStudentMessagesFullScreen()" class="btn btn-messages">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Message Teacher
-                        <span id="studentMessageBadge" class="badge hidden">0</span>
+                    <button id="studentLogoutBtn" onclick="logoutStudent()" class="back-arrow-btn logout-btn" title="Logout" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                     </button>
                     <button onclick="showSwapRequestsFullScreen()" class="btn btn-swap">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg> Swap Lesson with another student
@@ -5399,51 +4737,6 @@
         <button id="fab" class="fab hidden" onclick="showAddModal()" title="Add Lesson">+</button>
     </div>
     
-    <!-- Student Dashboard -->
-    <div id="studentDashboard">
-        <div class="student-dash-inner">
-            <div class="student-dash-greeting">
-                <h1 id="studentDashGreeting">Hi there!</h1>
-                <p>What would you like to do today?</p>
-            </div>
-            <div class="student-dash-cards">
-                <div class="student-dash-card student-dash-card-swap" onclick="studentDashGoSwap()">
-                    <div class="student-dash-card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
-                    </div>
-                    <div class="student-dash-card-text">
-                        <h3>Request a Lesson Swap <span id="studentDashSwapBadge" class="student-dash-badge" style="display:none;">0</span></h3>
-                        <p>Swap your lesson time with another student</p>
-                    </div>
-                </div>
-                <div class="student-dash-card student-dash-card-admin" onclick="studentDashGoAdmin()">
-                    <div class="student-dash-card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    </div>
-                    <div class="student-dash-card-text">
-                        <h3>My Info &amp; Account</h3>
-                        <p>Update personal info, view billing, and other admin</p>
-                    </div>
-                </div>
-                <div class="student-dash-card student-dash-card-lessons" onclick="studentDashGoLessons()">
-                    <div class="student-dash-card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                    </div>
-                    <div class="student-dash-card-text">
-                        <h3>View Upcoming Lessons</h3>
-                        <p>See your schedule and lesson calendar</p>
-                    </div>
-                </div>
-            </div>
-            <div class="student-dash-logout">
-                <button onclick="logoutStudent()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 0.4rem; transform: scaleX(-1);"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-                    Log Out
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Full Screen View Container -->
     <div id="fullScreenView" style="display: none;">
         <div id="fullScreenContent"></div>
@@ -5479,18 +4772,15 @@ function saveData() {
         seenNotifications: seenNotifications,
         seenRescheduleNotifications: seenRescheduleNotifications,
         studentNotifications: window.studentNotifications || [],
-        messages: messages,
         nextId: nextId,
         nextSeriesId: nextSeriesId,
         nextBlockId: nextBlockId,
         nextSwapId: nextSwapId,
         nextMoveId: nextMoveId,
         nextPaymentId: nextPaymentId,
-        nextMessageId: nextMessageId,
         stripeConfig: stripeConfig,
         achPayments: achPayments,
         nextAchPaymentId: nextAchPaymentId,
-        teacherProfile: teacherProfile,
         darkMode: document.documentElement.getAttribute('data-theme') === 'dark'
     };
     
@@ -5532,18 +4822,15 @@ function loadData() {
             if(data.seenNotifications) seenNotifications = data.seenNotifications;
             if(data.seenRescheduleNotifications) seenRescheduleNotifications = data.seenRescheduleNotifications;
             if(data.studentNotifications) window.studentNotifications = data.studentNotifications;
-            if(data.messages) messages = data.messages;
             if(data.nextId) nextId = data.nextId;
             if(data.nextSeriesId) nextSeriesId = data.nextSeriesId;
             if(data.nextBlockId) nextBlockId = data.nextBlockId;
             if(data.nextSwapId) nextSwapId = data.nextSwapId;
             if(data.nextMoveId) nextMoveId = data.nextMoveId;
             if(data.nextPaymentId) nextPaymentId = data.nextPaymentId;
-            if(data.nextMessageId) nextMessageId = data.nextMessageId;
             if(data.stripeConfig) stripeConfig = data.stripeConfig;
             if(data.achPayments) achPayments = data.achPayments;
             if(data.nextAchPaymentId) nextAchPaymentId = data.nextAchPaymentId;
-            if(data.teacherProfile) teacherProfile = data.teacherProfile;
             if(data.darkMode) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 updateThemeIcon();
@@ -5863,28 +5150,6 @@ let moveRequests = [
     {id: 1, studentName: "Olivia Davis", lessonId: 3, currentDay: 2, currentTime: "15:00", currentWeek: 0, newDay: 3, newTime: "16:00", newWeek: 1, duration: 45, status: "pending", timestamp: "2025-01-28T10:00:00Z"}
 ];
 let nextMoveId = 2;
-
-// Messaging system
-let messages = [
-    // Demo messages
-    {id: 1, conversationId: "Emma Smith", from: "teacher", to: "Emma Smith", text: "Great progress on your scales this week!", timestamp: "2025-02-08T10:00:00Z", read: true},
-    {id: 2, conversationId: "Emma Smith", from: "Emma Smith", to: "teacher", text: "Thank you! I've been practicing every day.", timestamp: "2025-02-08T10:15:00Z", read: true},
-    {id: 3, conversationId: "Noah Wilson", from: "Noah Wilson", to: "teacher", text: "Can I request a different time for next week?", timestamp: "2025-02-09T14:00:00Z", read: false},
-    {id: 4, conversationId: "Sophia Garcia", from: "teacher", to: "Sophia Garcia", text: "Don't forget your recital is coming up next month!", timestamp: "2025-02-09T16:00:00Z", read: false}
-];
-let nextMessageId = 5;
-let teacherProfile = {
-    name: '',
-    email: '',
-    phone: '',
-    street: '',
-    city: '',
-    state: '',
-    zip: '',
-    startHour: 8,
-    endHour: 20,
-    teachingDays: [0, 1, 2, 3, 4] // Mon-Fri by default
-};
 let loginMode = null;
 let loggedInStudent = null;
 let seenNotifications = {}; // Track which resolved swaps each student has seen
@@ -6114,11 +5379,6 @@ function updateDashboardStats() {
     if(blockEl) {
         blockEl.textContent = thisWeekBlocks + ' block' + (thisWeekBlocks !== 1 ? 's' : '') + ' this week';
     }
-    
-    // Update message badges
-    updateMessageBadges();
-    // Profile stat
-    updateDashboardProfileStat();
 }
 
 function goToCalendar() {
@@ -6174,12 +5434,32 @@ function loginAsStudent() {
     document.body.classList.remove('teacher-mode');
     document.body.classList.add('student-mode');
     document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('mainApp').classList.add('active');
+    document.getElementById('teacherControls').classList.add('hidden');
+    document.getElementById('studentControls').classList.remove('hidden');
+    document.getElementById('fab').classList.add('hidden');
     
-    // Show student dashboard instead of going straight to calendar
-    showStudentDashboard();
+    // Change back arrow to logout button for students (keep teal styling)
+    const headerBtn = document.getElementById('headerBackBtn');
+    headerBtn.onclick = logoutStudent;
+    headerBtn.title = 'Logout';
+    // Don't add logout-btn class - keep teal styling
+    headerBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>';
     
+    // Show student initials instead of full name
+    const initials = student.firstName.charAt(0) + student.lastName.charAt(0);
+    document.getElementById('loginStatus').innerHTML = '<button onclick="showMyInfoFullScreen()" class="theme-toggle" title="My Info" style="margin-right: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>' + initials;
+    
+    // Also populate the student info badge in the control bar
+    document.getElementById('studentInfoBadge').innerHTML = '<button onclick="showMyInfoFullScreen()" class="theme-toggle" title="My Info" style="margin-right: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>' + initials;
     document.body.style.overflow = 'hidden';
     document.body.style.height = '100vh';
+    // Force render after DOM is fully painted
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            render();
+        });
+    });
     
     // Check for notifications
     setTimeout(() => checkStudentNotifications(student.firstName + ' ' + student.lastName), 500);
@@ -6489,8 +5769,6 @@ function logout() {
     document.body.classList.remove('teacher-mode', 'student-mode');
     document.getElementById('mainApp').classList.remove('active');
     document.getElementById('teacherDashboard').style.display = 'none';
-    document.getElementById('studentDashboard').style.display = 'none';
-    document.getElementById('fullScreenView').style.display = 'none';
     document.getElementById('fab').classList.add('hidden');
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('publicWebsite').style.display = '';
@@ -6521,20 +5799,7 @@ function render() {
     }
     
     const weekLessons = lessons.filter(l => l.week === currentWeek);
-    
-    // Filter times to teaching hours
-    const startH = teacherProfile.startHour || 8;
-    const endH = teacherProfile.endHour || 20;
-    const times = allTimes.filter(t => {
-        const h = parseInt(t.split(':')[0]);
-        return h >= startH && h < endH;
-    });
-    
-    // Determine which days to show
-    const activeDays = teacherProfile.teachingDays && teacherProfile.teachingDays.length > 0 
-        ? teacherProfile.teachingDays 
-        : [0, 1, 2, 3, 4];
-    const displayDays = loginMode === 'student' ? activeDays : activeDays; // both use the setting
+    const times = allTimes;
     
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -6542,8 +5807,7 @@ function render() {
     startOfWeek.setDate(today.getDate() - today.getDay() + 1 + (currentWeek * 7));
     
     let html = "<div class='calendar-table-wrapper'><table class='calendar-table'><thead><tr><th>Time</th>";
-    displayDays.forEach(i => {
-        const d = days[i];
+    days.forEach((d, i) => {
         const dayDate = new Date(startOfWeek);
         dayDate.setDate(startOfWeek.getDate() + i);
         const monthDay = (dayDate.getMonth() + 1) + '/' + dayDate.getDate();
@@ -6567,8 +5831,7 @@ function render() {
         const hour = time.split(':')[0];
         html += "<tr><td>" + time + "</td>";
         
-        for(let di = 0; di < displayDays.length; di++) {
-            const d = displayDays[di];
+        for(let d = 0; d < 7; d++) {
             const cellDate = new Date(startOfWeek);
             cellDate.setDate(startOfWeek.getDate() + d);
             const isPastCell = isTimeInPast(currentWeek, d, time);
@@ -12552,9 +11815,6 @@ function exitFullScreenView() {
     // Return to appropriate view
     if(_fullScreenReturnView === 'dashboard') {
         goToDashboard();
-    } else if(loginMode === 'student') {
-        // Students go back to their dashboard
-        showStudentDashboard();
     } else {
         document.getElementById('mainApp').classList.add('active');
         render();
@@ -12569,849 +11829,12 @@ function showPaymentsFullScreen() {
     showFullScreenView(showPaymentsModal, '');
 }
 
-function showTeacherProfileFullScreen() {
-    showFullScreenView(showTeacherProfileSettings, '');
-}
-
-function showTeacherProfileSettings() {
-    const area = document.getElementById('fullScreenContentArea');
-    if(!area) return;
-    
-    const p = teacherProfile;
-    
-    let html = '<div style="max-width: 560px; margin: 0 auto;">';
-    
-    // Close button
-    html += '<div style="display: flex; justify-content: flex-end; margin-bottom: 0.5rem;">';
-    html += '<button onclick="exitFullScreenView()" style="background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--stone-400); transition: color 0.2s;" onmouseover="this.style.color=\'var(--stone-700)\'" onmouseout="this.style.color=\'var(--stone-400)\'">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
-    html += '</button></div>';
-    
-    // Header
-    html += '<div style="text-align: center; margin-bottom: 2rem;">';
-    html += '<div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(225, 29, 72, 0.15), rgba(244, 63, 94, 0.15)); color: #e11d48; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>';
-    html += '</div>';
-    html += '<h2 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--stone-800); margin-bottom: 0.25rem;">Profile Settings</h2>';
-    html += '<p style="font-size: 0.9rem; color: var(--stone-500);">Your contact info for notifications and communications</p>';
-    html += '</div>';
-    
-    // Form
-    html += '<div style="display: flex; flex-direction: column; gap: 1.25rem;">';
-    
-    // Name field
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Full Name</label>';
-    html += '<input type="text" id="teacherProfileName" value="' + escapeHtml(p.name) + '" placeholder="e.g. Melanie Johnson" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box;" onfocus="this.style.borderColor=\'#e11d48\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    html += '</div>';
-    
-    // Email field
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Email Address</label>';
-    html += '<input type="email" id="teacherProfileEmail" value="' + escapeHtml(p.email) + '" placeholder="e.g. melanie@studio.com" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box;" onfocus="this.style.borderColor=\'#e11d48\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    html += '</div>';
-    
-    // Phone field
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Phone Number</label>';
-    html += '<input type="tel" id="teacherProfilePhone" value="' + escapeHtml(p.phone) + '" placeholder="e.g. (612) 555-0100" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box;" onfocus="this.style.borderColor=\'#e11d48\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    html += '</div>';
-    
-    // Street field
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Street Address</label>';
-    html += '<input type="text" id="teacherProfileStreet" value="' + escapeHtml(p.street || '') + '" placeholder="e.g. 1234 Maple St" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box;" onfocus="this.style.borderColor=\'#e11d48\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    html += '</div>';
-    
-    // City, State, Zip row
-    html += '<div style="display: grid; grid-template-columns: 1fr auto auto; gap: 0.75rem;">';
-    
-    // City
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">City</label>';
-    html += '<input type="text" id="teacherProfileCity" value="' + escapeHtml(p.city || '') + '" placeholder="Minneapolis" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box;" onfocus="this.style.borderColor=\'#e11d48\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    html += '</div>';
-    
-    // State dropdown
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">State</label>';
-    html += '<select id="teacherProfileState" style="width: 100%; padding: 0.75rem 0.6rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box; cursor: pointer; appearance: auto;" onfocus="this.style.borderColor=\'#e11d48\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    html += '<option value="">--</option>';
-    var states = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC"];
-    states.forEach(function(st) {
-        html += '<option value="' + st + '"' + ((p.state || '') === st ? ' selected' : '') + '>' + st + '</option>';
-    });
-    html += '</select>';
-    html += '</div>';
-    
-    // Zip
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Zip</label>';
-    html += '<input type="text" id="teacherProfileZip" value="' + escapeHtml(p.zip || '') + '" placeholder="55408" maxlength="10" style="width: 90px; padding: 0.75rem 0.6rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box;" onfocus="this.style.borderColor=\'#e11d48\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    html += '</div>';
-    
-    html += '</div>'; // end city/state/zip row
-    
-    html += '</div>'; // end form fields
-    
-    // Teaching Schedule section
-    html += '<div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1.5px solid var(--stone-200);">';
-    html += '<div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem;">';
-    html += '<div style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(6, 182, 212, 0.15)); color: var(--teal-600); display: flex; align-items: center; justify-content: center;">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
-    html += '</div>';
-    html += '<div><div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--stone-800);">Teaching Schedule</div>';
-    html += '<div style="font-size: 0.8rem; color: var(--stone-500);">Set your default hours and days — the calendar will only show these</div></div>';
-    html += '</div>';
-    
-    // Hours row
-    html += '<div style="display: flex; gap: 1rem; align-items: end; margin-bottom: 1.25rem;">';
-    
-    // Start hour
-    html += '<div style="flex: 1;">';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Start Time</label>';
-    html += '<select id="teacherStartHour" style="width: 100%; padding: 0.75rem 0.6rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box; cursor: pointer; appearance: auto;" onfocus="this.style.borderColor=\'var(--teal-500)\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    for(var h = 5; h <= 14; h++) {
-        var ampm = h < 12 ? 'AM' : 'PM';
-        var disp = h > 12 ? (h - 12) : h;
-        if(h === 0) disp = 12;
-        html += '<option value="' + h + '"' + (p.startHour === h ? ' selected' : '') + '>' + disp + ':00 ' + ampm + '</option>';
-    }
-    html += '</select></div>';
-    
-    // End hour
-    html += '<div style="flex: 1;">';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">End Time</label>';
-    html += '<select id="teacherEndHour" style="width: 100%; padding: 0.75rem 0.6rem; border: 1.5px solid var(--stone-200); border-radius: 12px; font-size: 0.95rem; font-family: var(--font-body); background: var(--surface); color: var(--stone-800); outline: none; transition: border-color 0.2s; box-sizing: border-box; cursor: pointer; appearance: auto;" onfocus="this.style.borderColor=\'var(--teal-500)\'" onblur="this.style.borderColor=\'var(--stone-200)\'">';
-    for(var h = 14; h <= 23; h++) {
-        var ampm = h < 12 ? 'AM' : 'PM';
-        var disp = h > 12 ? (h - 12) : h;
-        html += '<option value="' + h + '"' + (p.endHour === h ? ' selected' : '') + '>' + disp + ':00 ' + ampm + '</option>';
-    }
-    html += '</select></div>';
-    
-    html += '</div>';
-    
-    // Teaching days
-    html += '<div>';
-    html += '<label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em;">Teaching Days</label>';
-    html += '<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">';
-    var dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    var activeDays = p.teachingDays || [0,1,2,3,4];
-    dayNames.forEach(function(dn, idx) {
-        var isActive = activeDays.includes(idx);
-        html += '<button type="button" id="teachDay' + idx + '" onclick="toggleTeachingDay(' + idx + ')" style="' +
-            'padding: 0.55rem 1rem; border-radius: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: var(--font-body); ' +
-            (isActive 
-                ? 'background: linear-gradient(135deg, var(--teal-500), var(--teal-600)); color: white; border: 1.5px solid var(--teal-600); box-shadow: 0 2px 6px rgba(20, 184, 166, 0.25);' 
-                : 'background: var(--surface); color: var(--stone-400); border: 1.5px solid var(--stone-200);') +
-            '">' + dn + '</button>';
-    });
-    html += '</div></div>';
-    
-    html += '</div>'; // end teaching schedule section
-    
-    // Info box
-    html += '<div class="info-box" style="margin-top: 1.5rem;">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-right: 0.5rem; vertical-align: -2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>';
-    html += '<span style="font-size: 0.85rem;">This info will be used for automatic notifications to students and families about schedule changes, lesson reminders, and other communications.</span>';
-    html += '</div>';
-    
-    // Save button
-    html += '<div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">';
-    html += '<button onclick="saveTeacherProfile()" style="flex: 1; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #e11d48, #f43f5e); color: white; border: none; border-radius: 12px; font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: var(--font-body); transition: all 0.2s;" onmouseover="this.style.opacity=\'0.9\'" onmouseout="this.style.opacity=\'1\'">Save Profile</button>';
-    html += '</div>';
-    
-    html += '</div>'; // end container
-    
-    area.innerHTML = html;
-}
-
-function saveTeacherProfile() {
-    const name = document.getElementById('teacherProfileName').value.trim();
-    const email = document.getElementById('teacherProfileEmail').value.trim();
-    const phone = document.getElementById('teacherProfilePhone').value.trim();
-    const street = document.getElementById('teacherProfileStreet').value.trim();
-    const city = document.getElementById('teacherProfileCity').value.trim();
-    const state = document.getElementById('teacherProfileState').value;
-    const zip = document.getElementById('teacherProfileZip').value.trim();
-    const startHour = parseInt(document.getElementById('teacherStartHour').value);
-    const endHour = parseInt(document.getElementById('teacherEndHour').value);
-    
-    // Collect active teaching days from button states
-    var teachingDays = [];
-    for(var i = 0; i < 7; i++) {
-        var btn = document.getElementById('teachDay' + i);
-        if(btn && btn.style.color === 'white') {
-            teachingDays.push(i);
-        }
-    }
-    if(teachingDays.length === 0) teachingDays = [0,1,2,3,4]; // fallback
-    
-    teacherProfile.name = name;
-    teacherProfile.email = email;
-    teacherProfile.phone = phone;
-    teacherProfile.street = street;
-    teacherProfile.city = city;
-    teacherProfile.state = state;
-    teacherProfile.zip = zip;
-    teacherProfile.startHour = startHour;
-    teacherProfile.endHour = endHour;
-    teacherProfile.teachingDays = teachingDays;
-    
-    saveData();
-    toast('Profile saved successfully!');
-    
-    // Update the dashboard stat
-    updateDashboardProfileStat();
-}
-
-function toggleTeachingDay(idx) {
-    var btn = document.getElementById('teachDay' + idx);
-    if(!btn) return;
-    var isActive = btn.style.color === 'white';
-    if(isActive) {
-        btn.style.background = 'var(--surface)';
-        btn.style.color = 'var(--stone-400)';
-        btn.style.border = '1.5px solid var(--stone-200)';
-        btn.style.boxShadow = 'none';
-    } else {
-        btn.style.background = 'linear-gradient(135deg, var(--teal-500), var(--teal-600))';
-        btn.style.color = 'white';
-        btn.style.border = '1.5px solid var(--teal-600)';
-        btn.style.boxShadow = '0 2px 6px rgba(20, 184, 166, 0.25)';
-    }
-}
-
-function updateDashboardProfileStat() {
-    const stat = document.getElementById('dashProfileStat');
-    if(!stat) return;
-    
-    if(teacherProfile.name) {
-        stat.textContent = teacherProfile.name;
-    } else {
-        stat.textContent = 'Not set up yet';
-        stat.style.opacity = '0.6';
-    }
-}
-
-// ===== PRINT SCHEDULE =====
-
-function printWeekSchedule() {
-    const weekLessons = lessons.filter(l => l.week === currentWeek);
-    const weekBlocks = blockedTimes.filter(b => b.week === currentWeek);
-    
-    // Calculate the week dates
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const startOfWeek = new Date(today);
-    startOfWeek.setDate(today.getDate() - today.getDay() + 1 + (currentWeek * 7));
-    
-    const formatDate = (d) => (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
-    const endOfWeek = new Date(startOfWeek);
-    endOfWeek.setDate(startOfWeek.getDate() + 6);
-    const weekRange = formatDate(startOfWeek) + ' — ' + formatDate(endOfWeek);
-    
-    const teacherName = teacherProfile.name || 'Melanie\'s Piano Studio';
-    
-    // Use teaching hours from profile
-    let minHour = teacherProfile.startHour || 8;
-    let maxHour = teacherProfile.endHour || 20;
-    
-    // Calculate cell height to fit one landscape page
-    const numRows = maxHour - minHour;
-    const availableHeight = 554;
-    const headerRowHeight = 28;
-    const cellHeight = Math.max(20, Math.min(50, Math.floor((availableHeight - headerRowHeight) / numRows)));
-    
-    // Use teaching days from profile
-    const activeDays = teacherProfile.teachingDays && teacherProfile.teachingDays.length > 0 
-        ? teacherProfile.teachingDays : [0,1,2,3,4];
-    const allDayNames = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-    
-    // Build header
-    let headerCells = '<th class="time-col">Time</th>';
-    activeDays.forEach(i => {
-        const dayDate = new Date(startOfWeek);
-        dayDate.setDate(startOfWeek.getDate() + i);
-        const dateStr = (dayDate.getMonth() + 1) + '/' + dayDate.getDate();
-        headerCells += '<th>' + allDayNames[i].substring(0, 3) + '<br><span class="hd">' + dateStr + '</span></th>';
-    });
-    
-    // Build body rows
-    let bodyRows = '';
-    for(let h = minHour; h < maxHour; h++) {
-        const timeStr = (h < 10 ? '0' : '') + h + ':00';
-        bodyRows += '<tr><td class="time-col">' + formatTime12(timeStr) + '</td>';
-        for(let di = 0; di < activeDays.length; di++) {
-            const d = activeDays[di];
-            bodyRows += '<td class="cell" data-day="' + d + '" data-hour="' + h + '">';
-            
-            // Render blocked times in this cell
-            weekBlocks.filter(b => {
-                if(b.day !== d) return false;
-                const bStart = parseInt(b.time.split(':')[0]) * 60 + parseInt(b.time.split(':')[1]);
-                const bEnd = bStart + b.duration;
-                return bStart < (h + 1) * 60 && bEnd > h * 60;
-            }).forEach(b => {
-                const bStartMin = parseInt(b.time.split(':')[0]) * 60 + parseInt(b.time.split(':')[1]);
-                const bEndMin = bStartMin + b.duration;
-                const cellStart = h * 60;
-                const cellEnd = (h + 1) * 60;
-                const visStart = Math.max(bStartMin, cellStart);
-                const visEnd = Math.min(bEndMin, cellEnd);
-                const top = ((visStart - cellStart) / 60) * cellHeight;
-                const height = ((visEnd - visStart) / 60) * cellHeight;
-                const startsHere = bStartMin >= cellStart && bStartMin < cellEnd;
-                const endsHere = bEndMin > cellStart && bEndMin <= cellEnd;
-                let br = '0';
-                if(startsHere && endsHere) br = '4px';
-                else if(startsHere) br = '4px 4px 0 0';
-                else if(endsHere) br = '0 0 4px 4px';
-                const reason = startsHere ? (b.reason === 'Closed' || b.reason === 'Weekend' ? '' : (b.reason || '')) : '';
-                bodyRows += '<div class="blk" style="top:' + top + 'px;height:' + height + 'px;border-radius:' + br + ';">' + escapeHtml(reason) + '</div>';
-            });
-            
-            // Render lessons in this cell
-            const cellLessons = weekLessons.filter(l => l.day === d && parseInt(l.time.split(':')[0]) === h);
-            
-            cellLessons.forEach(l => {
-                const mins = parseInt(l.time.split(':')[1]);
-                const top = (mins / 60) * cellHeight;
-                const height = (l.duration / 60) * cellHeight;
-                const name = l.firstName + ' ' + l.lastName.charAt(0) + '.';
-                const timeLabel = formatTime12(l.time);
-                
-                // Determine overlap for positioning
-                const allDay = weekLessons.filter(ol => ol.day === d);
-                const lStart = parseInt(l.time.split(':')[0]) * 60 + parseInt(l.time.split(':')[1]);
-                const lEnd = lStart + l.duration;
-                const overlapping = allDay.filter(o => {
-                    if(o.id === l.id) return false;
-                    const oStart = parseInt(o.time.split(':')[0]) * 60 + parseInt(o.time.split(':')[1]);
-                    const oEnd = oStart + o.duration;
-                    return lStart < oEnd && lEnd > oStart;
-                });
-                const totalCols = overlapping.length > 0 ? overlapping.length + 1 : 1;
-                let col = 0;
-                if(overlapping.length > 0) {
-                    const all = [l, ...overlapping].sort((a, b) => a.time.localeCompare(b.time) || a.id - b.id);
-                    col = all.findIndex(x => x.id === l.id);
-                }
-                const width = 100 / totalCols;
-                const left = col * width;
-                
-                const colors = [
-                    {bg:'#ccfbf1', border:'#5eead4', color:'#0f766e'},
-                    {bg:'#fef3c7', border:'#fbbf24', color:'#92400e'},
-                    {bg:'#fce7f3', border:'#f472b6', color:'#831843'},
-                    {bg:'#ddd6fe', border:'#a78bfa', color:'#5b21b6'},
-                    {bg:'#fecaca', border:'#f87171', color:'#991b1b'},
-                    {bg:'#bfdbfe', border:'#60a5fa', color:'#1e40af'}
-                ];
-                const c = colors[col % colors.length];
-                
-                bodyRows += '<div class="les" style="top:' + top + 'px;height:' + height + 'px;left:' + left + '%;width:' + width + '%;background:' + c.bg + ';border:1.5px solid ' + c.border + ';color:' + c.color + ';">';
-                bodyRows += '<strong>' + escapeHtml(name) + '</strong>';
-                if(height >= 18) bodyRows += '<br><span class="lt">' + timeLabel + ' · ' + l.duration + 'm</span>';
-                bodyRows += '</div>';
-            });
-            
-            bodyRows += '</td>';
-        }
-        bodyRows += '</tr>';
-    }
-    
-    // Summary
-    const totalLessons = weekLessons.length;
-    const totalMinutes = weekLessons.reduce((s, l) => s + l.duration, 0);
-    const totalH = Math.floor(totalMinutes / 60);
-    const totalM = totalMinutes % 60;
-    const totalStr = totalH > 0 ? totalH + 'h' + (totalM > 0 ? ' ' + totalM + 'm' : '') : totalMinutes + 'm';
-    
-    const printHtml = '<!DOCTYPE html><html><head><title>Schedule - ' + weekRange + '</title><style>' +
-        '*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }' +
-        'html, body { height: 100%; overflow: hidden; }' +
-        'body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; margin: 0; padding: 8px 12px; color: #1c1917; -webkit-print-color-adjust: exact; print-color-adjust: exact; }' +
-        '.hdr { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; padding-bottom: 5px; border-bottom: 2px solid #14b8a6; }' +
-        '.hdr h1 { font-size: 0.9rem; font-weight: 700; }' +
-        '.hdr .wr { font-size: 0.7rem; color: #57534e; }' +
-        '.hdr .si { text-align: right; font-size: 0.6rem; color: #78716c; line-height: 1.3; }' +
-        'table { width: 100%; border-collapse: collapse; table-layout: fixed; }' +
-        'thead th { background: #292524; color: white; padding: 3px 2px; font-size: 0.6rem; font-weight: 600; text-align: center; border: 1px solid #44403c; }' +
-        'thead th .hd { font-weight: 400; opacity: 0.7; font-size: 0.55rem; }' +
-        '.time-col { width: 44px; background: #fafaf9; font-weight: 600; font-size: 0.55rem; color: #78716c; text-align: center; vertical-align: middle; border: 1px solid #d6d3d1; }' +
-        '.cell { border: 1px solid #e7e5e4; height: ' + cellHeight + 'px; position: relative; vertical-align: top; padding: 0; }' +
-        '.les { position: absolute; left: 1px; right: 1px; border-radius: 3px; padding: 1px 3px; font-size: 0.5rem; overflow: hidden; line-height: 1.2; }' +
-        '.les strong { font-size: 0.52rem; white-space: nowrap; }' +
-        '.lt { font-size: 0.45rem; opacity: 0.8; white-space: nowrap; }' +
-        '.blk { position: absolute; left: 1px; right: 1px; background: repeating-linear-gradient(45deg, transparent, transparent 2px, #d6d3d1 2px, #d6d3d1 3px); border: 1px solid #a8a29e; font-size: 0.45rem; color: #78716c; text-align: center; padding: 1px; font-weight: 600; }' +
-        '.sum { margin-top: 4px; padding-top: 4px; border-top: 1px solid #d6d3d1; display: flex; gap: 1.5rem; font-size: 0.65rem; color: #57534e; }' +
-        '.sum strong { color: #1c1917; }' +
-        '@media print { body { padding: 4px 8px; } @page { size: landscape; margin: 0.3in; } table { page-break-inside: avoid; } }' +
-        '</style></head><body>' +
-        '<div class="hdr">' +
-        '<div><h1>' + escapeHtml(teacherName) + '</h1><div class="wr">Week of ' + weekRange + '</div></div>' +
-        '<div class="si">' +
-        (teacherProfile.phone ? escapeHtml(teacherProfile.phone) + '<br>' : '') +
-        (teacherProfile.email ? escapeHtml(teacherProfile.email) + '<br>' : '') +
-        (teacherProfile.street ? escapeHtml(teacherProfile.street) + '<br>' + escapeHtml(teacherProfile.city || '') + (teacherProfile.state ? ', ' + teacherProfile.state : '') + ' ' + escapeHtml(teacherProfile.zip || '') : '') +
-        '</div></div>' +
-        '<table><thead><tr>' + headerCells + '</tr></thead><tbody>' + bodyRows + '</tbody></table>' +
-        '<div class="sum"><div><strong>' + totalLessons + '</strong> lesson' + (totalLessons !== 1 ? 's' : '') + '</div><div><strong>' + totalStr + '</strong> total</div></div>' +
-        '</body></html>';
-    
-    const printWindow = window.open('', '_blank', 'width=1100,height=700');
-    printWindow.document.write(printHtml);
-    printWindow.document.close();
-    setTimeout(() => printWindow.print(), 400);
-}
-
-function formatTime12(time) {
-    if(!time) return '';
-    const parts = time.split(':');
-    let h = parseInt(parts[0]);
-    const m = parts[1];
-    const ampm = h >= 12 ? 'PM' : 'AM';
-    if(h > 12) h -= 12;
-    if(h === 0) h = 12;
-    return h + ':' + m + ' ' + ampm;
-}
-
-// ===== STUDENT DASHBOARD =====
-
-function showStudentDashboard() {
-    if(!loggedInStudent) return;
-    
-    // Hide everything else
-    document.getElementById('mainApp').classList.remove('active');
-    document.getElementById('teacherDashboard').style.display = 'none';
-    document.getElementById('loginScreen').style.display = 'none';
-    document.getElementById('fullScreenView').style.display = 'none';
-    
-    // Set greeting
-    document.getElementById('studentDashGreeting').textContent = 'Hi, ' + loggedInStudent.firstName + '!';
-    
-    // Update swap badge count
-    updateStudentDashBadges();
-    
-    // Show the dashboard
-    document.getElementById('studentDashboard').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-}
-
-function updateStudentDashBadges() {
-    if(!loggedInStudent) return;
-    const fullName = loggedInStudent.firstName + ' ' + loggedInStudent.lastName;
-    
-    // Count unread swap notifications
-    if(!seenNotifications[fullName]) seenNotifications[fullName] = [];
-    const unreadSwaps = swapRequests.filter(r => 
-        (r.status === 'approved' || r.status === 'declined') &&
-        (r.requestingStudent === fullName || r.targetStudent === fullName) &&
-        !seenNotifications[fullName].includes(r.id)
-    ).length;
-    
-    // Count pending incoming swap requests
-    const pendingSwaps = swapRequests.filter(r => 
-        r.status === 'pending' && r.targetStudent === fullName
-    ).length;
-    
-    const totalBadge = unreadSwaps + pendingSwaps;
-    const badge = document.getElementById('studentDashSwapBadge');
-    if(totalBadge > 0) {
-        badge.textContent = totalBadge;
-        badge.style.display = 'inline';
-    } else {
-        badge.style.display = 'none';
-    }
-}
-
-function studentDashGoSwap() {
-    document.getElementById('studentDashboard').style.display = 'none';
-    // Set up the calendar view with student controls
-    enterStudentCalendarView();
-    showSwapRequestsFullScreen();
-}
-
-function studentDashGoAdmin() {
-    document.getElementById('studentDashboard').style.display = 'none';
-    enterStudentCalendarView();
-    showMyInfoFullScreen();
-}
-
-function studentDashGoLessons() {
-    document.getElementById('studentDashboard').style.display = 'none';
-    enterStudentCalendarView();
-}
-
-function enterStudentCalendarView() {
-    if(!loggedInStudent) return;
-    
-    document.getElementById('mainApp').classList.add('active');
-    document.getElementById('teacherControls').classList.add('hidden');
-    document.getElementById('studentControls').classList.remove('hidden');
-    document.getElementById('fab').classList.add('hidden');
-    
-    // Change back arrow to go back to student dashboard (not logout)
-    const headerBtn = document.getElementById('headerBackBtn');
-    headerBtn.onclick = showStudentDashboard;
-    headerBtn.title = 'Back to Dashboard';
-    headerBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
-    
-    // Show student initials (no edit profile link)
-    const initials = loggedInStudent.firstName.charAt(0) + loggedInStudent.lastName.charAt(0);
-    document.getElementById('loginStatus').innerHTML = initials;
-    document.getElementById('studentInfoBadge').innerHTML = initials;
-    
-    // Force render
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            render();
-        });
-    });
-}
-
 function showSwapRequestsFullScreen() {
     showFullScreenView(showMyLessonsForSwap, '');
 }
 
 function showMyInfoFullScreen() {
     showFullScreenView(showMyInfo, '');
-}
-
-// ===== MESSAGING FUNCTIONS =====
-function showMessagesFullScreen() {
-    showFullScreenView(showMessagesView, 'Messages');
-}
-
-function showStudentMessagesFullScreen() {
-    showFullScreenView(showStudentMessagesView, 'Messages');
-}
-
-function getConversations() {
-    // Get unique conversation IDs (students)
-    const convIds = new Set();
-    messages.forEach(msg => {
-        convIds.add(msg.conversationId);
-    });
-    
-    // Build conversation list with last message
-    const conversations = [];
-    convIds.forEach(id => {
-        const convMessages = messages.filter(m => m.conversationId === id);
-        const lastMsg = convMessages[convMessages.length - 1];
-        const unreadCount = convMessages.filter(m => !m.read && m.from !== 'teacher').length;
-        
-        conversations.push({
-            id: id,
-            name: id,
-            lastMessage: lastMsg.text,
-            lastTimestamp: lastMsg.timestamp,
-            unreadCount: unreadCount,
-            hasUnread: unreadCount > 0
-        });
-    });
-    
-    // Sort by most recent
-    conversations.sort((a, b) => new Date(b.lastTimestamp) - new Date(a.lastTimestamp));
-    return conversations;
-}
-
-function getUnreadMessageCount() {
-    if (loginMode === 'teacher') {
-        return messages.filter(m => !m.read && m.from !== 'teacher').length;
-    } else if (loggedInStudent) {
-        const studentName = loggedInStudent.firstName + ' ' + loggedInStudent.lastName;
-        return messages.filter(m => !m.read && m.conversationId === studentName && m.from === 'teacher').length;
-    }
-    return 0;
-}
-
-function markConversationRead(conversationId, reader) {
-    messages.forEach(msg => {
-        if (msg.conversationId === conversationId && msg.from !== reader) {
-            msg.read = true;
-        }
-    });
-    saveData();
-    updateMessageBadges();
-}
-
-function sendMessage(conversationId, text, from, to) {
-    const newMessage = {
-        id: nextMessageId++,
-        conversationId: conversationId,
-        from: from,
-        to: to,
-        text: text,
-        timestamp: new Date().toISOString(),
-        read: false
-    };
-    messages.push(newMessage);
-    saveData();
-    return newMessage;
-}
-
-function formatMessageTime(timestamp) {
-    const date = new Date(timestamp);
-    const now = new Date();
-    const diffMs = now - date;
-    const diffMins = Math.floor(diffMs / 60000);
-    
-    if (diffMins < 1) return 'Just now';
-    if (diffMins < 60) return diffMins + 'm ago';
-    if (diffMins < 1440) return Math.floor(diffMins / 60) + 'h ago';
-    
-    const days = Math.floor(diffMins / 1440);
-    if (days === 1) return 'Yesterday';
-    if (days < 7) return days + 'd ago';
-    
-    return date.toLocaleDateString();
-}
-
-function formatMessageTimestamp(timestamp) {
-    const date = new Date(timestamp);
-    return date.toLocaleString('en-US', { 
-        month: 'short', 
-        day: 'numeric', 
-        hour: 'numeric', 
-        minute: '2-digit',
-        hour12: true 
-    });
-}
-
-let currentConversationId = null;
-
-function showMessagesView() {
-    const conversations = getConversations();
-    
-    let html = '<div style="display: flex; height: 100%; background: var(--stone-50);">';
-    
-    // Sidebar with conversation list
-    html += '<div class="message-sidebar">';
-    html += '<div class="message-header">';
-    html += '<h2>Messages</h2>';
-    html += '<div class="message-header-subtitle">' + conversations.length + ' conversation' + (conversations.length !== 1 ? 's' : '') + '</div>';
-    html += '</div>';
-    
-    html += '<div class="conversation-list">';
-    if (conversations.length === 0) {
-        html += '<div style="padding: 2rem; text-align: center; color: var(--stone-400);">';
-        html += '<p>No messages yet</p>';
-        html += '</div>';
-    } else {
-        conversations.forEach(conv => {
-            const active = currentConversationId === conv.id ? 'active' : '';
-            const unreadClass = conv.hasUnread ? 'has-unread' : '';
-            html += '<div class="conversation-item ' + active + ' ' + unreadClass + '" onclick="selectConversation(\'' + conv.id + '\')">';
-            html += '<div class="conversation-name">' + conv.name + '</div>';
-            html += '<div class="conversation-preview">' + conv.lastMessage.substring(0, 50) + (conv.lastMessage.length > 50 ? '...' : '') + '</div>';
-            html += '<div class="conversation-time">' + formatMessageTime(conv.lastTimestamp) + '</div>';
-            html += '</div>';
-        });
-    }
-    html += '</div>';
-    html += '</div>';
-    
-    // Main message area
-    html += '<div class="message-main">';
-    html += '<div id="messageThreadArea"></div>';
-    html += '</div>';
-    
-    html += '</div>';
-    
-    html += '<button onclick="exitFullScreenView()" class="modal-close-btn" title="Close">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-    html += '</button>';
-    
-    document.getElementById('fullScreenContentArea').innerHTML = html;
-    
-    // Auto-select first conversation if any
-    if (conversations.length > 0 && !currentConversationId) {
-        selectConversation(conversations[0].id);
-    } else if (currentConversationId) {
-        selectConversation(currentConversationId);
-    } else {
-        showEmptyMessageState();
-    }
-}
-
-function showStudentMessagesView() {
-    const studentName = loggedInStudent.firstName + ' ' + loggedInStudent.lastName;
-    const conversationMessages = messages.filter(m => m.conversationId === studentName);
-    
-    // Mark messages as read
-    markConversationRead(studentName, studentName);
-    
-    let html = '<div style="display: flex; flex-direction: column; height: 100%; background: var(--stone-50);">';
-    
-    html += '<div class="message-header">';
-    html += '<h2>Message Teacher</h2>';
-    html += '<div class="message-header-subtitle">Chat with your teacher</div>';
-    html += '</div>';
-    
-    html += '<div class="message-thread" id="studentMessageThread">';
-    if (conversationMessages.length === 0) {
-        html += '<div class="message-empty-state">';
-        html += '<div class="message-empty-icon">';
-        html += '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
-        html += '</div>';
-        html += '<div class="message-empty-text">No messages yet</div>';
-        html += '<div class="message-empty-subtext">Start a conversation with your teacher</div>';
-        html += '</div>';
-    } else {
-        conversationMessages.forEach(msg => {
-            const bubbleClass = msg.from === 'teacher' ? 'received' : 'sent';
-            html += '<div class="message-bubble ' + bubbleClass + '">';
-            if (msg.from === 'teacher') {
-                html += '<div class="message-sender-name">Teacher</div>';
-            }
-            html += '<div>' + escapeHtml(msg.text) + '</div>';
-            html += '<div class="message-timestamp">' + formatMessageTimestamp(msg.timestamp) + '</div>';
-            html += '</div>';
-        });
-    }
-    html += '</div>';
-    
-    html += '<div class="message-compose">';
-    html += '<div class="message-input-wrapper">';
-    html += '<textarea class="message-input" id="studentMessageInput" placeholder="Type your message..." onkeypress="if(event.key===\'Enter\' && !event.shiftKey) { event.preventDefault(); sendStudentMessage(); }"></textarea>';
-    html += '<button class="message-send-btn" onclick="sendStudentMessage()">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-    html += 'Send';
-    html += '</button>';
-    html += '</div>';
-    html += '</div>';
-    
-    html += '</div>';
-    
-    html += '<button onclick="exitFullScreenView()" class="modal-close-btn" title="Close">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-    html += '</button>';
-    
-    document.getElementById('fullScreenContentArea').innerHTML = html;
-    
-    // Scroll to bottom
-    setTimeout(() => {
-        const thread = document.getElementById('studentMessageThread');
-        if (thread) thread.scrollTop = thread.scrollHeight;
-    }, 100);
-}
-
-function selectConversation(conversationId) {
-    currentConversationId = conversationId;
-    markConversationRead(conversationId, 'teacher');
-    
-    const conversationMessages = messages.filter(m => m.conversationId === conversationId);
-    
-    let html = '<div class="message-header">';
-    html += '<h2>' + conversationId + '</h2>';
-    html += '<div class="message-header-subtitle">' + conversationMessages.length + ' message' + (conversationMessages.length !== 1 ? 's' : '') + '</div>';
-    html += '</div>';
-    
-    html += '<div class="message-thread" id="messageThread">';
-    conversationMessages.forEach(msg => {
-        const bubbleClass = msg.from === 'teacher' ? 'sent' : 'received';
-        html += '<div class="message-bubble ' + bubbleClass + '">';
-        if (msg.from !== 'teacher') {
-            html += '<div class="message-sender-name">' + msg.from + '</div>';
-        }
-        html += '<div>' + escapeHtml(msg.text) + '</div>';
-        html += '<div class="message-timestamp">' + formatMessageTimestamp(msg.timestamp) + '</div>';
-        html += '</div>';
-    });
-    html += '</div>';
-    
-    html += '<div class="message-compose">';
-    html += '<div class="message-input-wrapper">';
-    html += '<textarea class="message-input" id="messageInput" placeholder="Type your message..." onkeypress="if(event.key===\'Enter\' && !event.shiftKey) { event.preventDefault(); sendTeacherMessage(); }"></textarea>';
-    html += '<button class="message-send-btn" onclick="sendTeacherMessage()">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-    html += 'Send';
-    html += '</button>';
-    html += '</div>';
-    html += '</div>';
-    
-    document.getElementById('messageThreadArea').innerHTML = html;
-    
-    // Scroll to bottom
-    setTimeout(() => {
-        const thread = document.getElementById('messageThread');
-        if (thread) thread.scrollTop = thread.scrollHeight;
-    }, 100);
-    
-    // Update sidebar to show active conversation
-    showMessagesView();
-}
-
-function showEmptyMessageState() {
-    let html = '<div class="message-empty-state">';
-    html += '<div class="message-empty-icon">';
-    html += '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
-    html += '</div>';
-    html += '<div class="message-empty-text">Select a conversation</div>';
-    html += '<div class="message-empty-subtext">Choose a student to view messages</div>';
-    html += '</div>';
-    
-    document.getElementById('messageThreadArea').innerHTML = html;
-}
-
-function sendTeacherMessage() {
-    const input = document.getElementById('messageInput');
-    const text = input.value.trim();
-    
-    if (!text || !currentConversationId) return;
-    
-    sendMessage(currentConversationId, text, 'teacher', currentConversationId);
-    input.value = '';
-    
-    // Refresh the conversation view
-    selectConversation(currentConversationId);
-    updateMessageBadges();
-}
-
-function sendStudentMessage() {
-    const input = document.getElementById('studentMessageInput');
-    const text = input.value.trim();
-    
-    if (!text || !loggedInStudent) return;
-    
-    const studentName = loggedInStudent.firstName + ' ' + loggedInStudent.lastName;
-    sendMessage(studentName, text, studentName, 'teacher');
-    input.value = '';
-    
-    // Refresh the view
-    showStudentMessagesView();
-    updateMessageBadges();
-}
-
-function updateMessageBadges() {
-    const unreadCount = getUnreadMessageCount();
-    
-    // Update dashboard stat
-    const dashStat = document.getElementById('dashMessageStat');
-    if (dashStat) {
-        dashStat.textContent = unreadCount + ' unread';
-    }
-    
-    // Update student badge
-    const studentBadge = document.getElementById('studentMessageBadge');
-    if (studentBadge) {
-        if (unreadCount > 0) {
-            studentBadge.textContent = unreadCount;
-            studentBadge.classList.remove('hidden');
-        } else {
-            studentBadge.classList.add('hidden');
-        }
-    }
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
 }
 
 function miniCalSelectDate(year, month, day) {
