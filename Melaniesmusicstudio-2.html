@@ -14,10 +14,10 @@
     <meta name="description" content="Music lesson scheduling app for teachers">
     
     <!-- App Icon (180x180 for iOS) -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%2314b8a6'/><circle cx='90' cy='85' r='50' fill='%23fbbf24'/><ellipse cx='90' cy='95' rx='35' ry='25' fill='%23f59e0b'/><circle cx='75' cy='75' r='8' fill='%231c1917'/><circle cx='105' cy='75' r='8' fill='%231c1917'/><path d='M80 100 Q90 115 100 100' stroke='%231c1917' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M55 55 Q45 35 60 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><path d='M125 55 Q135 35 120 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><text x='90' y='155' text-anchor='middle' font-family='system-ui' font-size='24' font-weight='bold' fill='white'>â™ª</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%2314b8a6'/><circle cx='90' cy='85' r='50' fill='%23fbbf24'/><ellipse cx='90' cy='95' rx='35' ry='25' fill='%23f59e0b'/><circle cx='75' cy='75' r='8' fill='%231c1917'/><circle cx='105' cy='75' r='8' fill='%231c1917'/><path d='M80 100 Q90 115 100 100' stroke='%231c1917' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M55 55 Q45 35 60 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><path d='M125 55 Q135 35 120 40' stroke='%23fbbf24' stroke-width='6' fill='none' stroke-linecap='round'/><text x='90' y='155' text-anchor='middle' font-family='system-ui' font-size='24' font-weight='bold' fill='white'>♪</text></svg>">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314b8a6'/><circle cx='16' cy='14' r='9' fill='%23fbbf24'/><circle cx='13' cy='12' r='2' fill='%231c1917'/><circle cx='19' cy='12' r='2' fill='%231c1917'/><text x='16' y='28' text-anchor='middle' font-size='10' fill='white'>â™ª</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314b8a6'/><circle cx='16' cy='14' r='9' fill='%23fbbf24'/><circle cx='13' cy='12' r='2' fill='%231c1917'/><circle cx='19' cy='12' r='2' fill='%231c1917'/><text x='16' y='28' text-anchor='middle' font-size='10' fill='white'>♪</text></svg>">
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="manifest.json">
@@ -1228,7 +1228,7 @@
             position: fixed;
             inset: 0;
             background: url('https://images.pexels.com/photos/210764/pexels-photo-210764.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
-            filter: grayscale(1);
+            filter: grayscale(1) brightness(0.45);
             opacity: 1;
             z-index: 0;
         }
@@ -1237,7 +1237,7 @@
             content: '';
             position: fixed;
             inset: 0;
-            background: radial-gradient(ellipse at center, transparent 30%, rgba(28, 25, 23, 0.7) 100%);
+            background: radial-gradient(ellipse at center, rgba(28, 25, 23, 0.3) 30%, rgba(28, 25, 23, 0.8) 100%);
             z-index: 0;
         }
         
@@ -1266,9 +1266,10 @@
             font-family: var(--font-display);
             font-size: 1.65rem;
             font-weight: 700;
-            color: #fafaf9;
+            color: #ffffff;
             margin-bottom: 0.35rem;
             line-height: 1.3;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
         }
         
         [data-theme="dark"] .student-dash-greeting h1 {
@@ -1277,8 +1278,9 @@
         
         .student-dash-greeting p {
             font-size: 1.05rem;
-            color: #a8a29e;
+            color: #d6d3d1;
             font-weight: 400;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
         }
         
         .student-dash-cards {
@@ -1366,7 +1368,7 @@
         }
         .student-dash-card-swap:hover {
             border-color: #06b6d4;
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.04), rgba(6, 182, 212, 0.06));
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(6, 182, 212, 0.15)), rgba(255, 255, 255, 0.92);
         }
         .student-dash-card-swap:hover .student-dash-card-icon {
             background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
@@ -1381,7 +1383,7 @@
         }
         .student-dash-card-admin:hover {
             border-color: var(--violet-300);
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.04), rgba(167, 139, 250, 0.06));
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(167, 139, 250, 0.15)), rgba(255, 255, 255, 0.92);
         }
         .student-dash-card-admin:hover .student-dash-card-icon {
             background: linear-gradient(135deg, #8b5cf6, #a78bfa);
@@ -1396,11 +1398,24 @@
         }
         .student-dash-card-lessons:hover {
             border-color: var(--orange);
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.04), rgba(251, 146, 60, 0.06));
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(251, 146, 60, 0.15)), rgba(255, 255, 255, 0.92);
         }
         .student-dash-card-lessons:hover .student-dash-card-icon {
             background: linear-gradient(135deg, #f97316, #fb923c);
             color: white;
+        }
+        
+        [data-theme="dark"] .student-dash-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+        [data-theme="dark"] .student-dash-card-swap:hover {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.18), rgba(6, 182, 212, 0.2)), rgba(41, 37, 36, 0.92);
+        }
+        [data-theme="dark"] .student-dash-card-admin:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(167, 139, 250, 0.2)), rgba(41, 37, 36, 0.92);
+        }
+        [data-theme="dark"] .student-dash-card-lessons:hover {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(251, 146, 60, 0.2)), rgba(41, 37, 36, 0.92);
         }
         
         .student-dash-logout {
@@ -1410,28 +1425,43 @@
         }
         
         .student-dash-logout button {
-            background: none;
-            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            background: #ffffff;
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
             border-radius: 12px;
             padding: 0.65rem 1.8rem;
             font-size: 0.9rem;
             font-weight: 600;
-            color: #a8a29e;
+            color: #1c1917;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: var(--font-body);
         }
         
+        .student-dash-logout button svg {
+            stroke: #1c1917;
+            transition: stroke 0.2s ease;
+        }
+        
         .student-dash-logout button:hover {
-            border-color: rgba(255, 255, 255, 0.4);
-            color: #fafaf9;
-            background: rgba(255, 255, 255, 0.1);
+            border-color: #dc2626;
+            color: #ffffff;
+            background: #dc2626;
+        }
+        
+        .student-dash-logout button:hover svg {
+            stroke: #ffffff;
+        }
+        
+        [data-theme="dark"] .student-dash-logout button {
+            background: #ffffff;
+            border-color: #ffffff;
+            color: #1c1917;
         }
         
         [data-theme="dark"] .student-dash-logout button:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            color: var(--stone-200);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: #dc2626;
+            color: #ffffff;
+            background: #dc2626;
         }
         
         .student-dash-badge {
@@ -6285,7 +6315,7 @@ function showSwapNotifications(notifications, fullName) {
                 html += "<p style='font-size: 0.875rem;'>The swap with <strong>" + otherNamePrivate + "</strong> was approved by your teacher!</p>";
             }
             
-            // Show old â†’ new time
+            // Show old → new time
             if(oldDay !== undefined && newDay !== undefined) {
                 html += "<div style='margin-top: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.15); border-radius: 10px;'>" +
                     "<div style='display: flex; align-items: center; gap: 0.75rem;'>" +
@@ -6293,7 +6323,7 @@ function showSwapNotifications(notifications, fullName) {
                     "<div style='font-size: 0.7rem; font-weight: 600; opacity: 0.7; margin-bottom: 0.2rem;'>OLD TIME</div>" +
                     "<div style='font-size: 0.85rem; text-decoration: line-through; opacity: 0.6;'>" + days[oldDay] + " " + oldTime + "</div>" +
                     "</div>" +
-                    "<div style='font-size: 1.2rem;'>â†’</div>" +
+                    "<div style='font-size: 1.2rem;'>→</div>" +
                     "<div style='flex: 1; text-align: center;'>" +
                     "<div style='font-size: 0.7rem; font-weight: 600; opacity: 0.7; margin-bottom: 0.2rem;'>NEW TIME</div>" +
                     "<div style='font-size: 1rem; font-weight: 700;'>" + days[newDay] + " " + newTime + "</div>" +
@@ -6974,12 +7004,12 @@ function renderCompactSwapCard(request) {
     const lesson1 = lessons.find(l => l.id === request.requestingLessonId);
     const lesson2 = lessons.find(l => l.id === request.targetLessonId);
     const isApproved = request.status === 'approved';
-    const icon = isApproved ? '' : 'âœ•';
+    const icon = isApproved ? '' : '✕';
     const color = isApproved ? 'var(--teal-600)' : 'var(--stone-500)';
     const bg = isApproved ? 'rgba(13,148,136,0.06)' : 'rgba(168,162,158,0.08)';
     const resolvedDate = request.resolvedAt ? new Date(request.resolvedAt).toLocaleDateString() : '';
     
-    let detail = request.requestingStudent + ' â† ' + request.targetStudent;
+    let detail = request.requestingStudent + ' ← ' + request.targetStudent;
     
     return "<div style='display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; margin-bottom: 0.25rem; background: " + bg + "; border-radius: 8px; font-size: 0.8rem;'>" +
         "<span style='color: " + color + "; font-weight: 700; flex-shrink: 0;'>" + icon + "</span>" +
@@ -6991,14 +7021,14 @@ function renderCompactSwapCard(request) {
 
 function renderCompactMoveCard(request) {
     const isApproved = request.status === 'approved';
-    const icon = isApproved ? '' : 'âœ•';
+    const icon = isApproved ? '' : '✕';
     const color = isApproved ? 'var(--teal-600)' : 'var(--stone-500)';
     const bg = isApproved ? 'rgba(13,148,136,0.06)' : 'rgba(168,162,158,0.08)';
     const resolvedDate = request.resolvedAt ? new Date(request.resolvedAt).toLocaleDateString() : '';
     
     let detail = request.studentName + ' — ' + days[request.currentDay] + ' ' + request.currentTime;
     if(isApproved && request.newDay !== undefined) {
-        detail += ' â†’ ' + days[request.newDay] + ' ' + request.newTime;
+        detail += ' → ' + days[request.newDay] + ' ' + request.newTime;
     }
     
     return "<div style='display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; margin-bottom: 0.25rem; background: " + bg + "; border-radius: 8px; font-size: 0.8rem;'>" +
@@ -7031,7 +7061,7 @@ function renderSwapRequestCard(request, showActions) {
         statusLabel = 'Completed';
     } else {
         statusClass = 'info-box-danger';
-        statusIcon = 'âœ•';
+        statusIcon = '✕';
         statusLabel = 'Declined';
     }
     
@@ -7379,7 +7409,7 @@ function updateDropTooltip(e, time, cell, snapY, isBlocked) {
         tooltip.textContent = time;
         tooltip.style.background = 'var(--stone-700)';
     } else {
-        tooltip.textContent = 'â–¸ ' + time;
+        tooltip.textContent = '▸ ' + time;
         tooltip.style.background = 'var(--stone-800)';
     }
     tooltip.style.display = 'block';
@@ -8261,9 +8291,9 @@ function toast(msg, type = 'auto') {
     // Icon mapping
     const icons = {
         success: '',
-        error: 'âœ•',
-        warning: 'âš ',
-        info: 'â„¹',
+        error: '✕',
+        warning: '⚠',
+        info: 'ℹ',
         default: '•'
     };
     
@@ -8272,7 +8302,7 @@ function toast(msg, type = 'auto') {
         <div class="toast-content">
             <span class="toast-icon">${icons[type] || icons.default}</span>
             <span class="toast-message">${msg}</span>
-            <button class="toast-close" onclick="hideToast()">âœ•</button>
+            <button class="toast-close" onclick="hideToast()">✕</button>
         </div>
         <div class="toast-progress">
             <div class="toast-progress-bar"></div>
@@ -8454,7 +8484,7 @@ function checkBlockConflicts(blockDay, blockTime, blockDuration, blockWeek, repe
 }
 
 function showBlockConflictModal(conflicts, blockDay, blockTime, blockDuration, blockReason, repeatType) {
-    let html = "<h3 class='modal-title' style='color: var(--orange);'>âš ï¸ Lesson Conflict</h3>" +
+    let html = "<h3 class='modal-title' style='color: var(--orange);'>⚠ï¸ Lesson Conflict</h3>" +
         "<p class='modal-subtitle'>Blocking this time will overlap with " + conflicts.length + " lesson" + (conflicts.length > 1 ? "s" : "") + ":</p>";
     
     html += "<div class='scroll-container' style='max-height: 200px; margin-bottom: 1rem;'>";
@@ -9661,7 +9691,7 @@ function viewStudentSchedule(firstName, lastName) {
                 const dateInfo = getDateForLesson(lesson);
                 html += "<div style='font-size: 0.8rem; padding-left: 0.75rem; border-left: 2px solid var(--teal-400); margin-bottom: 0.25rem; color: var(--stone-600);'>" +
                     days[lesson.day] + ", " + dateInfo + " at " + lesson.time + " (" + lesson.duration + " min)" +
-                    (lesson.isRecurring ? " â†»" : "") +
+                    (lesson.isRecurring ? " ↻" : "") +
                     "</div>";
             });
             html += "</div>";
@@ -9717,7 +9747,7 @@ function editStudentProfile(firstName, lastName) {
     if(profile.photo) {
         photoHtml = "<div class='photo-upload-preview'>" +
             "<img src='" + profile.photo + "' id='photoPreview' class='photo-preview-img'>" +
-            "<button type='button' onclick='removeStudentPhoto(\"" + firstName + "\",\"" + lastName + "\")' class='photo-remove-btn'>âœ• Remove</button>" +
+            "<button type='button' onclick='removeStudentPhoto(\"" + firstName + "\",\"" + lastName + "\")' class='photo-remove-btn'>✕ Remove</button>" +
             "</div>";
     } else {
         photoHtml = "<div class='photo-upload-preview'>" +
@@ -9806,7 +9836,7 @@ function renderGuardiansEditor() {
         html += "<div class='guardian-card' id='guardian-" + index + "'>" +
             "<div class='guardian-header'>" +
             "<div class='section-title'>Parent/Guardian " + guardianNum + "</div>" +
-            (!isFirst ? "<button type='button' onclick='removeGuardian(" + index + ")' class='btn-remove-guardian'>âœ• Remove</button>" : "") +
+            (!isFirst ? "<button type='button' onclick='removeGuardian(" + index + ")' class='btn-remove-guardian'>✕ Remove</button>" : "") +
             "</div>" +
             "<label class='form-label'>Name</label>" +
             "<input type='text' id='guardianName-" + index + "' value='" + escapeHtml(guardian.name || '') + "' placeholder='John Doe' class='form-input' onchange='updateGuardian(" + index + ", \"name\", this.value)'>" +
@@ -9887,7 +9917,7 @@ function previewStudentPhoto(input) {
             // Replace placeholder or update existing image
             const container = preview.parentElement;
             container.innerHTML = "<img src='" + tempPhotoData + "' id='photoPreview' class='photo-preview-img'>" +
-                "<button type='button' onclick='clearPhotoPreview()' class='photo-remove-btn'>âœ• Remove</button>";
+                "<button type='button' onclick='clearPhotoPreview()' class='photo-remove-btn'>✕ Remove</button>";
         }
     };
     reader.readAsDataURL(file);
@@ -10044,7 +10074,7 @@ function renderNewStudentGuardians() {
         html += "<div class='guardian-card' id='new-guardian-" + index + "'>" +
             "<div class='guardian-header'>" +
             "<div class='section-title'>Parent/Guardian " + guardianNum + "</div>" +
-            (!isFirst ? "<button type='button' onclick='removeNewGuardian(" + index + ")' class='btn-remove-guardian'>âœ• Remove</button>" : "") +
+            (!isFirst ? "<button type='button' onclick='removeNewGuardian(" + index + ")' class='btn-remove-guardian'>✕ Remove</button>" : "") +
             "</div>" +
             "<label class='form-label'>Name</label>" +
             "<input type='text' id='newGuardianName-" + index + "' value='" + escapeHtml(guardian.name || '') + "' placeholder='John Doe' class='form-input' onchange='updateNewGuardian(" + index + ", \"name\", this.value)'>" +
@@ -10455,7 +10485,7 @@ function showMyLessonsForReschedule() {
                     "<div class='lesson-list-time'>" + formatLessonDate(lesson.week, lesson.day) + " at " + lesson.time + "</div>" +
                     "<div class='lesson-list-duration'>" + lesson.duration + " min" + (lesson.isRecurring ? " • Recurring" : "") + "</div>" +
                     "</div>" +
-                    "<span style='color: var(--orange); font-weight: 600;'>â†’</span>" +
+                    "<span style='color: var(--orange); font-weight: 600;'>→</span>" +
                     "</div>";
             }
         });
@@ -11213,7 +11243,7 @@ function showRescheduleOptions(lessonId) {
                 "<div style='font-weight: 700; color: var(--teal-700);'>" + dayName + " at " + slot.time + "</div>" +
                 "<div style='font-size: 0.8rem; color: var(--stone-500);'>" + slot.dateStr + " • " + weekLabel + "</div>" +
                 "</div>" +
-                "<span style='color: var(--teal-600); font-size: 1.2rem;'>â†’</span>" +
+                "<span style='color: var(--teal-600); font-size: 1.2rem;'>→</span>" +
                 "</div>" +
                 "</div>";
         });
@@ -11239,7 +11269,7 @@ function selectRescheduleSlot(lessonId, newDay, newTime, newWeek) {
         "<div style='font-size: 0.8rem; color: var(--stone-500);'>FROM:</div>" +
         "<div style='font-weight: 700; color: var(--stone-800);'>" + days[lesson.day] + ", " + currentDate + " at " + lesson.time + "</div>" +
         "</div>" +
-        "<div style='text-align: center; color: var(--stone-400); padding: 0.5rem;'>â†</div>" +
+        "<div style='text-align: center; color: var(--stone-400); padding: 0.5rem;'>←</div>" +
         "<div class='info-box' style='background: var(--teal-50); border-color: var(--teal-200);'>" +
         "<div style='font-size: 0.8rem; color: var(--stone-500);'>TO:</div>" +
         "<div style='font-weight: 700; color: var(--teal-700);'>" + days[newDay] + ", " + newDate + " at " + newTime + "</div>" +
@@ -11249,7 +11279,7 @@ function selectRescheduleSlot(lessonId, newDay, newTime, newWeek) {
         "Your teacher will be notified of this request. The change will only happen if they approve it." +
         "</p>" +
         "<button onclick='submitMoveRequest(" + lessonId + ", " + newDay + ", \"" + newTime + "\", " + newWeek + ")' class='modal-btn modal-btn-primary'> Send Request</button>" +
-        "<button onclick='showRescheduleOptions(" + lessonId + ")' class='modal-btn modal-btn-secondary'>â† Back</button>";
+        "<button onclick='showRescheduleOptions(" + lessonId + ")' class='modal-btn modal-btn-secondary'>← Back</button>";
     
     modal(html);
 }
@@ -11391,7 +11421,7 @@ function showTeacherPickTimeModal(requestId) {
                 "<div style='font-weight: 700; color: var(--teal-700);'>" + dayName + " at " + slot.time + "</div>" +
                 "<div style='font-size: 0.8rem; color: var(--stone-500);'>" + slot.dateStr + " • " + weekLabel + "</div>" +
                 "</div>" +
-                "<span style='font-size: 1.25rem;'>â†’</span>" +
+                "<span style='font-size: 1.25rem;'>→</span>" +
                 "</div>" +
                 "</div>";
         });
@@ -11456,7 +11486,7 @@ function renderMoveRequestCard(request, showActions) {
         statusLabel = 'Approved';
     } else {
         statusClass = 'info-box-danger';
-        statusIcon = 'âœ•';
+        statusIcon = '✕';
         statusLabel = 'Declined';
     }
     
@@ -11485,7 +11515,7 @@ function renderMoveRequestCard(request, showActions) {
         if(request.suggestedDay !== null && request.suggestedDay !== undefined) {
             const suggestedDate = getDateForLesson({day: request.suggestedDay, week: request.suggestedWeek});
             html += "<div style='background: var(--teal-50); border: 1px solid var(--teal-300); border-radius: 6px; padding: 0.5rem; margin-top: 0.5rem;'>" +
-                "<div style='font-size: 0.7rem; text-transform: uppercase; font-weight: 600; color: var(--teal-700);'>â–¸ Student's Preferred Time</div>" +
+                "<div style='font-size: 0.7rem; text-transform: uppercase; font-weight: 600; color: var(--teal-700);'>▸ Student's Preferred Time</div>" +
                 "<div style='font-weight: 700; color: var(--teal-800); margin-top: 0.25rem;'>" + days[request.suggestedDay] + " at " + request.suggestedTime + "</div>" +
                 "<div style='font-size: 0.75rem; color: var(--teal-600);'>" + suggestedDate + "</div>" +
                 "</div>";
@@ -11518,7 +11548,7 @@ function renderMoveRequestCard(request, showActions) {
         // From/To times
         html += "<div style='font-size: 0.85rem;'>" +
             "<div style='color: var(--stone-500);'>From: <strong>" + days[request.currentDay] + " " + request.currentTime + "</strong> (" + currentDate + ")</div>" +
-            "<div style='text-align: center; color: var(--stone-400); padding: 0.25rem;'>â†</div>" +
+            "<div style='text-align: center; color: var(--stone-400); padding: 0.25rem;'>←</div>" +
             "<div style='color: var(--teal-700);'>To: <strong>" + days[request.newDay] + " " + request.newTime + "</strong> (" + newDate + ")</div>" +
             "</div>";
         
@@ -11746,7 +11776,7 @@ function showStudentPayments(firstName, lastName) {
                 "<div class='payment-row-name'>$" + payment.amount.toFixed(2) + achBadge + "</div>" +
                 "<div class='payment-row-detail'>" + date.toLocaleDateString() + (payment.note ? ' • ' + payment.note : '') + "</div>" +
                 "</div>" +
-                (payment.achLinked ? "" : "<button onclick='deletePayment(" + payment.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='background: var(--teal-600); color: white; font-size: 0.7rem;'>âœ•</button>") +
+                (payment.achLinked ? "" : "<button onclick='deletePayment(" + payment.id + ",\"" + firstName + "\",\"" + lastName + "\")' class='btn btn-small' style='background: var(--teal-600); color: white; font-size: 0.7rem;'>✕</button>") +
                 "</div>";
         });
         html += "</div>";
@@ -11906,7 +11936,7 @@ function getStripeStatusBanner() {
             "<span style='font-size: 1.1rem;'>Link</span>" +
             "<div style='flex:1;'><strong>Connect Stripe</strong><br>" +
             "<span style='font-size: 0.75rem; opacity: 0.8;'>Enable online ACH bank payments</span></div>" +
-            "<span style='font-size: 0.8rem;'>â†’</span></div>";
+            "<span style='font-size: 0.8rem;'>→</span></div>";
     }
 }
 
@@ -12159,8 +12189,8 @@ function showAchPaymentHistory() {
             const statusBadge = payment.status === 'succeeded' 
                 ? "<span class='stripe-badge succeeded'> Settled</span>"
                 : payment.status === 'processing' 
-                    ? "<span class='stripe-badge processing'>â³ Processing</span>"
-                    : "<span class='stripe-badge failed'>âœ• Failed</span>";
+                    ? "<span class='stripe-badge processing'>⏳ Processing</span>"
+                    : "<span class='stripe-badge failed'>✕ Failed</span>";
             
             html += "<div class='payment-row' style='cursor: pointer;' onclick='showAchPaymentDetail(" + payment.id + ")'>" +
                 "<div class='payment-row-info'>" +
@@ -12223,7 +12253,7 @@ function showAchPaymentDetail(achId) {
     if(isProcessing) {
         html += "<div style='display: flex; gap: 0.5rem; margin-bottom: 0.5rem;'>" +
             "<button onclick='simulateAchSettle(" + payment.id + ")' class='modal-btn modal-btn-success' style='flex: 1; margin-bottom: 0;'> Simulate Settlement</button>" +
-            "<button onclick='simulateAchFail(" + payment.id + ")' class='modal-btn' style='flex: 1; margin-bottom: 0; background: var(--teal-600); color: white; border: none; padding: 0.65rem; border-radius: 10px; cursor: pointer;'>âœ• Simulate Failure</button></div>";
+            "<button onclick='simulateAchFail(" + payment.id + ")' class='modal-btn' style='flex: 1; margin-bottom: 0; background: var(--teal-600); color: white; border: none; padding: 0.65rem; border-radius: 10px; cursor: pointer;'>✕ Simulate Failure</button></div>";
     }
     
     html += "<button onclick='showAchPaymentHistory()' class='modal-btn modal-btn-secondary'>Back</button>";
