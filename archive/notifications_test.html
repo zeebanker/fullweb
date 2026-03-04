@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Notifications Test</title>
+    </head>
+    <body>
+
+        <button onclick="requestPermission()">
+            Enable Notifications
+        </button>
+
+        <script>
+            async function requestPermission() {
+                const permission = await Notification.requestPermission();
+
+                if (permission === "granted") {
+                    new Notification("Hello!", {
+                        body: "Notifications are working.",
+                        icon: "icon.png"
+                    });
+                } else {
+                    alert("Permission denied.");
+                }
+            }
+        </script>
+
+    </body>
+</html>

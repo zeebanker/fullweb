@@ -5131,6 +5131,34 @@
                 <span class="site-portal-btn-wrap">
                     <button onclick="openStudentPortal()" class="site-portal-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Student Portal</button>
                 </span>
+                <button onclick="requestPermission()">
+                    Enable Notifications
+                </button>
+
+                <script>
+                    async function requestPermission() {
+                        // console.log("Requesting permission...");
+
+                        const permission = await Notification.requestPermission();
+
+                        // console.log("Permission result:", permission);
+
+                        if (permission === "granted") {
+                            // console.log("Creating notification...");
+
+                            new Notification("Hello!", {
+                                body: "Notifications are working.",
+                                icon: "icon.png"
+                            });
+
+                            // console.log("Notification object:", notification);
+
+                        } else {
+                            // console.log("Permission denied.");
+                            alert("Permission denied.");
+                        }
+                    }
+                </script>
             </div>
         </nav>
         
@@ -5158,13 +5186,14 @@
                     <p>I hold a Bachelor of Music in Piano Performance and have guided hundreds of students through examinations, recitals, and — most importantly — the simple joy of sitting down and playing.</p>
                     <div class="site-stat-row">
                         <div class="site-stat">
-                            <div class="site-stat-num">15+</div>
+                            <div class="site-stat-num">30+</div>
                             <div class="site-stat-label">Years Teaching</div>
                         </div>
                         <div class="site-stat">
                             <div class="site-stat-num">200+</div>
                             <div class="site-stat-label">Students Taught</div>
                         </div>
+                        <!-- Replace this with something more relevant-->
                         <div class="site-stat">
                             <div class="site-stat-num">98%</div>
                             <div class="site-stat-label">Exam Pass Rate</div>
